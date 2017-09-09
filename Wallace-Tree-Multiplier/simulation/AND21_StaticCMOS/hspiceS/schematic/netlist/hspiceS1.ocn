@@ -1,0 +1,8 @@
+simulator( 'hspiceS )
+design(	 "/home/ecegrid/a/559mg3/cadence/simulation/AND21_StaticCMOS/hspiceS/schematic/netlist/AND21_StaticCMOS.C")
+resultsDir( "/home/ecegrid/a/559mg3/cadence/simulation/AND21_StaticCMOS/hspiceS/schematic" )
+analysis('tran ?from "0n"  ?to "60n"  ?by "1n"  )
+temp( 25 ) 
+run()
+selectResult( 'tran )
+plot(getData("/OUT_AND21") getData("/B_IN") getData("/A_IN") )

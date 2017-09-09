@@ -1,0 +1,65 @@
+* "simulator" "HSPICE" 
+* "version" "E-2010.12-SP2 64-BIT"
+* "format" "HSP"
+* "rundate" "21:40:12 11/26/2014 "
+* "netlist" "raw/Decoder "
+* "runtitle" "* # file name: /home/ecegrid/a/559mg3/cadence/simulation/decoder/hspic"
+* time =  0.000e+00       
+* temperature =  2.500e+01       
+*** BEGIN: Saved Operating Point ***                     
+.option 
++ gmindc= 1.000e-12       
+.nodeset
++ and_out = 1.800e+00       
++ c_in_1 = 0.000e+00       
++ c_in_2 = 0.000e+00       
++ c_in_3 = 0.000e+00       
++ clk = 0.000e+00       
++ d_out = 1.800e+00       
++ ff_out = 3.348e-06       
++ gd = 0.000e+00       
++ nand_out = 1.800e+00       
++ net61 = 1.800e+00       
++ p_in_1 = 1.800e+00       
++ p_in_2 = 1.800e+00       
++ p_in_3 = 1.800e+00       
++ vd = 1.800e+00       
++ xor_1 = 1.800e+00       
++ xor_2 = 1.800e+00       
++ xor_3 = 1.800e+00       
++ xi15^net030 = 9.601e-08       
++ xi15^net040 = 1.800e+00       
++ xi15^net044 = 9.601e-08       
++ xi15^net11 = 2.400e-08       
++ xi15^net17 = 1.800e+00       
++ xi7^net30 = 6.405e-09       
++ xi7^net34 = 1.602e+00       
++ xi7^net38 = 2.150e-01       
++ xi7^net42 = 1.800e+00       
++ xi7^net46 = 2.436e-08       
++ xi7^net50 = 4.267e-01       
++ xi6^net18 = 1.442e+00       
++ xi4^net18 = 9.601e-08       
++ xi4^net6 = 4.800e-08       
++ xi3^net18 = 9.601e-08       
++ xi3^net6 = 4.800e-08       
++ xi2^net044 = 1.800e+00       
++ xi2^net21 = 1.442e+00       
++ xi2^net23 = 2.400e-08       
++ xi2^net29 = 1.442e+00       
++ xi2^net8 = 1.800e+00       
++ xi1^net044 = 1.800e+00       
++ xi1^net21 = 1.442e+00       
++ xi1^net23 = 2.400e-08       
++ xi1^net29 = 1.442e+00       
++ xi1^net8 = 1.800e+00       
++ xi0^net044 = 1.800e+00       
++ xi0^net21 = 1.442e+00       
++ xi0^net23 = 2.400e-08       
++ xi0^net29 = 1.442e+00       
++ xi0^net8 = 1.800e+00       
++ xi15^xi8^net18 = 1.442e+00       
++ xi15^xi9^net18 = 2.150e-01       
++ xi15^xi10^net18 = 4.800e-08       
++ xi15^xi7^net18 = 4.800e-08       
+***   END: Saved Operating Point ***                     

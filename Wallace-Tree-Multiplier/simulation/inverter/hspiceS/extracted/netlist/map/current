@@ -1,0 +1,24 @@
+( ( nil
+  version "2.1"
+  mapType "incremental"
+  blockName "Inverter"
+  repList "hspiceS spice cmos_sch cmos.sch schematic"
+  stopList "hspiceS spice"
+  hierDelim "^"
+  netlistDir "/home/ecegrid/a/559mg3/cadence/simulation/Inverter/hspiceS/extracted/netlist"
+ )
+( instViewTable
+ )
+( net
+ )
+( inst
+ )
+( model
+( "hw1/Inverter/extracted" "Inverter" )
+ )
+( term
+ )
+( param
+ )
+( "Inverter" "ihnl/cds0/map" )
+ )

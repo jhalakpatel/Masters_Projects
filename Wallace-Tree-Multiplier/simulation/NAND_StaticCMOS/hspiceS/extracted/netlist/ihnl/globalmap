@@ -1,0 +1,8 @@
+CADENCE IHNL01060
+$model
+Proj_lib/NAND_StaticCMOS/extracted NAND_StaticCMOS
+$endmodel
+$net
+$endnet
+$param
+$endparam

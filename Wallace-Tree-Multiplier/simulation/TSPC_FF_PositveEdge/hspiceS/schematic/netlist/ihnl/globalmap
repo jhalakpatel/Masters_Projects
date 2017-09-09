@@ -1,0 +1,8 @@
+CADENCE IHNL01060
+$model
+Proj_lib/TSPC_FF_PositveEdge/schematic sub25
+$endmodel
+$net
+$endnet
+$param
+$endparam

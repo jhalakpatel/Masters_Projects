@@ -1,0 +1,10 @@
+CADENCE IHNL01060
+$model
+hw1/CMOS_Inverter_180nm/schematic sub0
+$endmodel
+$net
+vdd! vdd!
+gnd! 0
+$endnet
+$param
+$endparam

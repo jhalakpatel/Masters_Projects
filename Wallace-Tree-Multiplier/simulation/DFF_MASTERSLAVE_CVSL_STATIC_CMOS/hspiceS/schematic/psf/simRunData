@@ -1,0 +1,10 @@
+HEADER
+"PSFversion" "1.00"
+"design" "(\"Proj_lib\" \"DFF_MASTERSLAVE_CVSL_STATIC_CMOS\" \"schematic\" \"\")"
+"simulator" "hspiceS"
+"temperature" "25"
+"host" ""
+"date" "Nov  3 16:05:33 2014"
+"title" ""
+"analysisList" "()"
+END

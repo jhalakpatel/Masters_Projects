@@ -1,0 +1,8 @@
+CADENCE IHNL01060
+$model
+hw1/Inverter/extracted Inverter
+$endmodel
+$net
+$endnet
+$param
+$endparam

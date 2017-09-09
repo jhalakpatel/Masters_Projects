@@ -1,0 +1,37 @@
+#
+Proj_lib Inverter_180nm symbol
+I20
+#
+Proj_lib Doubled_C2MOS_Latch symbol
+I19
+#
+Proj_lib TSPC_FF_PositiveEdge symbol
+I17
+#
+Proj_lib NAND_StaticCMOS symbol
+I6
+#
+Proj_lib AND21_StaticCMOS symbol
+I4
+I3
+#
+Proj_lib XOR21_StaticCMOS symbol
+I2
+I1
+I0
+#ISCELL
+basic ipin symbol
+PIN5
+PIN4
+PIN3
+PIN2
+PIN1
+PIN0
+#ISCELL
+basic opin symbol
+PIN10
+#ISCELL
+basic iopin symbolr
+PIN8
+PIN9
+PIN7

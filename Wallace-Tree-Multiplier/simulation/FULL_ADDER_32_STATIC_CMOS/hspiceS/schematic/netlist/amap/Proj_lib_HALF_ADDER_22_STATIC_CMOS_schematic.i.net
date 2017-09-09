@@ -1,0 +1,6 @@
+HEADER
+"PSFversion" "1.00"
+"1v" "S_OUT_HALF_ADDER22"
+"A_INv" "A_IN"
+"2v" "C_OUT_HALF_ADDER22"
+"B_INv" "B_IN"

@@ -1,0 +1,7 @@
+// Generated for: spectre
+// Generated on: Oct 29 18:49:45 2014
+// Design library name: hw1
+// Design cell name: Inverter
+// Design view name: schematic
+simulator lang=spectre
+global 0 vdd!

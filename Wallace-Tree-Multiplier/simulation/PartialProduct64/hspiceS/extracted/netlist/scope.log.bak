@@ -1,0 +1,351 @@
+Mdi:ArrangeIcons
+ScopeSigMgr:loadpffile /home/ecegrid/a/559mg3/cadence/simulation/PartialProduct64/hspiceS/extracted/netlist/nanosim.fsdb 1 openonly
+# PF:1
+pf:read PF:1 clk_en
+# WF:1:1
+Graph addsignal WF:1:1 -region d -yview real(y) -xview real(x) -tracehi 1
+# Signal0
+pf:read PF:1 clk
+# WF:1:2
+Graph addsignal WF:1:2 -region d -yview real(y) -xview real(x) -tracehi 1
+# Signal1
+pf:read PF:1 a_0 a_1 a_2 a_3 a_4 a_5 a_6 a_7
+# WF:1:3 WF:1:4 WF:1:5 WF:1:6 WF:1:7 WF:1:8 WF:1:9 WF:1:10
+Graph addsignal {WF:1:3 WF:1:4 WF:1:5 WF:1:6 WF:1:7 WF:1:8 WF:1:9 WF:1:10} -region {d d d d d d d d} -yview {real(y) real(y) real(y) real(y) real(y) real(y) real(y) real(y)} -xview {real(x) real(x) real(x) real(x) real(x) real(x) real(x) real(x)} -tracehi {1 1 1 1 1 1 1 1}
+# Signal2 Signal3 Signal4 Signal5 Signal6 Signal7 Signal8 Signal9
+Graph:Select Graph0
+Graph:DSel
+Graph itemselect Signal2 add
+# Signal2
+Graph itemselect Signal2 rem
+Graph itemselect Signal2 add
+# Signal2
+Graph itemselect Signal3 add
+# Signal3
+Graph itemselect Signal4 add
+# Signal4
+Graph itemselect Signal5 add
+# Signal5
+Graph itemselect Signal6 add
+# Signal6
+Graph itemselect Signal7 add
+# Signal7
+Graph itemselect Signal8 add
+# Signal8
+Graph itemselect Signal9 add
+# Signal9
+Graph itemselect Signal9 add
+# Signal9
+GrXY:CreateBus
+Graph:DSel
+pf:read PF:1 b_0 b_1 b_2 b_3 b_4 b_5 b_6 b_7
+# WF:1:11 WF:1:12 WF:1:13 WF:1:14 WF:1:15 WF:1:16 WF:1:17 WF:1:18
+Graph addsignal {WF:1:11 WF:1:12 WF:1:13 WF:1:14 WF:1:15 WF:1:16 WF:1:17 WF:1:18} -region {d d d d d d d d} -yview {real(y) real(y) real(y) real(y) real(y) real(y) real(y) real(y)} -xview {real(x) real(x) real(x) real(x) real(x) real(x) real(x) real(x)} -tracehi {1 1 1 1 1 1 1 1}
+# Signal11 Signal12 Signal13 Signal14 Signal15 Signal16 Signal17 Signal18
+pf:read PF:1 s_0
+# WF:1:19
+Graph addsignal WF:1:19 -region d -yview real(y) -xview real(x) -tracehi 1
+# Signal19
+pf:read PF:1 s_1
+# WF:1:20
+Graph addsignal WF:1:20 -region d -yview real(y) -xview real(x) -tracehi 1
+# Signal20
+pf:read PF:1 s_2 s_3 s_4 s_5 s_6 s_7 s_8 s_9
+# WF:1:21 WF:1:22 WF:1:23 WF:1:24 WF:1:25 WF:1:26 WF:1:27 WF:1:28
+Graph addsignal {WF:1:21 WF:1:22 WF:1:23 WF:1:24 WF:1:25 WF:1:26 WF:1:27 WF:1:28} -region {d d d d d d d d} -yview {real(y) real(y) real(y) real(y) real(y) real(y) real(y) real(y)} -xview {real(x) real(x) real(x) real(x) real(x) real(x) real(x) real(x)} -tracehi {1 1 1 1 1 1 1 1}
+# Signal21 Signal22 Signal23 Signal24 Signal25 Signal26 Signal27 Signal28
+pf:read PF:1 s_10 s_11 s_12 s_13 s_14 s_15 s_16
+# WF:1:29 WF:1:30 WF:1:31 WF:1:32 WF:1:33 WF:1:34 WF:1:35
+Graph addsignal {WF:1:29 WF:1:30 WF:1:31 WF:1:32 WF:1:33 WF:1:34 WF:1:35} -region {d d d d d d d} -yview {real(y) real(y) real(y) real(y) real(y) real(y) real(y)} -xview {real(x) real(x) real(x) real(x) real(x) real(x) real(x)} -tracehi {1 1 1 1 1 1 1}
+# Signal29 Signal30 Signal31 Signal32 Signal33 Signal34 Signal35
+Graph:Select Graph0
+Graph:DSel
+Graph itemselect Signal19 add
+# Signal19
+Graph itemselect Signal19 rem
+Graph itemselect Signal19 add
+# Signal19
+Graph itemselect Signal20 add
+# Signal20
+Graph itemselect Signal21 add
+# Signal21
+Graph itemselect Signal22 add
+# Signal22
+Graph itemselect Signal23 add
+# Signal23
+Graph itemselect Signal24 add
+# Signal24
+Graph itemselect Signal25 add
+# Signal25
+Graph itemselect Signal26 add
+# Signal26
+Graph itemselect Signal27 add
+# Signal27
+Graph itemselect Signal28 add
+# Signal28
+Graph itemselect Signal29 add
+# Signal29
+Graph itemselect Signal30 add
+# Signal30
+Graph itemselect Signal31 add
+# Signal31
+Graph itemselect Signal32 add
+# Signal32
+Graph itemselect Signal33 add
+# Signal33
+Graph itemselect Signal34 add
+# Signal34
+Graph itemselect Signal19 rem
+# Signal34
+Graph itemselect Signal20 rem
+# Signal34
+Graph itemselect Signal21 rem
+# Signal34
+Graph itemselect Signal22 rem
+# Signal34
+Graph itemselect Signal23 rem
+# Signal34
+Graph itemselect Signal24 rem
+# Signal34
+Graph itemselect Signal25 rem
+# Signal34
+Graph itemselect Signal26 rem
+# Signal34
+Graph itemselect Signal27 rem
+# Signal34
+Graph itemselect Signal28 rem
+# Signal34
+Graph itemselect Signal29 rem
+# Signal34
+Graph itemselect Signal30 rem
+# Signal34
+Graph itemselect Signal31 rem
+# Signal34
+Graph itemselect Signal32 rem
+# Signal34
+Graph itemselect Signal33 rem
+# Signal34
+Graph itemselect Signal34 rem
+Graph itemselect Signal19 add
+# Signal19
+Graph itemselect Signal20 add
+# Signal20
+Graph itemselect Signal21 add
+# Signal21
+Graph itemselect Signal22 add
+# Signal22
+Graph itemselect Signal23 add
+# Signal23
+Graph itemselect Signal24 add
+# Signal24
+Graph itemselect Signal25 add
+# Signal25
+Graph itemselect Signal26 add
+# Signal26
+Graph itemselect Signal27 add
+# Signal27
+Graph itemselect Signal28 add
+# Signal28
+Graph itemselect Signal29 add
+# Signal29
+Graph itemselect Signal30 add
+# Signal30
+Graph itemselect Signal31 add
+# Signal31
+Graph itemselect Signal32 add
+# Signal32
+Graph itemselect Signal33 add
+# Signal33
+Graph itemselect Signal34 add
+# Signal34
+Graph itemselect Signal35 add
+# Signal35
+Graph itemselect Signal35 add
+# Signal35
+Graph itemselect Signal19 rem
+# Signal35
+Graph itemselect Signal20 rem
+# Signal35
+Graph itemselect Signal21 rem
+# Signal35
+Graph itemselect Signal22 rem
+# Signal35
+Graph itemselect Signal23 rem
+# Signal35
+Graph itemselect Signal24 rem
+# Signal35
+Graph itemselect Signal25 rem
+# Signal35
+Graph itemselect Signal26 rem
+# Signal35
+Graph itemselect Signal27 rem
+# Signal35
+Graph itemselect Signal28 rem
+# Signal35
+Graph itemselect Signal29 rem
+# Signal35
+Graph itemselect Signal30 rem
+# Signal35
+Graph itemselect Signal31 rem
+# Signal35
+Graph itemselect Signal32 rem
+# Signal35
+Graph itemselect Signal33 rem
+# Signal35
+Graph itemselect Signal34 rem
+# Signal35
+Graph itemselect Signal35 rem
+Graph itemselect Signal19 add
+# Signal19
+Graph itemselect Signal20 add
+# Signal20
+Graph itemselect Signal21 add
+# Signal21
+Graph itemselect Signal22 add
+# Signal22
+Graph itemselect Signal23 add
+# Signal23
+Graph itemselect Signal24 add
+# Signal24
+Graph itemselect Signal25 add
+# Signal25
+Graph itemselect Signal26 add
+# Signal26
+Graph itemselect Signal27 add
+# Signal27
+Graph itemselect Signal28 add
+# Signal28
+Graph itemselect Signal29 add
+# Signal29
+Graph itemselect Signal30 add
+# Signal30
+Graph itemselect Signal31 add
+# Signal31
+Graph itemselect Signal32 add
+# Signal32
+Graph itemselect Signal33 add
+# Signal33
+Graph itemselect Signal34 add
+# Signal34
+Graph itemselect Signal34 add
+# Signal34
+Graph itemselect Signal34 add
+# Signal34
+GrXY:CreateBus
+Graph:DSel
+Graph itemselect Signal11 add
+# Signal11
+Graph itemselect Signal11 rem
+Graph itemselect Signal11 add
+# Signal11
+Graph itemselect Signal12 add
+# Signal12
+Graph itemselect Signal13 add
+# Signal13
+Graph itemselect Signal14 add
+# Signal14
+Graph itemselect Signal15 add
+# Signal15
+Graph itemselect Signal16 add
+# Signal16
+Graph itemselect Signal17 add
+# Signal17
+Graph itemselect Signal18 add
+# Signal18
+Graph itemselect Signal18 add
+# Signal18
+GrXY:CreateBus
+Graph:DSel
+Graph itemselect Signal10 add
+# Signal10
+Graph sigconfig Signal10 -region d -rgnindex 38
+Graph:DSel
+Graph:DSel
+Graph itemselect Signal0 add
+# Signal0
+Graph sigconfig {Signal0 Signal36 Signal37 Signal10} -region {d d d d} -rgnindex {35 36 37 38}
+Mdi:FullSize
+wm geometry .sigmgr._PF:1 208x315+1280+511
+wm geometry .sigmgr._PF:1 208x315+1280+513
+wm geometry .sigmgr._PF:1 208x315+1280+515
+wm geometry .sigmgr._PF:1 208x315+1228+522
+wm geometry .sigmgr._PF:1 208x315+1190+527
+wm geometry .sigmgr._PF:1 208x315+1151+532
+wm geometry .sigmgr._PF:1 208x315+1100+537
+wm geometry .sigmgr._PF:1 208x315+1079+537
+wm geometry .sigmgr._PF:1 208x315+1068+537
+wm geometry .sigmgr._PF:1 208x315+1018+537
+wm geometry .sigmgr._PF:1 208x315+999+537
+wm geometry .sigmgr._PF:1 208x315+977+537
+wm geometry .sigmgr._PF:1 208x315+955+537
+wm geometry .sigmgr._PF:1 208x315+932+534
+wm geometry .sigmgr._PF:1 208x315+913+531
+wm geometry .sigmgr._PF:1 208x315+894+528
+wm geometry .sigmgr._PF:1 208x315+878+525
+wm geometry .sigmgr._PF:1 208x315+868+525
+wm geometry .sigmgr._PF:1 208x315+859+523
+wm geometry .sigmgr._PF:1 208x315+857+523
+wm geometry .sigmgr._PF:1 208x315+851+519
+wm geometry .sigmgr._PF:1 208x315+849+519
+wm geometry .sigmgr._PF:1 208x315+846+517
+wm geometry .sigmgr._PF:1 208x315+845+517
+Graph axisconfig AxisX(0) -range {231n 462n }
+Graph axisconfig AxisX(0) -range {299n 398n }
+Graph axisconfig AxisX(0) -range {299.5n 349n }
+Graph axisconfig AxisX(0) -range {306.4n 332.8n }
+Graph:DSel
+Graph itemselect Signal37 add
+# Signal37
+Graph itemselect Signal37 add
+# Signal37
+Graph:DSel
+Graph itemselect Signal10 add
+# Signal10
+Graph itemselect Signal10 add
+# Signal10
+Graph itemselect Signal10 add
+# Signal10
+Graph sigconfig Signal10 -bus decimal
+Graph:DSel
+Graph itemselect Signal37 add
+# Signal37
+Graph itemselect Signal37 add
+# Signal37
+Graph sigconfig Signal37 -bus decimal
+Graph:DSel
+Graph itemselect Signal36 add
+# Signal36
+Graph itemselect Signal36 add
+# Signal36
+Graph sigconfig Signal36 -bus decimal
+Graph axisconfig AxisX(0) -range {313.2n 326.4n }
+Graph itemselect Signal36 add
+# Signal36
+Graph sigconfig Signal36 -region d -rgnindex 38
+Graph:DSel
+Graph axisconfig AxisX(0) -range {300n 340n }
+Graph axisconfig AxisX(0) -range {280n 360n }
+Graph:DSel
+Graph:Select Graph0
+Graph axisconfig AxisX(0) -range {333.112673n 392.110162n}
+Graph:DSel
+Graph axisconfig AxisX(0) -range {347.111017n 388.342971n}
+Graph:DSel
+Graph axisconfig AxisX(0) -range {341.7807053n 392.823477n}
+Graph:DSel
+Graph axisconfig AxisX(0) -range {348.2023186n 387.777039n}
+Graph axisconfig AxisX(0) -range {356.5n 373n }
+Graph axisconfig AxisX(0) -range {359.9n 369.8n }
+Graph:DSel
+Graph axisconfig AxisX(0) -range {347.5n 377.5n }
+Graph:DSel
+Graph:Select Graph0
+Graph axisconfig AxisX(0) -range {359.1901004n 376.4916113n}
+Graph:DSel
+Graph axisconfig AxisX(0) -range {351.714744n 373.4410666n}
+Graph:DSel
+Graph axisconfig AxisX(0) -range {357.7304992n 380.6997465n}
+Graph axisconfig AxisX(0) -range {363.2n 376.4n }
+Graph axisconfig AxisX(0) -range {366.6n 373.2n }
+Graph axisconfig AxisX(0) -range {362n 378n }
+Graph:DSel

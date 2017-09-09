@@ -1,0 +1,168 @@
+Mdi:ArrangeIcons
+ScopeSigMgr:loadpffile /home/ecegrid/a/559mg3/cadence/simulation/CMOS_NAND_180nm/hspiceS/extracted/netlist/nanosim.fsdb 1 openonly
+# PF:1
+pf:read PF:1 a
+# WF:1:1
+Graph addsignal WF:1:1 -region d -yview real(y) -xview real(x) -tracehi 1
+# Signal0
+pf:read PF:1 b
+# WF:1:2
+Graph addsignal WF:1:2 -region d -yview real(y) -xview real(x) -tracehi 1
+# Signal1
+pf:read PF:1 out
+# WF:1:3
+Graph addsignal WF:1:3 -region d -yview real(y) -xview real(x) -tracehi 1
+# Signal2
+pf:read PF:1 v(a)
+# WF:1:4
+Graph addsignal WF:1:4 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal3
+pf:read PF:1 v(b)
+# WF:1:5
+Graph addsignal WF:1:5 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal4
+pf:read PF:1 v(out)
+# WF:1:6
+Graph addsignal WF:1:6 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal5
+Mdi:FullSize
+Graph:SaveGraph Graph0 /home/ecegrid/a/559mg3/NAND_Graphs 1
+Mdi:ArrangeIcons
+wm geometry . 900x785+314+93
+Mdi:ArrangeIcons
+wm geometry . 900x785+615+129
+Mdi:ArrangeIcons
+wm geometry . 900x785+778+147
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+wm geometry . 900x785+776+148
+Mdi:ArrangeIcons
+wm geometry . 900x785+765+149
+Mdi:ArrangeIcons
+wm geometry . 900x785+715+149
+Mdi:ArrangeIcons
+wm geometry . 900x785+647+149
+Mdi:ArrangeIcons
+wm geometry . 900x785+627+149
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+wm geometry . 900x785+522+149
+Mdi:ArrangeIcons
+wm geometry . 900x785+465+141
+Mdi:ArrangeIcons
+wm geometry . 900x785+394+131
+Mdi:ArrangeIcons
+wm geometry . 900x785+335+115
+Mdi:ArrangeIcons
+wm geometry . 900x785+332+115
+Mdi:ArrangeIcons
+wm geometry . 900x785+330+115
+Mdi:ArrangeIcons
+wm geometry . 900x785+328+115
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+wm geometry . 900x785+322+114
+Mdi:ArrangeIcons
+wm geometry . 900x785+309+111
+Mdi:ArrangeIcons
+wm geometry . 900x785+304+111
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+wm geometry . 900x785+303+111
+Mdi:ArrangeIcons
+wm geometry . 900x785+301+111
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+wm geometry . 1280x919+0+25
+Graph:DSel
+Graph:Select Graph0
+Graph:DSel
+Graph:DSel
+Graph itemselect Signal3 add
+# Signal3
+Graph itemselect Signal3 rem
+Graph itemselect Signal3 add
+# Signal3
+Graph itemselect Signal4 add
+# Signal4
+Graph itemselect Signal3 rem
+# Signal4
+Graph itemselect Signal4 rem
+Graph itemselect Signal3 add
+# Signal3
+Graph itemselect Signal4 add
+# Signal4
+Graph itemselect Signal5 add
+# Signal5
+Graph itemselect Signal3 rem
+# Signal5
+Graph itemselect Signal4 rem
+# Signal5
+Graph itemselect Signal5 rem
+Graph itemselect Signal3 add
+# Signal3
+Graph itemselect Signal4 add
+# Signal4
+Graph itemselect Signal5 add
+# Signal5
+Graph itemselect Signal2 add
+# Signal2
+Graph itemselect Signal1 add
+# Signal1
+Graph itemselect Signal0 add
+# Signal0
+Graph:DSel
+Graph:Select Graph0
+Graph itemselect Signal5 add
+# Signal5
+Graph itemselect Signal5 rem
+Graph itemselect Signal5 add
+# Signal5
+Graph itemselect Signal4 add
+# Signal4
+Graph itemselect Signal5 rem
+# Signal4
+Graph itemselect Signal4 rem
+Graph itemselect Signal5 add
+# Signal5
+Graph itemselect Signal4 add
+# Signal4
+Graph itemselect Signal3 add
+# Signal3
+Graph itemselect Signal5 rem
+# Signal3
+Graph itemselect Signal4 rem
+# Signal3
+Graph itemselect Signal3 rem
+Graph itemselect Signal5 add
+# Signal5
+Graph itemselect Signal2 add
+# Signal2
+Graph itemselect Signal1 add
+# Signal1
+Graph itemselect Signal0 add
+# Signal0
+Graph:DSel
+Graph:SetCMap 2
+Graph:SetCMap mono
+Graph:SetCMap 2
+Graph:SetCMap mono
+Graph:SetCMap 2
+.frame1.mdi.mdi1.work.graph0 save -file /home/ecegrid/a/559mg3/NAND_EXTRACTED.png -format png  -x 0 -y 0 -w 1268 -h 795 -colormode color

@@ -1,0 +1,3 @@
+print_node_v IN* OUT_0 OUT_1
+print_node_logic IN* OUT_0 OUT_1
+report_block_powr total track_power=1 *

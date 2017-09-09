@@ -1,0 +1,5 @@
+CADENCE IHNL01063
+
+Proj_lib Inverter_180nm schematic cds0
+Proj_lib TSPC_FF_PositiveEdge schematic cds1
+Proj_lib Input_Latch schematic cds2

@@ -1,0 +1,10 @@
+HEADER
+"PSFversion" "1.00"
+"design" "(\"Proj_lib\" \"AND21_StaticCMOS\" \"schematic\" \"\")"
+"simulator" "hspiceS"
+"temperature" "25"
+"host" ""
+"date" "Nov  3 12:07:07 2014"
+"title" ""
+"analysisList" "()"
+END

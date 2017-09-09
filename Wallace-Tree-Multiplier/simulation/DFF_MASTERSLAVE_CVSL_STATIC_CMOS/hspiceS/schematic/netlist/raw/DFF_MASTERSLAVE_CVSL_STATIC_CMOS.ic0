@@ -1,0 +1,25 @@
+* "simulator" "HSPICE" 
+* "version" "E-2010.12-SP2 64-BIT"
+* "format" "HSP"
+* "rundate" "16:05:34 11/03/2014 "
+* "netlist" "raw/DFF_MASTERSLAVE_CVSL_STATIC_CMOS "
+* "runtitle" "* # file name: /home/ecegrid/a/559mg3/cadence/simulation/"
+* time =  0.000e+00       
+* temperature =  2.500e+01       
+*** BEGIN: Saved Operating Point ***                     
+.option 
++ gmindc= 1.000e-12       
+.nodeset
++ 1 = 2.471e-06       
++ 2 = 1.639e+00       
++ clk = 0.000e+00       
++ d_in = 0.000e+00       
++ net090 = 5.527e-01       
++ net105 = 1.639e+00       
++ net112 = 1.799e+00       
++ net74 = 2.150e-01       
++ net82 = 6.412e-09       
++ net84 = 1.800e+00       
++ net86 = 1.604e+00       
++ vdd! = 1.800e+00       
+***   END: Saved Operating Point ***                     

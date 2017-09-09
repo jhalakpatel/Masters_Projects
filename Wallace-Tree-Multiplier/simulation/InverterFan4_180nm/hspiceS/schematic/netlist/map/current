@@ -1,0 +1,28 @@
+( ( nil
+  version "2.1"
+  mapType "incremental"
+  blockName "InverterFan4_180nm"
+  repList "hspiceS spice cmos_sch cmos.sch schematic"
+  stopList "hspiceS spice"
+  globalList "gnd! vdd!"
+  hierDelim "^"
+  netlistDir "/home/ecegrid/a/559mg3/cadence/simulation/InverterFan4_180nm/hspiceS/schematic/netlist"
+ )
+( instViewTable
+ )
+( net
+ )
+( inst
+ )
+( model
+( "hw1/InverterFan4_180nm/schematic" "sub2" )
+( "hw1/Inverter_180nm/schematic" "Inverter_180nm" )
+( "gnd!" "0" )
+ )
+( term
+ )
+( param
+ )
+( "Inverter_180nm" "ihnl/cds0/map" )
+( "sub2" "ihnl/cds1/map" )
+ )

@@ -1,0 +1,7 @@
+// Generated for: spectre
+// Generated on: Oct 29 18:15:06 2014
+// Design library name: hw1
+// Design cell name: InverterFan4_180nm
+// Design view name: schematic
+simulator lang=spectre
+global 0 vdd!

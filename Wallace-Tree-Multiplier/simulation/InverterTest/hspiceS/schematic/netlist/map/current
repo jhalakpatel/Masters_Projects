@@ -1,0 +1,28 @@
+( ( nil
+  version "2.1"
+  mapType "incremental"
+  blockName "InverterTest"
+  repList "hspiceS spice cmos_sch cmos.sch schematic"
+  stopList "hspiceS spice"
+  globalList "gnd! vdd!"
+  hierDelim "^"
+  netlistDir "/home/ecegrid/a/559mg3/cadence/simulation/InverterTest/hspiceS/schematic/netlist"
+ )
+( instViewTable
+ )
+( net
+ )
+( inst
+ )
+( model
+( "jhalak_lib/InverterTest/schematic" "InverterTest" )
+( "jhalak_lib/inverterp/schematic" "inverterp" )
+( "gnd!" "0" )
+ )
+( term
+ )
+( param
+ )
+( "inverterp" "ihnl/cds0/map" )
+( "InverterTest" "ihnl/cds1/map" )
+ )

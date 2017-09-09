@@ -1,0 +1,7 @@
+simulator( 'hspiceS )
+design(	 "/home/ecegrid/a/559mg3/cadence/simulation/Inverter/hspiceS/schematic/netlist/Inverter.C")
+resultsDir( "/home/ecegrid/a/559mg3/cadence/simulation/Inverter/hspiceS/schematic" )
+analysis('tran ?from "0n"  ?to "30n"  ?by "1n"  )
+temp( 25 ) 
+run()
+createFinalNetlist()

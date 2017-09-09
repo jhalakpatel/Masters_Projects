@@ -1,0 +1,8 @@
+CADENCE IHNL01060
+$model
+Proj_lib/PartialProduct64/extracted PartialProduct64
+$endmodel
+$net
+$endnet
+$param
+$endparam

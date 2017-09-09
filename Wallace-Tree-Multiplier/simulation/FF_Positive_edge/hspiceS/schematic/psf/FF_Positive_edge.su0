@@ -1,0 +1,19 @@
+header
+"PSFversion" "1.00" 
+"simulator" "HSPICE"
+"version" "E-2010.12-SP2 64-BIT" 
+"rundate" "02:00:37 12/01/2014 " 
+"runtitle" "* # file name: /home/ecegrid/a/559mg3/cadence/simulation/ff_positi" 
+"runtype" "Summary Information"
+"op point time" "      0.00"  
+"op point iterations" "       
+"transient time" "      0.06"      
+"transient time" "      0.06"      
+"total cpu time" "        0.08"    
+"node value" "complete"
+"operating point" "invalid"
+"ac analysis" "invalid"
+"dc sweep" "invalid"
+"transient analysis" "complete"
+trailer
+end

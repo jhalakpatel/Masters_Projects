@@ -1,0 +1,23 @@
+* "simulator" "HSPICE" 
+* "version" "E-2010.12-SP2 64-BIT"
+* "format" "HSP"
+* "rundate" "16:07:03 10/27/2014 "
+* "netlist" "raw/Domino_OR "
+* "runtitle" "* # file name: /home/ecegrid/a/559mg3/cadence/simulation/domino_or/hsp"
+* time =  0.000e+00       
+* temperature =  2.500e+01       
+*** BEGIN: Saved Operating Point ***                     
+.option 
++ gmindc= 1.000e-12       
+.nodeset
++ a = 0.000e+00       
++ b = 0.000e+00       
++ clk = 0.000e+00       
++ net048 = 2.500e+00       
++ net052 = 2.500e+00       
++ net13 = 2.500e+00       
++ net5 = 2.018e+00       
++ net9 = 2.038e+00       
++ out = 5.905e-08       
++ vdd! = 2.500e+00       
+***   END: Saved Operating Point ***                     

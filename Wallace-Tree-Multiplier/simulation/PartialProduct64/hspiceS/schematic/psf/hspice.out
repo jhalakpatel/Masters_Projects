@@ -1,0 +1,510 @@
+Using: /usr/bin/time -p /package/eda/synopsys/hspice-E-2010.12-SP2/hspice/linux/hspice raw/PartialProduct64
+ ****** HSPICE -- E-2010.12-SP2 64-BIT (May 23 2011) linux ******               
+  Copyright (C) 2010 Synopsys, Inc. All Rights Reserved.                        
+  Unpublished-rights reserved under US copyright laws.
+  This program is protected by law and is subject to the
+  terms and conditions of the license agreement from Synopsys.
+  Use of this program is your acceptance to be bound by the
+  license agreement. HSPICE is the trademark of Synopsys, Inc.
+  Input File: raw/PartialProduct64                                              
+  Command line options: raw/PartialProduct64
+ lic:  
+ lic: FLEXlm: v10.8 
+ lic: USER:   559mg3               HOSTNAME: ecegrid-thin4.ecn.purdue.edu 
+ lic: HOSTID:                      PID:      33957 
+ lic: Using FLEXlm license file: 
+ lic: 1718@marina.ecn.purdue.edu 
+ lic: Checkout 1 hspice 
+ lic: License/Maintenance for hspice will expire on 14-sep-2015/2014.09 
+ lic: 1(in_use)/50(total) FLOATING license(s) on SERVER marina.ecn.purdue.edu 
+ lic:   
+ Init: read install configuration file: /package/eda/synopsys/hspice-E-2010.12-SP2/hspice/meta.cfg
+1****** HSPICE -- E-2010.12-SP2 64-BIT (May 23 2011) linux ******               
+ ******  
+ * # file name: /home/ecegrid/a/559mg3/cadence/simulation/partialproduct64/
+
+  ******  circuit name directory
+ circuit number to circuit name directory
+   number circuitname                     definition         multiplier
+        0 main circuit
+        1 xi123.                          sub5               1.00 
+        2 xi122.                          decoder_g1         1.00 
+        3 xi121.                          output_latch_g2    1.00 
+        4 xi125.                          input_latch_g3     1.00 
+        5 xi119.                          input_latch_g3     1.00 
+        6 xi89.                           sub10              1.00 
+        7 xi105.                          sub8               1.00 
+        8 xi74.                           sub8               1.00 
+        9 xi75.                           sub8               1.00 
+       10 xi61.                           sub8               1.00 
+       11 xi60.                           sub8               1.00 
+       12 xi77.                           sub8               1.00 
+       13 xi87.                           sub8               1.00 
+       14 xi59.                           sub8               1.00 
+       15 xi44.                           sub8               1.00 
+       16 xi49.                           sub8               1.00 
+       17 xi78.                           sub8               1.00 
+       18 xi39.                           sub8               1.00 
+       19 xi76.                           sub8               1.00 
+       20 xi40.                           sub8               1.00 
+       21 xi41.                           sub8               1.00 
+       22 xi86.                           sub9               1.00 
+       23 xi70.                           sub9               1.00 
+       24 xi79.                           sub9               1.00 
+       25 xi80.                           sub9               1.00 
+       26 xi81.                           sub9               1.00 
+       27 xi73.                           sub9               1.00 
+       28 xi63.                           sub9               1.00 
+       29 xi82.                           sub9               1.00 
+       30 xi83.                           sub9               1.00 
+       31 xi97.                           sub9               1.00 
+       32 xi84.                           sub9               1.00 
+       33 xi66.                           sub9               1.00 
+       34 xi98.                           sub9               1.00 
+       35 xi58.                           sub9               1.00 
+       36 xi99.                           sub9               1.00 
+       37 xi100.                          sub9               1.00 
+       38 xi57.                           sub9               1.00 
+       39 xi45.                           sub9               1.00 
+       40 xi46.                           sub9               1.00 
+       41 xi47.                           sub9               1.00 
+       42 xi52.                           sub9               1.00 
+       43 xi53.                           sub9               1.00 
+       44 xi55.                           sub9               1.00 
+       45 xi65.                           sub9               1.00 
+       46 xi48.                           sub9               1.00 
+       47 xi25.                           sub9               1.00 
+       48 xi30.                           sub9               1.00 
+       49 xi51.                           sub9               1.00 
+       50 xi50.                           sub9               1.00 
+       51 xi31.                           sub9               1.00 
+       52 xi32.                           sub9               1.00 
+       53 xi33.                           sub9               1.00 
+       54 xi34.                           sub9               1.00 
+       55 xi35.                           sub9               1.00 
+       56 xi36.                           sub9               1.00 
+       57 xi56.                           sub9               1.00 
+       58 xi64.                           sub9               1.00 
+       59 xi54.                           sub9               1.00 
+       60 xi112.                          sub11              1.00 
+       61 xi113.                          sub11              1.00 
+       62 xi20.                           sub11              1.00 
+       63 xi115.                          sub11              1.00 
+       64 xi114.                          sub11              1.00 
+       65 xi117.                          sub11              1.00 
+       66 xi118.                          sub11              1.00 
+       67 xi116.                          sub11              1.00 
+       68 xi122.xi15.                     sub3               1.00 
+       69 xi122.xi7.                      sub4               1.00 
+       70 xi122.xi6.                      sub1               1.00 
+       71 xi122.xi4.                      sub5               1.00 
+       72 xi122.xi3.                      sub5               1.00 
+       73 xi122.xi2.                      sub6               1.00 
+       74 xi122.xi1.                      sub6               1.00 
+       75 xi122.xi0.                      sub6               1.00 
+       76 xi121.xi25.                     sub7               1.00 
+       77 xi121.xi21.                     sub7               1.00 
+       78 xi121.xi22.                     sub7               1.00 
+       79 xi121.xi23.                     sub7               1.00 
+       80 xi121.xi24.                     sub7               1.00 
+       81 xi121.xi20.                     sub7               1.00 
+       82 xi121.xi19.                     sub7               1.00 
+       83 xi121.xi18.                     sub7               1.00 
+       84 xi121.xi17.                     sub7               1.00 
+       85 xi121.xi1.                      sub7               1.00 
+       86 xi121.xi0.                      sub7               1.00 
+       87 xi121.xi2.                      sub7               1.00 
+       88 xi121.xi3.                      sub7               1.00 
+       89 xi121.xi4.                      sub7               1.00 
+       90 xi121.xi5.                      sub7               1.00 
+       91 xi121.xi6.                      sub7               1.00 
+       92 xi121.xi7.                      sub7               1.00 
+       93 xi121.xi8.                      sub7               1.00 
+       94 xi121.xi9.                      sub7               1.00 
+       95 xi121.xi10.                     sub7               1.00 
+       96 xi121.xi11.                     sub7               1.00 
+       97 xi121.xi12.                     sub7               1.00 
+       98 xi121.xi13.                     sub7               1.00 
+       99 xi121.xi14.                     sub7               1.00 
+      100 xi121.xi15.                     sub7               1.00 
+      101 xi121.xi16.                     sub7               1.00 
+      102 xi125.xi16.                     sub7               1.00 
+      103 xi125.xi15.                     sub7               1.00 
+      104 xi125.xi14.                     sub7               1.00 
+      105 xi125.xi13.                     sub7               1.00 
+      106 xi125.xi12.                     sub7               1.00 
+      107 xi125.xi11.                     sub7               1.00 
+      108 xi125.xi10.                     sub7               1.00 
+      109 xi125.xi9.                      sub7               1.00 
+      110 xi125.xi8.                      sub7               1.00 
+      111 xi125.xi7.                      sub7               1.00 
+      112 xi125.xi6.                      sub7               1.00 
+      113 xi125.xi5.                      sub7               1.00 
+      114 xi125.xi4.                      sub7               1.00 
+      115 xi125.xi3.                      sub7               1.00 
+      116 xi125.xi2.                      sub7               1.00 
+      117 xi125.xi0.                      sub7               1.00 
+      118 xi119.xi16.                     sub7               1.00 
+      119 xi119.xi15.                     sub7               1.00 
+      120 xi119.xi14.                     sub7               1.00 
+      121 xi119.xi13.                     sub7               1.00 
+      122 xi119.xi12.                     sub7               1.00 
+      123 xi119.xi11.                     sub7               1.00 
+      124 xi119.xi10.                     sub7               1.00 
+      125 xi119.xi9.                      sub7               1.00 
+      126 xi119.xi8.                      sub7               1.00 
+      127 xi119.xi7.                      sub7               1.00 
+      128 xi119.xi6.                      sub7               1.00 
+      129 xi119.xi5.                      sub7               1.00 
+      130 xi119.xi4.                      sub7               1.00 
+      131 xi119.xi3.                      sub7               1.00 
+      132 xi119.xi2.                      sub7               1.00 
+      133 xi119.xi0.                      sub7               1.00 
+      134 xi89.xi54.                      sub8               1.00 
+      135 xi89.xi55.                      sub8               1.00 
+      136 xi89.xi45.                      sub9               1.00 
+      137 xi89.xi46.                      sub9               1.00 
+      138 xi89.xi47.                      sub9               1.00 
+      139 xi89.xi48.                      sub9               1.00 
+      140 xi89.xi49.                      sub9               1.00 
+      141 xi89.xi50.                      sub9               1.00 
+      142 xi89.xi51.                      sub9               1.00 
+      143 xi89.xi52.                      sub9               1.00 
+      144 xi89.xi53.                      sub9               1.00 
+      145 xi112.xi7.                      sub5               1.00 
+      146 xi112.xi6.                      sub5               1.00 
+      147 xi112.xi5.                      sub5               1.00 
+      148 xi112.xi4.                      sub5               1.00 
+      149 xi112.xi3.                      sub5               1.00 
+      150 xi112.xi2.                      sub5               1.00 
+      151 xi112.xi1.                      sub5               1.00 
+      152 xi112.xi0.                      sub5               1.00 
+      153 xi113.xi7.                      sub5               1.00 
+      154 xi113.xi6.                      sub5               1.00 
+      155 xi113.xi5.                      sub5               1.00 
+      156 xi113.xi4.                      sub5               1.00 
+      157 xi113.xi3.                      sub5               1.00 
+      158 xi113.xi2.                      sub5               1.00 
+      159 xi113.xi1.                      sub5               1.00 
+      160 xi113.xi0.                      sub5               1.00 
+      161 xi20.xi7.                       sub5               1.00 
+      162 xi20.xi6.                       sub5               1.00 
+      163 xi20.xi5.                       sub5               1.00 
+      164 xi20.xi4.                       sub5               1.00 
+      165 xi20.xi3.                       sub5               1.00 
+      166 xi20.xi2.                       sub5               1.00 
+      167 xi20.xi1.                       sub5               1.00 
+      168 xi20.xi0.                       sub5               1.00 
+      169 xi115.xi7.                      sub5               1.00 
+      170 xi115.xi6.                      sub5               1.00 
+      171 xi115.xi5.                      sub5               1.00 
+      172 xi115.xi4.                      sub5               1.00 
+      173 xi115.xi3.                      sub5               1.00 
+      174 xi115.xi2.                      sub5               1.00 
+      175 xi115.xi1.                      sub5               1.00 
+      176 xi115.xi0.                      sub5               1.00 
+      177 xi114.xi7.                      sub5               1.00 
+      178 xi114.xi6.                      sub5               1.00 
+      179 xi114.xi5.                      sub5               1.00 
+      180 xi114.xi4.                      sub5               1.00 
+      181 xi114.xi3.                      sub5               1.00 
+      182 xi114.xi2.                      sub5               1.00 
+      183 xi114.xi1.                      sub5               1.00 
+      184 xi114.xi0.                      sub5               1.00 
+      185 xi117.xi7.                      sub5               1.00 
+      186 xi117.xi6.                      sub5               1.00 
+      187 xi117.xi5.                      sub5               1.00 
+      188 xi117.xi4.                      sub5               1.00 
+      189 xi117.xi3.                      sub5               1.00 
+      190 xi117.xi2.                      sub5               1.00 
+      191 xi117.xi1.                      sub5               1.00 
+      192 xi117.xi0.                      sub5               1.00 
+      193 xi118.xi7.                      sub5               1.00 
+      194 xi118.xi6.                      sub5               1.00 
+      195 xi118.xi5.                      sub5               1.00 
+      196 xi118.xi4.                      sub5               1.00 
+      197 xi118.xi3.                      sub5               1.00 
+      198 xi118.xi2.                      sub5               1.00 
+      199 xi118.xi1.                      sub5               1.00 
+      200 xi118.xi0.                      sub5               1.00 
+      201 xi116.xi7.                      sub5               1.00 
+      202 xi116.xi6.                      sub5               1.00 
+      203 xi116.xi5.                      sub5               1.00 
+      204 xi116.xi4.                      sub5               1.00 
+      205 xi116.xi3.                      sub5               1.00 
+      206 xi116.xi2.                      sub5               1.00 
+      207 xi116.xi1.                      sub5               1.00 
+      208 xi116.xi0.                      sub5               1.00 
+      209 xi122.xi15.xi10.                sub1               1.00 
+      210 xi122.xi15.xi9.                 sub1               1.00 
+      211 xi122.xi15.xi8.                 sub1               1.00 
+      212 xi122.xi15.xi7.                 sub1               1.00 
+      213 xi122.xi15.xi6.                 sub2               1.00 
+      214 xi122.xi15.xi2.                 sub2               1.00 
+      215 xi122.xi2.xi3.                  sub2               1.00 
+      216 xi122.xi2.xi2.                  sub2               1.00 
+      217 xi122.xi1.xi3.                  sub2               1.00 
+      218 xi122.xi1.xi2.                  sub2               1.00 
+      219 xi122.xi0.xi3.                  sub2               1.00 
+      220 xi122.xi0.xi2.                  sub2               1.00 
+1****** HSPICE -- E-2010.12-SP2 64-BIT (May 23 2011) linux ******               
+ ******  
+ * # file name: /home/ecegrid/a/559mg3/cadence/simulation/partialproduct64/
+
+  ******  mos   model parameters tnom=  25.000 temp=  25.000 *****
+ ***************************************************************************
+ ***        model parameters  model name:   0:tsmc18dp model type:pmos   ***
+ ***************************************************************************
+
+   *** general parameters ***
+    deriv=   0.           
+
+   ***  level 49  model parameters  ***
+
+      hspver=    2006.03               level=         49         
+     version=        3.1            paramchk=          0         
+      apwarn=          1                lite=          0         
+      vgslim=          0             binUnit=          1         
+      capMod=          2               xpart=        0.5         
+      mobMod=          1              nqsMod=          0         
+      stiMod=          0                 elm=          5         
+    sfvtflag=          0                 tox=      4e-09 meter   
+          xj=      1e-07 meter       binflag=          0         
+        lmin=          0 meter          lmax=          0 meter   
+        wmin=          0 meter          wmax=          0 meter   
+        lref=          0 meter          wref=          0 meter   
+        lint=2.00756e-08 meter          wint=          0 meter   
+       lmult=          1               wmult=          1         
+          ll=          0                 lln=          1         
+          lw=          0                 lwn=          1         
+         lwl=          0                  wl=          0         
+         wln=          1                  ww=          0         
+         wwn=          1                 wwl=          0         
+         dwg=-2.83557e-08 m/V             dwb=8.00308e-09 m/V^1/2 
+          xl=     -2e-08                  xw=     -1e-08         
+          a0=    1.78335                 ags=   0.407511 V^-1    
+          b0= 1.3146e-06 meter            b1=      5e-06 meter   
+        keta=  0.0137171 V^-1           voff=  -0.106465 V       
+       ngate=          0 cm^-3           vbx=          0 V       
+         vbm=         -3 V                xt=   1.55e-07 meter   
+        vth0=  -0.406489 V               nch= 4.1589e+17 cm^-3   
+        nsub=      6e+16 cm^-3           nlx=9.14321e-08 meter   
+      gamma1=          0 V^-1/2       gamma2=          0 V^-1/2  
+          k1=     0.5499 V^1/2            k2=  0.0389453         
+          k3=          0                 k3b=    11.4952 V^-1    
+          w0=      1e-06 meter          dvt0=    0.54493         
+        dvt1=   0.316082                dvt2=        0.1 V^-1    
+       dvt0w=          0 meter^-1      dvt1w=          0 meter^-1
+       dvt2w=          0 V^-1           dsub=    0.44414         
+        eta0=  0.0141703                etab= -0.0398356 V^-1    
+          u0=    117.961 cm^2/V/sec         ua=1.64867e-09 m/V     
+          ub=1.16506e-21 (m/V)^2          uc=     -1e-10 V^-1    
+        vsat=     200000 m/sec            a1=   0.461053 v^-1    
+          a2=   0.659736               delta=       0.01 V       
+        rdsw=    364.944 ohm-um         prwg=        0.5 V^-1    
+        prwb=   -0.11292 V^-1/2           wr=          1         
+        pclm=    2.23645             pdiblc1=0.000916765         
+     pdiblc2=  0.0209189             pdiblcb=-0.000956827 V^-1    
+      pscbe1=1.73116e+09 V/m          pscbe2=      5e-10 V/m     
+       drout=0.000997678                pvag=    14.3378         
+     nfactor=          2                cdsc=    0.00024 f/m^2   
+       cdscb=          0 f/V/m^2       cdscd=          0 f/V/m^2 
+         cit=          0 f/m^2        alpha0=          0 m/V     
+       beta0=         30 V               dlc=2.00756e-08 meter   
+         dwc=          0 meter           clc=      1e-07 meter   
+         cle=        0.6                cgso=   6.79e-10 f/m     
+        cgdo=   6.79e-10 f/m            cgbo=      1e-12 f/m     
+        cgsl=          0 f/m            cgdl=          0 f/m     
+      ckappa=        0.6                  cf=          0 f/m     
+        tnom=     300.15 K               kt1=      -0.11 V       
+        kt1l=          0                 kt2=      0.022         
+         ute=       -1.5                 ua1=   4.31e-09 m/V     
+         ub1=  -7.61e-18 (m/V)^2         uc1=   -5.6e-11 m/V^2   
+          at=      33000 m/s             prt=          0         
+         using Berkeley noise model       noiMod=          1         
+        noia=    9.9e+18                noib=       2400         
+        noic=    1.4e-12                  em=    4.1e+07         
+          ef=          1                  af=          1         
+          kf=          0              gdsnoi=-1.23457e-29         
+         using Hspice diodes            using ACM 
+         acm=         0                 hdif=         0 meter    
+        ldif=         0 meter             js=         0 amp/m^2  
+         jsw=         0 amp/m            xti=         0          
+           n=         1                   cj= 0.0011764 f/m^2    
+          mj=  0.416328                   pb=  0.860712 V        
+        cjsw=2.13595e-10 f/m             mjsw=  0.265446          
+         php=  0.860712 V               pbsw (not used)           
+      cjgate=2.13595e-10 f/m            cjswg (not used)           
+       mjswg (not used)                 pbswg (not used)           
+       lketa= 0.00203801               wketa=  0.0270296         
+       pketa= -0.0014448               pvth0= 0.00436442         
+         pk2= 0.00310448               peta0=     0.0001         
+         pu0=   -2.36398                 pua=-8.41675e-11         
+         pub=      1e-21               pvsat=        -50         
+       prdsw=     4.4192         
+ ***************************************************************************
+ ***        model parameters  model name:   0:tsmc18dn model type:nmos   ***
+ ***************************************************************************
+
+   *** general parameters ***
+    deriv=   0.           
+
+   ***  level 49  model parameters  ***
+
+      hspver=    2006.03               level=         49         
+     version=        3.1            paramchk=          0         
+      apwarn=          1                lite=          0         
+      vgslim=          0             binUnit=          1         
+      capMod=          2               xpart=        0.5         
+      mobMod=          1              nqsMod=          0         
+      stiMod=          0                 elm=          5         
+    sfvtflag=          0                 tox=      4e-09 meter   
+          xj=      1e-07 meter       binflag=          0         
+        lmin=          0 meter          lmax=          0 meter   
+        wmin=          0 meter          wmax=          0 meter   
+        lref=          0 meter          wref=          0 meter   
+        lint=7.63177e-09 meter          wint=1.79871e-09 meter   
+       lmult=          1               wmult=          1         
+          ll=          0                 lln=          1         
+          lw=          0                 lwn=          1         
+         lwl=          0                  wl=          0         
+         wln=          1                  ww=          0         
+         wwn=          1                 wwl=          0         
+         dwg=-3.2689e-09 m/V             dwb=7.68589e-09 m/V^1/2 
+          xl=     -2e-08                  xw=     -1e-08         
+          a0=          2                 ags=   0.428939 V^-1    
+          b0=-6.37867e-09 meter            b1=     -1e-07 meter   
+        keta= -0.0127717 V^-1           voff= -0.0882278 V       
+       ngate=          0 cm^-3           vbx=          0 V       
+         vbm=         -3 V                xt=   1.55e-07 meter   
+        vth0=   0.362786 V               nch= 2.3549e+17 cm^-3   
+        nsub=      6e+16 cm^-3           nlx=1.67568e-07 meter   
+      gamma1=          0 V^-1/2       gamma2=          0 V^-1/2  
+          k1=   0.587303 V^1/2            k2= 0.00479305         
+          k3=      0.001                 k3b=    2.27361 V^-1    
+          w0=      1e-07 meter          dvt0=    1.78384         
+        dvt1=   0.535428                dvt2=-0.00124365 V^-1    
+       dvt0w=          0 meter^-1      dvt1w=          0 meter^-1
+       dvt2w=          0 V^-1           dsub=  0.0173531         
+        eta0= 0.00245516                etab=          1 V^-1    
+          u0=    263.329 cm^2/V/sec         ua=-1.35975e-09 m/V     
+          ub=2.25012e-18 (m/V)^2          uc=5.20448e-11 V^-1    
+        vsat=     108343 m/sec            a1=0.000534764 v^-1    
+          a2=    0.83702               delta=       0.01 V       
+        rdsw=        150 ohm-um         prwg=        0.5 V^-1    
+        prwb=       -0.2 V^-1/2           wr=          1         
+        pclm=   0.730335             pdiblc1=    0.22463         
+     pdiblc2= 0.00222053             pdiblcb=       -0.1 V^-1    
+      pscbe1=8.69756e+09 V/m          pscbe2=      5e-10 V/m     
+       drout=   0.768542                pvag=          0         
+     nfactor=        2.5                cdsc=    0.00024 f/m^2   
+       cdscb=          0 f/V/m^2       cdscd=          0 f/V/m^2 
+         cit=          0 f/m^2        alpha0=          0 m/V     
+       beta0=         30 V               dlc=7.63177e-09 meter   
+         dwc=1.79871e-09 meter           clc=      1e-07 meter   
+         cle=        0.6                cgso=   7.16e-10 f/m     
+        cgdo=   7.16e-10 f/m            cgbo=      1e-12 f/m     
+        cgsl=          0 f/m            cgdl=          0 f/m     
+      ckappa=        0.6                  cf=          0 f/m     
+        tnom=     300.15 K               kt1=      -0.11 V       
+        kt1l=          0                 kt2=      0.022         
+         ute=       -1.5                 ua1=   4.31e-09 m/V     
+         ub1=  -7.61e-18 (m/V)^2         uc1=   -5.6e-11 m/V^2   
+          at=      33000 m/s             prt=          0         
+         using Berkeley noise model       noiMod=          1         
+        noia=      1e+20                noib=      50000         
+        noic=   -1.4e-12                  em=    4.1e+07         
+          ef=          1                  af=          1         
+          kf=          0              gdsnoi=-1.23457e-29         
+         using Hspice diodes            using ACM 
+         acm=         0                 hdif=         0 meter    
+        ldif=         0 meter             js=         0 amp/m^2  
+         jsw=         0 amp/m            xti=         0          
+           n=         1                   cj=0.000972571 f/m^2    
+          mj=  0.365507                   pb=  0.730054 V        
+        cjsw=2.60481e-10 f/m             mjsw=       0.1          
+         php=  0.730054 V               pbsw (not used)           
+      cjgate=2.60481e-10 f/m            cjswg (not used)           
+       mjswg (not used)                 pbswg (not used)           
+       lketa= -0.0118628               wketa=0.000693821         
+       pketa=4.53796e-05               pvth0=0.000428928         
+         pk2=-0.000492072               peta0=2.44792e-06         
+         pu0=    24.2773                 pua=9.13864e-11         
+       pvsat=     1680.8               prdsw=   -4.20038         
+ 
+
+  
+  
+ **warning** No connections on ground node.
+ **warning**  No DC path to ground from node        0:a0_b1            defined in subckt 0               ; Connected by HSPICE with gdcpath
+
+
+      
+ **info** set option symb=1 internally to help for convergence.
+ *****************************************************************
+ ******  option summary
+ ******
+ runlvl  = 3         bypass  = 2         
+  
+ **info** dc convergence successful
+ you can increase the efficiency of the
+ operating point calculation by setting dcon= 1
+ in the .option statement
+
+
+          ***** job concluded
+1****** HSPICE -- E-2010.12-SP2 64-BIT (May 23 2011) linux ******               
+ ******  
+ * # file name: /home/ecegrid/a/559mg3/cadence/simulation/partialproduct64/
+
+  ******  job statistics summary tnom=  25.000 temp=  25.000 *****
+  
+  
+ ******  Machine Information  ******
+ CPU:
+ model name	: Intel(R) Xeon(R) CPU E5-2697 v2 @ 2.70GHz
+ cpu MHz	: 2699.982
+  
+ OS:
+ Linux version 2.6.32-504.1.3.el6.x86_64 (mockbuild@x86-022.build.eng.bos.redhat
+ .com) (gcc version 4.4.7 20120313 (Red Hat 4.4.7-9) (GCC) ) #1 SMP Fri Oct 31 1
+ 1:37:10 EDT 2014
+
+
+  ******  HSPICE Threads Information  ******
+
+  Command Line Threads Count :     1
+  Available CPU Count        :    48
+  Actual Threads Count       :     1
+
+
+  ******  Circuit Statistics  ******
+  # nodes       =    1475 # elements   =    2733
+  # resistors   =       0 # capacitors =       0 # inductors   =       0
+  # mutual_inds =       0 # vccs       =       0 # vcvs        =       0
+  # cccs        =       0 # ccvs       =       0 # volt_srcs   =       0
+  # curr_srcs   =       0 # diodes     =       0 # bjts        =       0
+  # jfets       =       0 # mosfets    =    2733 # U elements  =       0
+  # T elements  =       0 # W elements =       0 # B elements  =       0
+  # S elements  =       0 # P elements =       0 # va device   =       0
+  # vector_srcs =       0
+
+
+  ******  Runtime Statistics (seconds)  ******
+
+  analysis           time    # points   tot. iter  conv.iter
+  op point           0.39           1          33
+  readin             0.02
+  errchk             0.09
+  setup              0.03
+  output             0.00
+
+
+           peak memory used        131.26 megabytes
+           total cpu time            0.52 seconds
+           total elapsed time        0.71 seconds
+           job started at     17:35:31 11/27/2014
+           job ended   at     17:35:32 11/27/2014
+
+
+ lic: Release hspice token(s) 

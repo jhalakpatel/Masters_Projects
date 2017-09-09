@@ -1,0 +1,48 @@
+header
+"PSFversion" "1.00" 
+"simulator" "HSPICE"
+"version" "E-2010.12-SP2 64-BIT" 
+"rundate" "21:33:30 10/25/2014 " 
+"runtitle" "* # file name: /home/ecegrid/a/559mg3/cadence/simulation/cmos_nor_" 
+"runtype" "logFile"
+TYPE
+"analysisInst" STRUCT(
+"analysisType" STRING *
+"dataFile" STRING *
+"format" STRING *
+"parent" STRING *
+"sweepVariable" ARRAY ( * ) STRING *
+"description" STRING * )
+VALUE
+"opBegin" "analysisInst" ( 
+"Operating Point"
+"CMOS_NOR_180nm.op0"
+"PSF"
+""
+()
+"Operating Point"
+)
+"timeSweep" "analysisInst" ( 
+"Transient Analysis"
+"CMOS_NOR_180nm.tr0"
+"PSF"
+""
+()
+"Transient Analysis"
+)
+"opEnd" "analysisInst" ( 
+"Operating Point"
+"CMOS_NOR_180nm.op0@3e-08"
+"PSF"
+""
+()
+"Operating Point"
+)
+"summary" "analysisInst" ( 
+"Summary Information"
+"CMOS_NOR_180nm.su0"
+"PSF"
+""
+()
+"Summary Information"
+)

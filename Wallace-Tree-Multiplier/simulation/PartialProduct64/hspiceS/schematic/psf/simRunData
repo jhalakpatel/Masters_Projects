@@ -1,0 +1,10 @@
+HEADER
+"PSFversion" "1.00"
+"design" "(\"Proj_lib\" \"PartialProduct64\" \"schematic\" \"\")"
+"simulator" "hspiceS"
+"temperature" "25"
+"host" ""
+"date" "Nov 27 17:35:29 2014"
+"title" ""
+"analysisList" "()"
+END

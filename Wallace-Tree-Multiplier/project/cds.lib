@@ -1,0 +1,2 @@
+INCLUDE /package/eda/cells/ncsu-cdk-1.5.1/local/cdssetup/cds.lib
+DEFINE Proj_lib ./Proj_lib

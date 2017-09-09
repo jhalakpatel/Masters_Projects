@@ -1,0 +1,33 @@
+; --------------------------------------------------------
+;|                                                        |
+;|           NanoSim Version G-2012.06 (RHEL64)           |
+;| Copyright (c) 2012 Synopsys Inc., All Rights Reserved. |
+;|                                                        |
+; --------------------------------------------------------
+;
+;Built by nsmgr   on Fri May 18 18:17:12 PDT 2012
+; Mon Dec  1 01:20:14 EST 2014
+; Machine Name: ecegrid-thin3.ecn.purdue.edu
+; 
+; ratio = TotalCap / NodeCap
+; where TotalCap is the capacitances between two terminals
+; and NodeCap is node capacitance.
+; Both TotalCap and NodeCap are estimation of capacitive effects.
+;
+ratio=0.0147111 Cap = 0.0749664fF NodeCap = 5.09589fF c31
+ratio=0.0664763 Cap = 0.19201fF NodeCap = 4.02012fF c32
+ratio=0.0664763 Cap = 0.0752328fF NodeCap = 4.02012fF c27
+ratio=0.0289251 Cap = 0.0752328fF NodeCap = 2.60095fF c29
+
+# of capacitors from netlist                              :           23
+     # of Ground CAPS from netlist                        :           11
+     # of Coupling CAPS from netlist                      :           12
+# of capacitors converted from diodes                     :            0
+     # of Ground CAPS converted from diodes               :            0
+     # of Coupling CAPS converted from diodes             :            0
+# of Coupling CAPS from netlist and converted diodes      :           12
+     # of Coupling CAPS kept (listed here)                :            4
+     # of Coupling CAPS put into SMS Mode                 :            0
+     # of Coupling CAPS split to ground                   :            8
+# of MOSFETS converted to Ground CAPS                     :            0
+# of MOSFETS used as Coupling CAPS (listed here)          :            0

@@ -1,0 +1,80 @@
+Mdi:ArrangeIcons
+ScopeSigMgr:loadpffile /home/ecegrid/a/559mg3/cadence/simulation/Inverter/hspiceS/extracted/netlist/nanosim.fsdb 1 openonly
+# PF:1
+pf:read PF:1 out
+# WF:1:1
+Graph addsignal WF:1:1 -region d -yview real(y) -xview real(x) -tracehi 1
+# Signal0
+pf:read PF:1 in
+# WF:1:2
+Graph addsignal WF:1:2 -region d -yview real(y) -xview real(x) -tracehi 1
+# Signal1
+pf:read PF:1 v(in)
+# WF:1:3
+Graph addsignal WF:1:3 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal2
+pf:read PF:1 v(out)
+# WF:1:4
+Graph addsignal WF:1:4 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal3
+Mdi:FullSize
+wm geometry .sigmgr._PF:1 208x315+959+540
+wm geometry .sigmgr._PF:1 208x315+958+540
+wm geometry .sigmgr._PF:1 208x315+957+540
+wm geometry .sigmgr._PF:1 208x315+955+540
+wm geometry .sigmgr._PF:1 208x315+953+540
+wm geometry .sigmgr._PF:1 208x315+950+540
+wm geometry .sigmgr._PF:1 208x315+946+540
+wm geometry .sigmgr._PF:1 208x315+940+540
+wm geometry .sigmgr._PF:1 208x315+933+540
+wm geometry .sigmgr._PF:1 208x315+926+540
+wm geometry .sigmgr._PF:1 208x315+919+540
+wm geometry .sigmgr._PF:1 208x315+913+540
+wm geometry .sigmgr._PF:1 208x315+906+540
+wm geometry .sigmgr._PF:1 208x315+898+540
+wm geometry .sigmgr._PF:1 208x315+891+540
+wm geometry .sigmgr._PF:1 208x315+883+540
+wm geometry .sigmgr._PF:1 208x315+870+538
+wm geometry .sigmgr._PF:1 208x315+859+536
+wm geometry .sigmgr._PF:1 208x315+847+536
+wm geometry .sigmgr._PF:1 208x315+834+536
+wm geometry .sigmgr._PF:1 208x315+822+536
+wm geometry .sigmgr._PF:1 208x315+809+533
+wm geometry .sigmgr._PF:1 208x315+801+533
+wm geometry .sigmgr._PF:1 208x315+796+533
+wm geometry .sigmgr._PF:1 208x315+795+532
+wm geometry .sigmgr._PF:1 208x315+794+532
+wm geometry .sigmgr._PF:1 208x315+793+532
+wm geometry .sigmgr._PF:1 208x315+791+533
+wm geometry .sigmgr._PF:1 208x315+789+533
+wm geometry .sigmgr._PF:1 208x315+788+533
+wm geometry .sigmgr._PF:1 208x315+787+533
+wm geometry .sigmgr._PF:1 208x315+785+532
+wm geometry .sigmgr._PF:1 208x315+784+532
+wm geometry .sigmgr._PF:1 208x315+783+531
+wm geometry .sigmgr._PF:1 208x315+782+530
+wm geometry .sigmgr._PF:1 208x315+782+529
+wm geometry .sigmgr._PF:1 208x315+785+526
+wm geometry .sigmgr._PF:1 208x315+801+521
+wm geometry .sigmgr._PF:1 208x315+820+519
+wm geometry .sigmgr._PF:1 208x315+845+517
+wm geometry .sigmgr._PF:1 208x315+868+515
+wm geometry .sigmgr._PF:1 208x315+891+508
+wm geometry .sigmgr._PF:1 208x315+914+501
+wm geometry .sigmgr._PF:1 208x315+939+496
+wm geometry .sigmgr._PF:1 208x315+966+491
+wm geometry .sigmgr._PF:1 208x315+993+486
+wm geometry .sigmgr._PF:1 208x315+1016+479
+wm geometry .sigmgr._PF:1 208x315+1031+472
+wm geometry .sigmgr._PF:1 208x315+1050+465
+wm geometry .sigmgr._PF:1 208x315+1065+460
+wm geometry .sigmgr._PF:1 208x315+1072+458
+wm geometry .sigmgr._PF:1 208x315+1079+456
+wm geometry .sigmgr._PF:1 208x315+1080+456
+Graph:DSel
+Graph:Select Graph0
+ScopeSigMgr:Unload 0 {{(1) nanosim.fsdb}}
+Graph0 delsignal Signal0
+Graph0 delsignal Signal1
+Graph0 delsignal Signal2
+Graph0 delsignal Signal3

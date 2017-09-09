@@ -1,0 +1,18 @@
+* "simulator" "HSPICE" 
+* "version" "E-2010.12-SP2 64-BIT"
+* "format" "HSP"
+* "rundate" "06:41:05 10/25/2014 "
+* "netlist" "raw/CMOS_NAND_180nm "
+* "runtitle" "* # file name: /home/ecegrid/a/559mg3/cadence/simulation/cmos_nand_180"
+* time =  0.000e+00       
+* temperature =  2.500e+01       
+*** BEGIN: Saved Operating Point ***                     
+.option 
++ gmindc= 1.000e-12       
+.nodeset
++ a = 0.000e+00       
++ b = 0.000e+00       
++ net12 = 3.560e-01       
++ out = 2.500e+00       
++ vdd! = 2.500e+00       
+***   END: Saved Operating Point ***                     

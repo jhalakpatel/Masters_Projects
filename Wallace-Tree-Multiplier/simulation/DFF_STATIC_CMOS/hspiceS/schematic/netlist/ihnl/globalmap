@@ -1,0 +1,11 @@
+CADENCE IHNL01060
+$model
+Proj_lib/Inverter_180nm/schematic Inverter_180nm
+Proj_lib/AND21_StaticCMOS/schematic AND21_StaticCMOS
+Proj_lib/NOR21_STATIC_CMOS/schematic sub36
+Proj_lib/DFF_STATIC_CMOS/schematic DFF_STATIC_CMOS
+$endmodel
+$net
+$endnet
+$param
+$endparam

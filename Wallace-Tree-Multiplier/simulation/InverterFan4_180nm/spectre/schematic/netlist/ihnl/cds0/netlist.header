@@ -1,0 +1,5 @@
+
+// Library name: hw1
+// Cell name: Inverter_180nm
+// View name: schematic
+subckt Inverter_180nm In Out

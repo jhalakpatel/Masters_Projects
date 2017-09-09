@@ -1,0 +1,21 @@
+* # File name: /home/ecegrid/a/559mg3/cadence/simulation/Input_Latch/
+# hspiceS/schematic/netlist/Input_Latch.C.raw
+# Netlist output for hspiceS.
+# Generated on Nov 30 19:09:20 2014
+
+USE Proj_lib_Input_Latch_schematic
+
+USE Proj_lib_TSPC_FF_PositiveEdge_schematic sub2
+USE Proj_lib_Inverter_180nm_schematic sub1
+
+USEM tsmc18dP tsmc18dP
+USEM tsmc18dN tsmc18dN
+
+# Include files
+
+
+
+
+
+
+# End of Netlist

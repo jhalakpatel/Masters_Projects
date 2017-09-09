@@ -1,0 +1,2 @@
+(armSave "4.4")
+((Proj_lib_AND21_StaticCMOS_schematic (nil subcktName "sub2" fileName Proj_lib_AND21_StaticCMOS_schematic)) (Proj_lib_Inverter_180nm_schematic (nil subcktName "sub1" fileName Proj_lib_Inverter_180nm_schematic)) (Proj_lib_OR21_StaticCMOS_schematic (nil subcktName "sub4" fileName Proj_lib_OR21_StaticCMOS_schematic)) (Proj_lib_XOR21_StaticCMOS_schematic (nil subcktName "sub3" fileName Proj_lib_XOR21_StaticCMOS_schematic)) (Proj_lib_HALF_ADDER_22_STATIC_CMOS_schematic (nil subcktName "sub5" fileName Proj_lib_HALF_ADDER_22_STATIC_CMOS_schematic)))

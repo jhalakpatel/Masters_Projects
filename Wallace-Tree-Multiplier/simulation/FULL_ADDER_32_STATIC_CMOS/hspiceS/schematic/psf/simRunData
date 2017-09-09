@@ -1,0 +1,10 @@
+HEADER
+"PSFversion" "1.00"
+"design" "(\"Proj_lib\" \"FULL_ADDER_32_STATIC_CMOS\" \"schematic\" \"\")"
+"simulator" "hspiceS"
+"temperature" "25"
+"host" ""
+"date" "Nov  3 12:50:07 2014"
+"title" ""
+"analysisList" "()"
+END

@@ -1,0 +1,19 @@
+* "simulator" "HSPICE" 
+* "version" "E-2010.12-SP2 64-BIT"
+* "format" "HSP"
+* "rundate" "12:18:07 11/03/2014 "
+* "netlist" "raw/OR21_StaticCMOS "
+* "runtitle" "* # file name: /home/ecegrid/a/559mg3/cadence/simulation/or21_staticcm"
+* time =  0.000e+00       
+* temperature =  2.500e+01       
+*** BEGIN: Saved Operating Point ***                     
+.option 
++ gmindc= 1.000e-12       
+.nodeset
++ a_in = 0.000e+00       
++ b_in = 0.000e+00       
++ net15 = 1.800e+00       
++ net8 = 1.800e+00       
++ out_or21 = 2.400e-08       
++ vdd! = 1.800e+00       
+***   END: Saved Operating Point ***                     

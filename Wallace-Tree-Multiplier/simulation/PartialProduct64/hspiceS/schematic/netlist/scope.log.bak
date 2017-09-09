@@ -1,0 +1,83 @@
+Mdi:ArrangeIcons
+ScopeSigMgr:loadpffile /home/ecegrid/a/559mg3/cadence/simulation/PartialProduct64/hspiceS/schematic/netlist/nanosim.fsdb 1 openonly
+# PF:1
+pf:read PF:1 clk_en
+# WF:1:1
+Graph addsignal WF:1:1 -region d -yview real(y) -xview real(x) -tracehi 1
+# Signal0
+pf:read PF:1 clk
+# WF:1:2
+Graph addsignal WF:1:2 -region d -yview real(y) -xview real(x) -tracehi 1
+# Signal1
+Mdi:FullSize
+Mdi:ArrangeIcons
+wm geometry . 1920x975+0+25
+Graph axisconfig AxisX(0) -range {206.25n 412.5n }
+wm geometry .sigmgr 376x204+758+206
+wm geometry .sigmgr 376x204+758+212
+wm geometry .sigmgr 376x204+758+220
+wm geometry .sigmgr 376x204+758+236
+wm geometry .sigmgr 376x204+756+253
+wm geometry .sigmgr 376x204+752+270
+wm geometry .sigmgr 376x204+745+290
+wm geometry .sigmgr 376x204+731+326
+wm geometry .sigmgr 376x204+724+344
+wm geometry .sigmgr 376x204+717+362
+wm geometry .sigmgr 376x204+710+381
+wm geometry .sigmgr 376x204+703+399
+wm geometry .sigmgr 376x204+689+436
+wm geometry .sigmgr 376x204+681+452
+wm geometry .sigmgr 376x204+674+468
+wm geometry .sigmgr 376x204+667+484
+wm geometry .sigmgr 376x204+643+535
+wm geometry .sigmgr 376x204+640+540
+wm geometry .sigmgr 376x204+626+575
+wm geometry .sigmgr 376x204+597+628
+wm geometry .sigmgr 376x204+594+640
+wm geometry .sigmgr 376x204+588+657
+wm geometry .sigmgr 376x204+584+665
+Graph axisconfig AxisX(0) -range {90n 530n }
+Graph axisconfig AxisX(0) -range {231.8n 383.6n }
+Graph axisconfig AxisX(0) -range {130n 490n }
+Graph axisconfig AxisX(0) -range {248.75n 372.5n }
+Graph axisconfig AxisX(0) -range {170n 450n }
+Graph axisconfig AxisX(0) -range {-12.5n 637.5n }
+Graph:DSel
+Graph:Select Graph0
+Graph:DSel
+Graph axisconfig AxisX(0) -range {65.6653n 81.9669n}
+Graph axisconfig AxisX(0) -range {55n 91n }
+Graph axisconfig AxisX(0) -range {35n 115n }
+Graph axisconfig AxisX(0) -range {-15n 165n }
+Graph axisconfig AxisX(0) -range {-120n 280n }
+Graph:DSel
+Graph:DSel
+Graph axisconfig AxisX(0) -range {73.9524n 84.17n}
+Graph:DSel
+Graph axisconfig AxisX(0) -range {65n 93n }
+Graph axisconfig AxisX(0) -range {50n 110n }
+Graph axisconfig AxisX(0) -range {20n 140n }
+Graph axisconfig AxisX(0) -range {-40n 200n }
+Graph:Select Graph0
+Graph:DSel
+Graph itemselect Signal0 add
+# Signal0
+Graph axisconfig AxisX(0) -range {40.75n 131.5n }
+Graph axisconfig AxisX(0) -range {-10n 190n }
+Graph axisconfig AxisX(0) -range {-130n 310n }
+Graph axisconfig AxisX(0) -range {-400n 600n }
+Graph:DSel
+Graph:DSel
+Graph axisconfig AxisX(0) -range {482.273n 423.5873n}
+Graph axisconfig AxisX(0) -range {387.5n 517.5n }
+Graph axisconfig AxisX(0) -range {310n 590n }
+Graph axisconfig AxisX(0) -range {150n 750n }
+Graph axisconfig AxisX(0) -range {364.5n 579n }
+Graph axisconfig AxisX(0) -range {250n 690n }
+Graph axisconfig AxisX(0) -range {466.616655n 437.535806n}
+Graph axisconfig AxisX(0) -range {422.5n 482.5n }
+Graph axisconfig AxisX(0) -range {387.5n 517.5n }
+Graph axisconfig AxisX(0) -range {310n 590n }
+ScopeSigMgr:Unload 0 {{(1) nanosim.fsdb}}
+Graph0 delsignal Signal0
+Graph0 delsignal Signal1

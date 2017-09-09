@@ -1,0 +1,8 @@
+simulator( 'hspiceS )
+design(	 "/home/ecegrid/a/559mg3/cadence/simulation/HALF_ADDER_22_STATIC_CMOS/hspiceS/schematic/netlist/HALF_ADDER_22_STATIC_CMOS.C")
+resultsDir( "/home/ecegrid/a/559mg3/cadence/simulation/HALF_ADDER_22_STATIC_CMOS/hspiceS/schematic" )
+analysis('tran ?from "0n"  ?to "60n"  ?by "1n"  )
+temp( 25 ) 
+run()
+selectResult( 'tran )
+plot(getData("/B_IN") getData("/A_IN") getData("/C_OUT_HALF_ADDER22") getData("/S_OUT_HALF_ADDER22") )

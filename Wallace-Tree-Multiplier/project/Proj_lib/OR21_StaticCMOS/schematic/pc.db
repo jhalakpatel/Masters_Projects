@@ -1,0 +1,22 @@
+#
+NCSU_Analog_Parts nmos4 symbol
+N1
+N0
+#
+NCSU_Analog_Parts pmos4 symbol
+P1
+P0
+#
+Proj_lib Inverter_180nm symbol
+I0
+#ISCELL
+basic opin symbol
+PIN0
+#ISCELL
+basic ipin symbol
+PIN2
+PIN1
+#ISCELL
+basic iopin symbolr
+PIN4
+PIN3

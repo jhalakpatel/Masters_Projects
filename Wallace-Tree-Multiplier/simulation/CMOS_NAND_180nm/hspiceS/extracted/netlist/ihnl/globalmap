@@ -1,0 +1,8 @@
+CADENCE IHNL01060
+$model
+hw1/CMOS_NAND_180nm/extracted CMOS_NAND_180nm
+$endmodel
+$net
+$endnet
+$param
+$endparam

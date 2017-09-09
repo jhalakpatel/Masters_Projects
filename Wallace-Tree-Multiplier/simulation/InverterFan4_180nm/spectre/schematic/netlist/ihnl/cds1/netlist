@@ -1,0 +1,9 @@
+
+// Library name: hw1
+// Cell name: InverterFan4_180nm
+// View name: schematic
+I4 (Out_inv Out\<3\>) Inverter_180nm
+I3 (Out_inv Out\<2\>) Inverter_180nm
+I2 (Out_inv Out\<1\>) Inverter_180nm
+I1 (Out_inv Out\<0\>) Inverter_180nm
+I0 (In Out_inv) Inverter_180nm

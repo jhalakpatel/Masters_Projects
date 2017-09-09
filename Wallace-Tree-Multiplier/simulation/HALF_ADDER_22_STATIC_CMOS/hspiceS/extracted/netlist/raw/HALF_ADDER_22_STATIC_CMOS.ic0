@@ -1,0 +1,26 @@
+* "simulator" "HSPICE" 
+* "version" "E-2010.12-SP2 64-BIT"
+* "format" "HSP"
+* "rundate" "16:00:13 11/26/2014 "
+* "netlist" "raw/HALF_ADDER_22_STATIC_CMOS "
+* "runtitle" "* # file name: /home/ecegrid/a/559mg3/cadence/simulation/"
+* time =  0.000e+00       
+* temperature =  2.500e+01       
+*** BEGIN: Saved Operating Point ***                     
+.option 
++ gmindc= 1.000e-12       
+.nodeset
++ 1 =-1.176e-37       
++ 2 =-1.246e-37       
++ 3 =-1.176e-37       
++ 4 =-1.184e-37       
++ 5 =-1.184e-37       
++ 6 =-1.217e-37       
++ 11 =-1.168e-37       
++ 12 = 1.171e-36       
++ 13 =-1.094e-37       
++ a_in = 0.000e+00       
++ b_in = 0.000e+00       
++ gd =-1.078e-37       
++ vd =-1.190e-37       
+***   END: Saved Operating Point ***                     

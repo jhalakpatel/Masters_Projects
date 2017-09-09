@@ -1,0 +1,8 @@
+simulator( 'hspiceS )
+design(	 "/home/ecegrid/a/559mg3/cadence/simulation/Full_Adder_Mirror_StaticCMOS/hspiceS/schematic/netlist/Full_Adder_Mirror_StaticCMOS.C")
+resultsDir( "/home/ecegrid/a/559mg3/cadence/simulation/Full_Adder_Mirror_StaticCMOS/hspiceS/schematic" )
+analysis('tran ?from "0n"  ?to "60n"  ?by "1n"  )
+temp( 25 ) 
+run()
+selectResult( 'tran )
+plot(getData("/GD") getData("/VD") getData("/B_IN") getData("/C_IN") getData("/A_IN") getData("/SUM_OUT") getData("/CARRY_OUT") )

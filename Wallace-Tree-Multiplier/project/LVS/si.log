@@ -1,0 +1,75 @@
+
+Running simulation in directory: "/home/ecegrid/a/559mg3/cadence/project/LVS".
+
+
+
+Begin netlist:    Dec  9 20:42:27 2014
+	view name list	= ("auLvs" "extracted" "schematic")
+	stop name list	= ("auLvs")
+	library name	= "Proj_lib"
+	cell name	= "PartialProduct64"
+	view name	= "extracted"
+	globals lib	= "basic"
+Running Artist Flat Netlisting ...
+End netlist:    Dec  9 20:42:29 2014
+
+Moving original netlist to extNetlist
+Removing parasitic components from netlist
+	presistors removed:  0
+	pcapacitors removed: 8994
+	pinductors removed:  0
+	pdiodes removed:     0
+	trans lines removed: 0
+	1500 nodes merged into 1500 nodes
+
+
+Begin netlist:    Dec  9 20:42:29 2014
+	view name list	= ("auLvs" "schematic")
+	stop name list	= ("auLvs")
+	library name	= "Proj_lib"
+	cell name	= "PartialProduct64"
+	view name	= "schematic"
+	globals lib	= "basic"
+Running Artist Flat Netlisting ...
+End netlist:    Dec  9 20:42:31 2014
+
+Moving original netlist to extNetlist
+Removing parasitic components from netlist
+	presistors removed:  0
+	pcapacitors removed: 0
+	pinductors removed:  0
+	pdiodes removed:     0
+	trans lines removed: 0
+	2755 nodes merged into 2755 nodes
+
+Running netlist comparison program:  LVS
+Begin comparison:    Dec  9 20:42:31 2014
+@(#)$CDS: LVS.exe version 5.1.0 11/22/2011 01:35 (cicln04) $
+
+The net-lists match.
+
+			     layout  schematic
+				instances
+	un-matched		0	0
+	rewired			0	0
+	size errors		0	0
+	pruned			0	0
+	active			2778	2778
+	total			2778	2778
+
+				  nets
+	un-matched		0	0
+	merged			0	0
+	pruned			0	0
+	active			1499	1499
+	total			1499	1499
+
+				terminals
+	un-matched		0	0
+	matched but
+	different type		0	0
+	total			36	36
+End comparison:      Dec  9 20:42:31 2014
+
+
+Comparison program completed successfully.

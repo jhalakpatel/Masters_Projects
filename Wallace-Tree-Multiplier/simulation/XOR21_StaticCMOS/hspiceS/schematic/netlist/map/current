@@ -1,0 +1,26 @@
+( ( nil
+  version "2.1"
+  mapType "incremental"
+  blockName "XOR21_StaticCMOS"
+  repList "hspiceS spice cmos_sch cmos.sch schematic"
+  stopList "hspiceS spice"
+  hierDelim "^"
+  netlistDir "/home/ecegrid/a/559mg3/cadence/simulation/XOR21_StaticCMOS/hspiceS/schematic/netlist"
+ )
+( instViewTable
+ )
+( net
+ )
+( inst
+ )
+( model
+( "Proj_lib/XOR21_StaticCMOS/schematic" "XOR21_StaticCMOS" )
+( "Proj_lib/Inverter_180nm/schematic" "Inverter_180nm" )
+ )
+( term
+ )
+( param
+ )
+( "Inverter_180nm" "ihnl/cds0/map" )
+( "XOR21_StaticCMOS" "ihnl/cds1/map" )
+ )

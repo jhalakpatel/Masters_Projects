@@ -1,0 +1,123 @@
+@(#)$CDS: LVS.exe version 5.1.0 11/22/2011 01:35 (cicln04) $
+
+Command line: /package/eda/cadence/IC5141.151/tools.lnx86/dfII/bin/32bit/LVS.exe -dir /home/ecegrid/a/559mg3/cadence/project/LVS -l -s -t /home/ecegrid/a/559mg3/cadence/project/LVS/layout /home/ecegrid/a/559mg3/cadence/project/LVS/schematic
+Like matching is enabled.
+Net swapping is enabled.
+Using terminal names as correspondence points.
+Compiling Diva LVS rules...
+
+    Net-list summary for /home/ecegrid/a/559mg3/cadence/project/LVS/layout/netlist
+       count
+	1499		nets
+	36		terminals
+	1358		pmos
+	1420		nmos
+
+    Net-list summary for /home/ecegrid/a/559mg3/cadence/project/LVS/schematic/netlist
+       count
+	1499		nets
+	36		terminals
+	1358		pmos
+	1420		nmos
+
+
+    Terminal correspondence points
+    N437      N54       A_0
+    N1142     N40       A_1
+    N227      N178      A_2
+    N355      N266      A_3
+    N305      N237      A_4
+    N1270     N119      A_5
+    N1378     N203      A_6
+    N399      N17       A_7
+    N256      N204      B_0
+    N1137     N31       B_1
+    N903      N132      B_2
+    N867      N109      B_3
+    N551      N157      B_4
+    N6        N4        B_5
+    N247      N193      B_6
+    N1344     N179      B_7
+    N1437     N251      GD
+    N10       N9        S_0
+    N513      N129      S_1
+    N1222     N99       S_10
+    N774      N38       S_11
+    N725      N279      S_12
+    N908      N133      S_13
+    N1402     N224      S_14
+    N1074     N261      S_15
+    N1459     N256      S_16
+    N1246     N110      S_2
+    N734      N7        S_3
+    N451      N69       S_4
+    N717      N271      S_5
+    N922      N146      S_6
+    N549      N155      S_7
+    N1285     N135      S_8
+    N128      N115      S_9
+    N1124     N22       VD
+    N667      N245      clk
+
+Devices in the netlist but not in the rules:
+        pcapacitor
+Devices in the rules but not in the netlist:
+        cap nfet pfet nmos4 pmos4
+
+The net-lists match.
+
+			     layout  schematic
+				instances
+	un-matched		0	0
+	rewired			0	0
+	size errors		0	0
+	pruned			0	0
+	active			2778	2778
+	total			2778	2778
+
+				  nets
+	un-matched		0	0
+	merged			0	0
+	pruned			0	0
+	active			1499	1499
+	total			1499	1499
+
+				terminals
+	un-matched		0	0
+	matched but
+	different type		0	0
+	total			36	36
+
+
+Probe files from /home/ecegrid/a/559mg3/cadence/project/LVS/schematic
+
+devbad.out:
+
+netbad.out:
+
+mergenet.out:
+
+termbad.out:
+
+prunenet.out:
+
+prunedev.out:
+
+audit.out:
+
+
+Probe files from /home/ecegrid/a/559mg3/cadence/project/LVS/layout
+
+devbad.out:
+
+netbad.out:
+
+mergenet.out:
+
+termbad.out:
+
+prunenet.out:
+
+prunedev.out:
+
+audit.out:

@@ -1,0 +1,24 @@
+* "simulator" "HSPICE" 
+* "version" "E-2010.12-SP2 64-BIT"
+* "format" "HSP"
+* "rundate" "23:05:17 11/25/2014 "
+* "netlist" "raw/FF_Positive_edge "
+* "runtitle" "* # file name: /home/ecegrid/a/559mg3/cadence/simulation/ff_positive_e"
+* time =  0.000e+00       
+* temperature =  2.500e+01       
+*** BEGIN: Saved Operating Point ***                     
+.option 
++ gmindc= 1.000e-12       
+.nodeset
++ 1 = 1.800e+00       
++ 2 = 1.800e+00       
++ 3 = 1.602e+00       
++ 4 = 1.442e+00       
++ 5 = 6.405e-09       
++ 11 = 1.800e+00       
++ clk = 0.000e+00       
++ d_in = 0.000e+00       
++ gd = 0.000e+00       
++ q_out = 3.348e-06       
++ vd = 1.800e+00       
+***   END: Saved Operating Point ***                     

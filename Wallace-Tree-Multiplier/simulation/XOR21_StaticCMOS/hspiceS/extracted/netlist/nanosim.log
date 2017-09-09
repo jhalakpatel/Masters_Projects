@@ -1,0 +1,215 @@
+ --------------------------------------------------------
+|                                                        |
+|           NanoSim Version G-2012.06 (RHEL64)           |
+| Copyright (c) 2012 Synopsys Inc., All Rights Reserved. |
+|                                                        |
+ --------------------------------------------------------
+
+Built by nsmgr   on Fri May 18 18:17:12 PDT 2012
+Wed Nov 26 13:25:53 EST 2014
+Machine Name: ecegrid-thin4.ecn.purdue.edu
+
+Command line options:  -n nanosim.sp -c nanosim.cfg -nvec nanosim.vec -out fsdb -z tt
+
+
+The 64-bit version of the simulator is running.
+
+
+Initializing system messages took 0.000 s
+
+LICENSE Information: 
+-- Key: TIMEMILL__NSADDON	            
+-- Version: 2012.06
+
+Installing interactive/configuration commands ... 
+Installing commands took 0.010 s
+
+
+Start netlist compilation at Wed Nov 26 13:25:53 2014
+
+Compiling "nanosim.sp" (SPICE)
+Compiling "/package/eda/cells/ncsu-cdk-1.5.1/local/models/hspice/public/publicModel/tsmc18dP" (SPICE)
+Compiling "/package/eda/cells/ncsu-cdk-1.5.1/local/models/hspice/public/publicModel/tsmc18dN" (SPICE)
+Compiling "nanosim.vec" (VECTOR)
+
+
+
+Parsing netlist finished in 0 seconds
+
+Circuit temperature from netlist                  :       25.000
+
+
+Netlist compilation will be case insensitive.
+All letters will be converted to lower case.
+Building instance tree finished in 0 seconds
+
+Finish netlist compilation at Wed Nov 26 13:25:53 2014
+
+Netlist compilation took 0.010 s
+NOTICE:Techfile Voltage (*nanosim tech="voltage") set to  1.8V ... 
+Found technology file: ./tt_tech_tsmc18dn...
+Found technology file: ./tt_tech_tsmc18dp...
+Building node/element arrays took 0.000 s
+
+Reading configuration files ...
+Reading configuration files took 0.000000 s
+
+
+# of CMOS elements                                        :           12
+# of dc voltage sources                                   :            1
+# of stimulus elements                                    :            1
+# of elements                                             :           35
+# of used elements                                        :           21
+# of nodes                                                :           10
+# of subckt                                               :            1
+# of top-level instances                                  :           35
+# of capacitors from netlist                              :           32
+     # of Ground CAPS from netlist                        :           11
+     # of Coupling CAPS from netlist                      :           21
+
+# of Coupling CAPS from netlist and converted diodes      :           21
+     # of Coupling CAPS kept (see .fcap file)             :            8
+     # of Coupling CAPS put into SMS Mode                 :            0
+     # of Coupling CAPS split to ground                   :           13
+
+
+Circuit partitioning ...
+
+Among 3 stages, there are: 
+           3 pwl stages 
+           0 grouped pwl stages
+           0 analog stages 
+           0 NR stages 
+           0 grouped analog stages
+           0 rc stages 
+           0 ud stages 
+           0 ADFMI functional model stages
+           4 nodes in the largest pwl stage
+           0 nodes in the largest digital stage
+
+           3 stages (3 pwl/analog stages) with 0-9 nodes
+
+
+Among 10 nodes, there are: 
+          10 pwl nodes
+           0 analog (accurate) nodes
+           0 rc nodes
+           0 ud nodes
+
+           0 cut nodes 
+           0 mem_cut nodes 
+           8 no_clamp nodes 
+           6 nodes in stages
+           4 voltage source nodes
+           2 constant nodes
+           0 NR nodes
+
+Among 35 elements, there are: 
+          20 elements in stages
+          20 pwl elements 
+           0 synchronous elements 
+           0 SMS elements 
+           0 analog (accurate) elements
+           0 rc elements 
+           0 ud elements 
+           0 ADFMI functional model elements 
+           0 VERILOGA model elements 
+           0 behavioral model elements 
+
+           0 mna elements
+           0 NR elements
+           0 mos transistors identified as keepers
+           0 keepers removed
+           0 keepers reduced
+
+
+Circuit partitioning took 0.010 s
+Constructing matrix ...
+Matrix ordering and construction took 0.000 s
+Profiling block-number for individual report_block_powr configuration commands (1 cmd's totally)  
+Cmd 1: 1 blocks from "report_block_powr total track_power=1 * "   
+Processing block power (number of blocks: 1) ...  
+
+
+After reading configuration file(s), 6 signals are identified to be printed:
+           3 logic signals
+           3 voltage signals
+
+Statistics of memory used for signal printing:
+      632696 bytes allocated in total, including:
+             96016 bytes allocated for node current/voltage/logic signals
+            272320 bytes allocated additionally for node current signals
+            264360 bytes allocated additionally for element branch current signals
+
+Levelizing stages ...
+Levelizing stages took 0.000 s
+DC initialization ...
+
+Finishing initialization (level 0 -- 1)
+0 dynamic stages assigned in DC Initialization
+
+Number of residual dc events scheduled          : 0
+Number of ic nodes scheduled                    : 0
+DC initialization took 0.000 s
+
+Simulation begins in pwl mode ...
+Simulation ends at 1000.000 ns
+
+Simulation took 0.050 s
+
+Current information calculated over the intervals:
+
+     0.00000e+00 -  1.00001e+03 ns
+
+
+
+
+Block: total
+    Number of nodes in block		:  6
+    Number of elements in block		:  20
+    Number of block supply nodes	:  1
+    Number of block ground nodes	:  1
+    Number of block biput nodes		:  2
+    Number of block input nodes		:  0
+    Number of block output nodes	:  0
+    Number of block stages		:  3
+    Number of block partial stages	:  0
+
+    Average supply current		: -2.048230 uA
+    RMS supply current			:  19.022463 uA
+
+    Average input current		:  0.000000 uA
+    RMS input current			:  0.000000 uA
+
+    Average output current		:  0.000000 uA
+    RMS output current			:  0.000000 uA
+
+    Average biput current		:  0.007730 uA
+    RMS biput current			:  16.454056 uA
+
+    Average block power			:  3.698273 uW
+    RMS block power			:  35.424662 uW
+
+Simulation time resolution                      : 1.000e-02 ns
+Print time resolution                           : 1.000e-02 ns
+Number of PWL matrix solutions                  : 7595
+Number of PWL MOS model lookups                 : 17559
+Number of time steps                            : 7595
+Number of iterations                            : 0
+Number of rejected time steps                   : 0
+
+Global simulation parameters used:
+
+SPD            0.18V     ASPD           0.09V
+SIM_DESV       0.18V     SIM_AESV       0.09V
+VDS_MIN  0.000370663V     AVDS_MIN      1e-08V
+SSC (steady state current)         0.1uA
+SUBI (subthreshold current)          1uA
+DC CURRENT                           1uA
+
+	       1.0 real	       0.8 user	       0.1 sys
+
+Signal data is saved in nanosim.fsdb
+
+No errors reported in the .err file (nanosim.err)
+

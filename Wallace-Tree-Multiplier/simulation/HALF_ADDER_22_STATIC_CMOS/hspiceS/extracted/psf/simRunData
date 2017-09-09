@@ -1,0 +1,10 @@
+HEADER
+"PSFversion" "1.00"
+"design" "(\"Proj_lib\" \"HALF_ADDER_22_STATIC_CMOS\" \"extracted\" \"\")"
+"simulator" "hspiceS"
+"temperature" "25"
+"host" ""
+"date" "Nov 26 16:00:13 2014"
+"title" ""
+"analysisList" "()"
+END

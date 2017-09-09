@@ -1,0 +1,22 @@
+* # File name: /home/ecegrid/a/559mg3/cadence/simulation/
+# Inverter_FanOut4_Open/hspiceS/schematic/netlist/
+# Inverter_FanOut4_Open.C.raw
+# Netlist output for hspiceS.
+# Generated on Oct 31 15:38:15 2014
+
+# global net definitions
+.GLOBAL vdd!
+USE hw1_Inverter_FanOut4_Open_schematic
+
+
+USEM tsmc18dP tsmc18dP
+USEM tsmc18dN tsmc18dN
+
+# Include files
+
+
+
+
+
+
+# End of Netlist

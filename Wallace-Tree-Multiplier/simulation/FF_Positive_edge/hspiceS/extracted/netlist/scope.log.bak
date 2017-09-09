@@ -1,0 +1,26 @@
+ScopeSigMgr:loadpffile /home/ecegrid/a/559mg3/cadence/simulation/FF_Positive_edge/hspiceS/extracted/netlist/nanosim.fsdb 1 openonly
+# PF:1
+pf:read PF:1 clk
+# WF:1:1
+Graph addsignal WF:1:1 -region d -yview real(y) -xview real(x) -tracehi 1
+# Signal0
+pf:read PF:1 d_in
+# WF:1:2
+Graph addsignal WF:1:2 -region d -yview real(y) -xview real(x) -tracehi 1
+# Signal1
+pf:read PF:1 q_out
+# WF:1:3
+Graph addsignal WF:1:3 -region d -yview real(y) -xview real(x) -tracehi 1
+# Signal2
+pf:read PF:1 v(clk)
+# WF:1:4
+Graph addsignal WF:1:4 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal3
+pf:read PF:1 v(d_in)
+# WF:1:5
+Graph addsignal WF:1:5 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal4
+pf:read PF:1 v(q_out)
+# WF:1:6
+Graph addsignal WF:1:6 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal5

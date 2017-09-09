@@ -1,0 +1,64 @@
+# File name: Proj_lib_Full_Adder_Mirror_StaticCMOS_LAYOUT_schematic.S.
+# Subcircuit for cell: Full_Adder_Mirror_StaticCMOS_LAYOUT.
+# Generated for: hspiceS.
+# Generated on Nov 11 15:47:13 2014.
+
+MN1 net8 A_IN GD GD  tsmc18dN  L=180e-9 W=270e-9 AD=121.5e-15 AS=121.5e-15 &
+PD=1.44e-6 PS=1.44e-6 M=1 
+MN0 net76 B_IN net8 GD  tsmc18dN  L=180e-9 W=270e-9 AD=121.5e-15 AS=121.5e-&
+15 PD=1.44e-6 PS=1.44e-6 M=1 
+MN3 net76 C_IN net20 GD  tsmc18dN  L=180e-9 W=270e-9 AD=121.5e-15 &
+AS=121.5e-15 PD=1.44e-6 PS=1.44e-6 M=1 
+MN2 net20 A_IN GD GD  tsmc18dN  L=180e-9 W=270e-9 AD=121.5e-15 AS=121.5e-&
+15 PD=1.44e-6 PS=1.44e-6 M=1 
+MN4 GD B_IN net20 GD  tsmc18dN  L=180e-9 W=270e-9 AD=121.5e-15 AS=121.5e-&
+15 PD=1.44e-6 PS=1.44e-6 M=1 
+MN10 net32 B_IN GD GD  tsmc18dN  L=180e-9 W=270e-9 AD=121.5e-15 AS=121.5e-&
+15 PD=1.44e-6 PS=1.44e-6 M=1 
+MN9 net32 A_IN GD GD  tsmc18dN  L=180e-9 W=270e-9 AD=121.5e-15 AS=121.5e-&
+15 PD=1.44e-6 PS=1.44e-6 M=1 
+MN6 net51 A_IN net39 GD  tsmc18dN  L=180e-9 W=270e-9 AD=121.5e-15 &
+AS=121.5e-15 PD=1.44e-6 PS=1.44e-6 M=1 
+MN8 net40 net76 net32 GD  tsmc18dN  L=180e-9 W=270e-9 AD=121.5e-15 &
+AS=121.5e-15 PD=1.44e-6 PS=1.44e-6 M=1 
+MN7 net39 C_IN net91 GD  tsmc18dN  L=180e-9 W=270e-9 AD=121.5e-15 &
+AS=121.5e-15 PD=1.44e-6 PS=1.44e-6 M=1 
+MN5 GD B_IN net51 GD  tsmc18dN  L=180e-9 W=270e-9 AD=121.5e-15 AS=121.5e-&
+15 PD=1.44e-6 PS=1.44e-6 M=1 
+MN11 net32 C_IN GD GD  tsmc18dN  L=180e-9 W=270e-9 AD=121.5e-15 AS=121.5e-&
+15 PD=1.44e-6 PS=1.44e-6 M=1 
+MN14 SUM_OUT net91 GD GD  tsmc18dN  L=180e-9 W=270e-9 AD=121.5e-15 &
+AS=121.5e-15 PD=1.44e-6 PS=1.44e-6 M=1 
+MN15 CARRY_OUT net76 GD GD  tsmc18dN  L=180e-9 W=270e-9 AD=121.5e-15 &
+AS=121.5e-15 PD=1.44e-6 PS=1.44e-6 M=1 
+MP0 net71 A_IN VD VD  tsmc18dP  L=180e-9 W=810e-9 AD=364.5e-15 AS=364.5e-&
+15 PD=2.52e-6 PS=2.52e-6 M=1 
+MP2 net76 B_IN net71 VD  tsmc18dP  L=180e-9 W=810e-9 AD=364.5e-15 &
+AS=364.5e-15 PD=2.52e-6 PS=2.52e-6 M=1 
+MP5 VD B_IN net80 VD  tsmc18dP  L=180e-9 W=810e-9 AD=364.5e-15 AS=364.5e-&
+15 PD=2.52e-6 PS=2.52e-6 M=1 
+MP4 net76 C_IN net80 VD  tsmc18dP  L=180e-9 W=810e-9 AD=364.5e-15 &
+AS=364.5e-15 PD=2.52e-6 PS=2.52e-6 M=1 
+MP3 net80 A_IN VD VD  tsmc18dP  L=180e-9 W=810e-9 AD=364.5e-15 AS=364.5e-&
+15 PD=2.52e-6 PS=2.52e-6 M=1 
+MP12 net40 net76 net108 VD  tsmc18dP  L=180e-9 W=810e-9 AD=364.5e-15 &
+AS=364.5e-15 PD=2.52e-6 PS=2.52e-6 M=1 
+MP11 net88 C_IN net91 VD  tsmc18dP  L=180e-9 W=810e-9 AD=364.5e-15 &
+AS=364.5e-15 PD=2.52e-6 PS=2.52e-6 M=1 
+MP10 net92 A_IN net88 VD  tsmc18dP  L=180e-9 W=810e-9 AD=364.5e-15 &
+AS=364.5e-15 PD=2.52e-6 PS=2.52e-6 M=1 
+MP9 VD B_IN net92 VD  tsmc18dP  L=180e-9 W=810e-9 AD=364.5e-15 AS=364.5e-&
+15 PD=2.52e-6 PS=2.52e-6 M=1 
+MP8 net108 C_IN VD VD  tsmc18dP  L=180e-9 W=810e-9 AD=364.5e-15 AS=364.5e-&
+15 PD=2.52e-6 PS=2.52e-6 M=1 
+MP7 net108 B_IN VD VD  tsmc18dP  L=180e-9 W=810e-9 AD=364.5e-15 AS=364.5e-&
+15 PD=2.52e-6 PS=2.52e-6 M=1 
+MP6 net108 A_IN VD VD  tsmc18dP  L=180e-9 W=810e-9 AD=364.5e-15 AS=364.5e-&
+15 PD=2.52e-6 PS=2.52e-6 M=1 
+MP15 SUM_OUT net91 VD VD  tsmc18dP  L=180e-9 W=810e-9 AD=364.5e-15 &
+AS=364.5e-15 PD=2.52e-6 PS=2.52e-6 M=1 
+MP16 CARRY_OUT net76 VD VD  tsmc18dP  L=180e-9 W=810e-9 AD=364.5e-15 &
+AS=364.5e-15 PD=2.52e-6 PS=2.52e-6 M=1 
+
+
+

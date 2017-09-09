@@ -1,0 +1,3 @@
+choose nanosim  -nspice ./nanosim.sp -nvec ./nanosim.vec -o ./nanosim  -C /home/ecegrid/a/559mg3/cadence/simulation/InverterTest/hspiceS/schematic/netlist/nanosim.cfg2;
+set bus_format [%d];
+set nanosimgui 2;

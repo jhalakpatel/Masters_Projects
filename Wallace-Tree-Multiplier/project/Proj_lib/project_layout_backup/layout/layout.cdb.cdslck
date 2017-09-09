@@ -1,0 +1,16 @@
+#
+# Edit Lock-Stake file. CAUTION: Please do not change.
+#
+# Information about current Edit Lock Owner.
+#
+LockStakeVersion               1.1
+LoginName                      559mg3
+HostName                       ee207lnx02.ecn.purdue.edu
+ProcessIdentifier              20414
+ProcessCreationTime_UTC        1417498795
+ProcessCreationTime_Readable   Tue Dec  2 00:39:55 2014 EST
+AppIdentifier                  /package/eda/cadence/IC5141/tools/dfII/bin/icfb.exe
+OSType                         lnx86
+ReasonForPlacingEditLock       XXopen upgrade lock
+FilePathUsedToEditLock         /home/ecegrid/a/559mg3/cadence/project/Proj_lib/project_layout_backup/layout/layout.cdb
+TimeEditLocked                 Tue Dec  2 01:57:41 2014 EST

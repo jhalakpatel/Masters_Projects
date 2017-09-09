@@ -1,0 +1,29 @@
+;! output_format 5.3
+; header 490289582
+; --------------------------------------------------------
+;|                                                        |
+;|           NanoSim Version G-2012.06 (RHEL64)           |
+;| Copyright (c) 2012 Synopsys Inc., All Rights Reserved. |
+;|                                                        |
+; --------------------------------------------------------
+;
+;Built by nsmgr   on Fri May 18 18:17:12 PDT 2012
+; Sat Oct 25 03:30:29 EDT 2014
+; Machine Name: ee207lnx15.ecn.purdue.edu
+; 
+;
+.vdd 2.5
+.time_resolution 0.01
+.current_resolution 1e-06
+.voltage_resolution 0.01
+; tentative simulation_time 100000
+.high_threshold 1.75
+.low_threshold 0.75
+.nnodes 9
+.nelems 12
+.extra_nodes 0
+.bus_notation [ - ]
+.hier_separator .
+.case L
+; file closed at 1000.000000ns
+; trailer 816270601 

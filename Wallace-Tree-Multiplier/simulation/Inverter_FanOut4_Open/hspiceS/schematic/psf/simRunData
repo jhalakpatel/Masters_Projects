@@ -1,0 +1,10 @@
+HEADER
+"PSFversion" "1.00"
+"design" "(\"hw1\" \"Inverter_FanOut4_Open\" \"schematic\" \"\")"
+"simulator" "hspiceS"
+"temperature" "25"
+"host" ""
+"date" "Oct 31 15:38:14 2014"
+"title" ""
+"analysisList" "()"
+END

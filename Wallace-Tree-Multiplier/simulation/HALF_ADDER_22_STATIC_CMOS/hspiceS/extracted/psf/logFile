@@ -1,0 +1,32 @@
+header
+"PSFversion" "1.00" 
+"simulator" "HSPICE"
+"version" "E-2010.12-SP2 64-BIT" 
+"rundate" "16:00:13 11/26/2014 " 
+"runtitle" "* # file name: /home/ecegrid/a/559mg3/cadence/simulation/         " 
+"runtype" "logFile"
+TYPE
+"analysisInst" STRUCT(
+"analysisType" STRING *
+"dataFile" STRING *
+"format" STRING *
+"parent" STRING *
+"sweepVariable" ARRAY ( * ) STRING *
+"description" STRING * )
+VALUE
+"opBegin" "analysisInst" ( 
+"Operating Point"
+"HALF_ADDER_22_STATIC_CMOS.op0"
+"PSF"
+""
+()
+"Operating Point"
+)
+"summary" "analysisInst" ( 
+"Summary Information"
+"HALF_ADDER_22_STATIC_CMOS.su0"
+"PSF"
+""
+()
+"Summary Information"
+)

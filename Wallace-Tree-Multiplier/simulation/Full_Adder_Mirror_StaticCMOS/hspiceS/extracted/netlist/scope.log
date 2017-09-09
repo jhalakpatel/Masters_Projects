@@ -1,0 +1,190 @@
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+wm geometry . 1280x919+1280+25
+ScopeSigMgr:loadpffile /home/ecegrid/a/559mg3/cadence/simulation/Full_Adder_Mirror_StaticCMOS/hspiceS/extracted/netlist/nanosim.fsdb 1 openonly
+# PF:1
+pf:read PF:1 a_in b_in c_in carry_out sum_out v(a_in) v(b_in) v(c_in) v(carry_out) v(sum_out)
+# WF:1:3 WF:1:4 WF:1:5 WF:1:6 WF:1:7 WF:1:8 WF:1:9 WF:1:10
+Graph addsignal {WF:1:3 WF:1:4 WF:1:5 WF:1:6 WF:1:7 WF:1:8 WF:1:9 WF:1:10} -region {d d d d new new new new} -yview {real(y) real(y) real(y) real(y) real(y) real(y) real(y) real(y)} -xview {real(x) real(x) real(x) real(x) real(x) real(x) real(x) real(x)} -tracehi {1 1 1 1 2 2 2 2}
+# Signal0 Signal1 Signal2 Signal3 Signal4 Signal5 Signal6 Signal7
+Mdi:FullSize
+ScopeSigMgr:Unload 0 {{(1) nanosim.fsdb}}
+wm geometry .sigmgr._PF:1 208x315+1280+513
+wm geometry .sigmgr._PF:1 208x315+1280+514
+wm geometry .sigmgr._PF:1 208x315+1280+517
+wm geometry .sigmgr._PF:1 208x315+1280+523
+wm geometry .sigmgr._PF:1 208x315+1280+536
+wm geometry .sigmgr._PF:1 208x315+1280+545
+wm geometry .sigmgr._PF:1 208x315+1280+554
+wm geometry .sigmgr._PF:1 208x315+1280+564
+wm geometry .sigmgr._PF:1 208x315+1280+574
+wm geometry .sigmgr._PF:1 208x315+1280+586
+wm geometry .sigmgr._PF:1 208x315+1280+599
+wm geometry .sigmgr._PF:1 208x315+1280+614
+wm geometry .sigmgr._PF:1 208x315+1280+630
+wm geometry .sigmgr._PF:1 208x315+1280+654
+wm geometry .sigmgr._PF:1 208x315+1280+679
+wm geometry .sigmgr._PF:1 208x315+1280+724
+wm geometry .sigmgr._PF:1 208x315+1280+745
+wm geometry .sigmgr._PF:1 208x315+1280+754
+wm geometry .sigmgr._PF:1 208x315+1280+760
+wm geometry .sigmgr._PF:1 208x315+1280+766
+wm geometry .sigmgr._PF:1 208x315+1280+771
+wm geometry .sigmgr._PF:1 208x315+1280+777
+wm geometry .sigmgr._PF:1 208x315+1280+782
+wm geometry .sigmgr._PF:1 208x315+1280+786
+wm geometry .sigmgr._PF:1 208x315+1280+791
+wm geometry .sigmgr._PF:1 208x315+1280+793
+wm geometry .sigmgr._PF:1 208x315+1280+795
+wm geometry .sigmgr._PF:1 208x315+1245+795
+wm geometry .sigmgr._PF:1 208x315+1235+795
+wm geometry .sigmgr._PF:1 208x315+1225+795
+wm geometry .sigmgr._PF:1 208x315+1214+795
+wm geometry .sigmgr._PF:1 208x315+1188+789
+wm geometry .sigmgr._PF:1 208x315+1175+783
+wm geometry .sigmgr._PF:1 208x315+1153+774
+wm geometry .sigmgr._PF:1 208x315+1130+761
+wm geometry .sigmgr._PF:1 208x315+1080+729
+wm geometry .sigmgr._PF:1 208x315+1068+713
+wm geometry .sigmgr._PF:1 208x315+1036+697
+wm geometry .sigmgr._PF:1 208x315+1018+681
+wm geometry .sigmgr._PF:1 208x315+998+679
+wm geometry .sigmgr._PF:1 208x315+980+650
+wm geometry .sigmgr._PF:1 208x315+944+624
+wm geometry .sigmgr._PF:1 208x315+934+613
+wm geometry .sigmgr._PF:1 208x315+924+606
+wm geometry .sigmgr._PF:1 208x315+908+593
+wm geometry .sigmgr._PF:1 208x315+906+591
+wm geometry .sigmgr._PF:1 208x315+903+588
+wm geometry .sigmgr._PF:1 208x315+901+586
+wm geometry .sigmgr._PF:1 208x315+899+584
+wm geometry .sigmgr._PF:1 208x315+897+583
+wm geometry .sigmgr._PF:1 208x315+896+581
+wm geometry .sigmgr 376x204+2173+130
+wm geometry .sigmgr 376x204+2171+130
+wm geometry .sigmgr 376x204+2168+130
+wm geometry .sigmgr 376x204+2162+130
+wm geometry .sigmgr 376x204+2150+130
+wm geometry .sigmgr 376x204+2138+130
+wm geometry .sigmgr 376x204+2123+130
+wm geometry .sigmgr 376x204+2101+130
+wm geometry .sigmgr 376x204+2078+128
+wm geometry .sigmgr 376x204+2045+128
+wm geometry .sigmgr 376x204+2010+128
+wm geometry .sigmgr 376x204+1974+128
+wm geometry .sigmgr 376x204+1902+128
+wm geometry .sigmgr 376x204+1862+128
+wm geometry .sigmgr 376x204+1828+128
+wm geometry .sigmgr 376x204+1790+133
+wm geometry .sigmgr 376x204+1754+138
+wm geometry .sigmgr 376x204+1710+143
+wm geometry .sigmgr 376x204+1654+149
+wm geometry .sigmgr 376x204+1596+154
+wm geometry .sigmgr 376x204+1536+160
+wm geometry .sigmgr 376x204+1476+166
+wm geometry .sigmgr 376x204+1414+176
+wm geometry .sigmgr 376x204+1351+186
+wm geometry .sigmgr 376x204+1288+196
+wm geometry .sigmgr 376x204+1232+206
+wm geometry .sigmgr 376x204+1176+217
+wm geometry .sigmgr 376x204+1080+231
+wm geometry .sigmgr 376x204+1037+237
+wm geometry .sigmgr 376x204+1002+242
+wm geometry .sigmgr 376x204+973+246
+wm geometry .sigmgr 376x204+945+249
+wm geometry .sigmgr 376x204+900+256
+wm geometry .sigmgr 376x204+852+256
+wm geometry .sigmgr 376x204+831+260
+wm geometry .sigmgr 376x204+809+260
+wm geometry .sigmgr 376x204+788+260
+wm geometry .sigmgr 376x204+767+260
+wm geometry .sigmgr 376x204+724+260
+wm geometry .sigmgr 376x204+702+260
+wm geometry .sigmgr 376x204+680+260
+wm geometry .sigmgr 376x204+658+260
+wm geometry .sigmgr 376x204+635+260
+wm geometry .sigmgr 376x204+613+260
+wm geometry .sigmgr 376x204+588+260
+wm geometry .sigmgr 376x204+562+260
+wm geometry .sigmgr 376x204+539+260
+wm geometry .sigmgr 376x204+517+260
+wm geometry .sigmgr 376x204+497+260
+wm geometry .sigmgr 376x204+480+260
+wm geometry .sigmgr 376x204+463+260
+wm geometry .sigmgr 376x204+450+260
+wm geometry .sigmgr 376x204+437+260
+wm geometry .sigmgr 376x204+432+260
+wm geometry .sigmgr 376x204+430+260
+wm geometry .sigmgr 376x204+428+260
+wm geometry .sigmgr 376x204+427+260
+wm geometry .sigmgr 376x204+426+260
+wm geometry .sigmgr 376x204+425+260
+wm geometry .sigmgr 376x204+424+260
+wm geometry .sigmgr 376x204+422+260
+wm geometry .sigmgr 376x204+421+260
+pf:read PF:1 v(sum_out)
+# WF:1:2
+Graph addsignal WF:1:2 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal8
+Graph axisconfig {AxisY(0,0) AxisY(1,0) AxisY(2,0) AxisY(3,0) AxisX(0) AxisY(4,0)} -range {{0.8895 1.929 } {0.8895 1.929 } {0.8895 1.929 } {0.8895 1.929 } {330n 660n } {0.8895 1.929 }}
+Graph axisconfig {AxisY(0,0) AxisY(1,0) AxisY(2,0) AxisY(3,0) AxisX(0) AxisY(4,0)} -range {{-0.25 2.75 } {-0.25 2.75 } {-0.25 2.75 } {-0.25 2.75 } {100n 900n } {-0.25 2.75 }}
+Graph:DSel
+Graph:Select Graph0
+Graph:DSel
+Graph:DSel
+Graph:DSel
+Graph:DSel
+Graph:DSel
+Graph itemselect Signal0 add
+# Signal0
+Graph itemselect Signal0 rem
+Graph itemselect Signal0 add
+# Signal0
+Graph itemselect Signal1 add
+# Signal1
+Graph itemselect Signal0 rem
+# Signal1
+Graph itemselect Signal1 rem
+Graph itemselect Signal0 add
+# Signal0
+Graph itemselect Signal1 add
+# Signal1
+Graph itemselect Signal2 add
+# Signal2
+Graph itemselect Signal2 add
+# Signal2
+GrXY:CreateBus
+Graph:DSel
+Graph axisconfig {AxisY(0,0) AxisY(1,0) AxisY(2,0) AxisY(3,0) AxisX(0) AxisY(4,0)} -range {{0.32 1.64 } {0.32 1.64 } {0.32 1.64 } {0.32 1.64 } {397n 694n } {0.32 1.64 }}
+Graph axisconfig {AxisY(0,0) AxisY(1,0) AxisY(2,0) AxisY(3,0) AxisX(0) AxisY(4,0)} -range {{0.66 1.32 } {0.66 1.32 } {0.66 1.32 } {0.66 1.32 } {465.5n 581n } {0.66 1.32 }}
+Graph:DSel
+Graph itemselect Signal9 add
+# Signal9
+Graph itemselect Signal9 add
+# Signal9
+Graph sigconfig Signal9 -bus decimal
+Graph:DSel
+Graph:DSel
+pf:read PF:1 carry_out
+# WF:1:1
+Graph addsignal WF:1:1 -region d -yview real(y) -xview real(x) -tracehi 1
+# Signal10
+Graph:Select Graph0
+Graph:DSel
+Graph itemselect Signal10 add
+# Signal10
+Graph sigconfig {Signal10 Signal9} -region {d d} -rgnindex {4 5}
+Graph:DSel
+Graph:DSel
+Graph:DSel
+Graph:DSel
+Graph itemselect Signal9 add
+# Signal9
+Graph delsignal selected
+Graph axisconfig {AxisY(0,0) AxisY(1,0) AxisY(2,0) AxisY(3,0) AxisX(0) AxisY(4,0)} -range {{0.0 2.0 } {0.0 2.0 } {0.0 2.0 } {0.0 2.0 } {375n 675n } {0.0 2.0 }}
+Graph axisconfig {AxisY(0,0) AxisY(1,0) AxisY(2,0) AxisY(3,0) AxisX(0) AxisY(4,0)} -range {{-1.2 3.2 } {-1.2 3.2 } {-1.2 3.2 } {-1.2 3.2 } {175n 875n } {-1.2 3.2 }}
+Graph:DSel
+.frame1.mdi.mdi1.work.graph0 save -file /home/ecegrid/a/559mg3/Adder_Waverforms.png -format png  -x 0 -y 0 -w 1268 -h 795 -colormode color
+Graph:SetCMap 2
+Graph:SetCMap mono
+.frame1.mdi.mdi1.work.graph0 save -file /home/ecegrid/a/559mg3/Adder_waveforms.png -format png  -x 0 -y 0 -w 1268 -h 795 -colormode color

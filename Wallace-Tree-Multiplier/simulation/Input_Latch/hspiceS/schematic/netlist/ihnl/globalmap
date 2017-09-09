@@ -1,0 +1,10 @@
+CADENCE IHNL01060
+$model
+Proj_lib/TSPC_FF_PositiveEdge/schematic sub16
+Proj_lib/Inverter_180nm/schematic Inverter_180nm
+Proj_lib/Input_Latch/schematic Input_Latch
+$endmodel
+$net
+$endnet
+$param
+$endparam

@@ -1,0 +1,4 @@
+#! /bin/csh -f
+# This script can be used to rerun the last simulation
+
+hspice raw/TSPC_FF_PositiveEdge  >../psf/hspice.out

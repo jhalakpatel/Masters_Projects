@@ -1,0 +1,8 @@
+simulator( 'hspiceS )
+design(	 "/home/ecegrid/a/559mg3/cadence/simulation/Input_Latch/hspiceS/schematic/netlist/Input_Latch.C")
+resultsDir( "/home/ecegrid/a/559mg3/cadence/simulation/Input_Latch/hspiceS/schematic" )
+analysis('tran ?from "0n"  ?to "120n"  ?by "1n"  )
+temp( 25 ) 
+run()
+selectResult( 'tran )
+plot(getData("/clk_in_3") getData("/clk_in_4") getData("/clk_in_2") getData("/clk_in_1") getData("/clk") )

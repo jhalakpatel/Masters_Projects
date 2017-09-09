@@ -1,0 +1,48 @@
+header
+"PSFversion" "1.00" 
+"simulator" "HSPICE"
+"version" "E-2010.12-SP2 64-BIT" 
+"rundate" "15:03:43 11/12/2014 " 
+"runtitle" "* # file name: /home/ecegrid/a/559mg3/cadence/simulation/         " 
+"runtype" "logFile"
+TYPE
+"analysisInst" STRUCT(
+"analysisType" STRING *
+"dataFile" STRING *
+"format" STRING *
+"parent" STRING *
+"sweepVariable" ARRAY ( * ) STRING *
+"description" STRING * )
+VALUE
+"opBegin" "analysisInst" ( 
+"Operating Point"
+"Full_Adder_Mirror_StaticCMOS.op0"
+"PSF"
+""
+()
+"Operating Point"
+)
+"timeSweep" "analysisInst" ( 
+"Transient Analysis"
+"Full_Adder_Mirror_StaticCMOS.tr0"
+"PSF"
+""
+()
+"Transient Analysis"
+)
+"opEnd" "analysisInst" ( 
+"Operating Point"
+"Full_Adder_Mirror_StaticCMOS.op0@6e-08"
+"PSF"
+""
+()
+"Operating Point"
+)
+"summary" "analysisInst" ( 
+"Summary Information"
+"Full_Adder_Mirror_StaticCMOS.su0"
+"PSF"
+""
+()
+"Summary Information"
+)

@@ -1,0 +1,117 @@
+Mdi:ArrangeIcons
+wm geometry . 900x785+0+84
+Mdi:ArrangeIcons
+wm geometry . 900x785+18+84
+Mdi:ArrangeIcons
+wm geometry . 900x785+23+84
+Mdi:ArrangeIcons
+wm geometry . 900x785+27+84
+Mdi:ArrangeIcons
+wm geometry . 900x785+33+84
+Mdi:ArrangeIcons
+wm geometry . 900x785+46+84
+Mdi:ArrangeIcons
+wm geometry . 900x785+54+84
+Mdi:ArrangeIcons
+wm geometry . 900x785+65+81
+Mdi:ArrangeIcons
+wm geometry . 900x785+77+81
+Mdi:ArrangeIcons
+wm geometry . 900x785+90+79
+Mdi:ArrangeIcons
+wm geometry . 900x785+100+74
+Mdi:ArrangeIcons
+wm geometry . 900x785+118+72
+Mdi:ArrangeIcons
+wm geometry . 900x785+126+72
+ScopeSigMgr:loadpffile /home/ecegrid/a/559mg3/cadence/simulation/NAND_StaticCMOS/hspiceS/extracted/netlist/nanosim.fsdb 1 openonly
+# PF:1
+pf:read PF:1 a_in
+# WF:1:1
+Graph addsignal WF:1:1 -region d -yview real(y) -xview real(x) -tracehi 1
+# Signal0
+pf:read PF:1 b_in
+# WF:1:2
+Graph addsignal WF:1:2 -region d -yview real(y) -xview real(x) -tracehi 1
+# Signal1
+pf:read PF:1 out_nand21
+# WF:1:3
+Graph addsignal WF:1:3 -region d -yview real(y) -xview real(x) -tracehi 1
+# Signal2
+Mdi:Move 346 87
+Mdi:Move 145 57
+wm geometry .sigmgr 376x204+641+178
+wm geometry .sigmgr 376x204+640+180
+wm geometry .sigmgr 376x204+640+181
+wm geometry .sigmgr 376x204+639+184
+wm geometry .sigmgr 376x204+638+187
+wm geometry .sigmgr 376x204+635+193
+wm geometry .sigmgr 376x204+632+200
+wm geometry .sigmgr 376x204+631+206
+wm geometry .sigmgr 376x204+628+213
+wm geometry .sigmgr 376x204+623+220
+wm geometry .sigmgr 376x204+617+232
+wm geometry .sigmgr 376x204+609+245
+wm geometry .sigmgr 376x204+601+258
+wm geometry .sigmgr 376x204+592+272
+wm geometry .sigmgr 376x204+584+285
+wm geometry .sigmgr 376x204+575+296
+wm geometry .sigmgr 376x204+556+320
+wm geometry .sigmgr 376x204+547+329
+wm geometry .sigmgr 376x204+537+341
+wm geometry .sigmgr 376x204+528+353
+wm geometry .sigmgr 376x204+519+365
+wm geometry .sigmgr 376x204+509+377
+wm geometry .sigmgr 376x204+500+392
+wm geometry .sigmgr 376x204+490+408
+wm geometry .sigmgr 376x204+480+423
+wm geometry .sigmgr 376x204+470+438
+wm geometry .sigmgr 376x204+461+457
+wm geometry .sigmgr 376x204+451+475
+wm geometry .sigmgr 376x204+441+493
+wm geometry .sigmgr 376x204+431+512
+wm geometry .sigmgr 376x204+424+525
+wm geometry .sigmgr 376x204+410+550
+wm geometry .sigmgr 376x204+403+560
+wm geometry .sigmgr 376x204+396+569
+wm geometry .sigmgr 376x204+389+579
+wm geometry .sigmgr 376x204+382+589
+wm geometry .sigmgr 376x204+377+594
+wm geometry .sigmgr 376x204+375+599
+wm geometry .sigmgr 376x204+375+601
+wm geometry .sigmgr 376x204+374+606
+wm geometry .sigmgr 376x204+372+608
+wm geometry .sigmgr 376x204+372+610
+wm geometry .sigmgr 376x204+370+612
+wm geometry .sigmgr 376x204+368+615
+wm geometry .sigmgr 376x204+366+617
+wm geometry .sigmgr 376x204+364+620
+wm geometry .sigmgr 376x204+363+622
+wm geometry .sigmgr 376x204+361+624
+wm geometry .sigmgr 376x204+359+626
+wm geometry .sigmgr 376x204+358+628
+wm geometry .sigmgr 376x204+358+630
+wm geometry .sigmgr 376x204+356+632
+wm geometry .sigmgr 376x204+355+634
+wm geometry .sigmgr 376x204+353+635
+wm geometry .sigmgr 376x204+352+638
+wm geometry .sigmgr 376x204+351+639
+wm geometry .sigmgr 376x204+349+640
+wm geometry .sigmgr 376x204+349+641
+wm geometry .sigmgr 376x204+349+642
+wm geometry .sigmgr 376x204+349+644
+wm geometry .sigmgr 376x204+349+645
+wm geometry .sigmgr 376x204+349+646
+wm geometry .sigmgr 376x204+348+648
+wm geometry .sigmgr 376x204+348+649
+wm geometry .sigmgr 376x204+348+650
+wm geometry .sigmgr 376x204+347+651
+wm geometry .sigmgr 376x204+347+653
+wm geometry .sigmgr 376x204+346+654
+wm geometry .sigmgr 376x204+346+655
+wm geometry .sigmgr 376x204+346+656
+wm geometry .sigmgr 376x204+345+657
+wm geometry .sigmgr 376x204+345+658
+wm geometry .sigmgr 376x204+344+659
+wm geometry .sigmgr 376x204+343+660
+Mdi:FullSize

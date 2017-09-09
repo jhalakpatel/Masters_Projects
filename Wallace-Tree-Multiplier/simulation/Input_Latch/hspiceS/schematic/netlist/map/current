@@ -1,0 +1,28 @@
+( ( nil
+  version "2.1"
+  mapType "incremental"
+  blockName "Input_Latch"
+  repList "hspiceS spice cmos_sch cmos.sch schematic"
+  stopList "hspiceS spice"
+  hierDelim "^"
+  netlistDir "/home/ecegrid/a/559mg3/cadence/simulation/Input_Latch/hspiceS/schematic/netlist"
+ )
+( instViewTable
+ )
+( net
+ )
+( inst
+ )
+( model
+( "Proj_lib/Inverter_180nm/schematic" "Inverter_180nm" )
+( "Proj_lib/TSPC_FF_PositiveEdge/schematic" "sub16" )
+( "Proj_lib/Input_Latch/schematic" "Input_Latch" )
+ )
+( term
+ )
+( param
+ )
+( "Inverter_180nm" "ihnl/cds0/map" )
+( "Input_Latch" "ihnl/cds2/map" )
+( "sub16" "ihnl/cds1/map" )
+ )

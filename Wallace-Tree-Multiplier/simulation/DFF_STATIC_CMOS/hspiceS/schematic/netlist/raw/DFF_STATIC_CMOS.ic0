@@ -1,0 +1,29 @@
+* "simulator" "HSPICE" 
+* "version" "E-2010.12-SP2 64-BIT"
+* "format" "HSP"
+* "rundate" "20:57:59 11/26/2014 "
+* "netlist" "raw/DFF_STATIC_CMOS "
+* "runtitle" "* # file name: /home/ecegrid/a/559mg3/cadence/simulation/dff_static_cm"
+* time =  0.000e+00       
+* temperature =  2.500e+01       
+*** BEGIN: Saved Operating Point ***                     
+.option 
++ gmindc= 1.000e-12       
+.nodeset
++ clk = 0.000e+00       
++ d_in = 0.000e+00       
++ gd = 0.000e+00       
++ net040 = 1.800e+00       
++ net11 = 1.800e+00       
++ net14 = 2.400e-08       
++ net17 = 1.800e+00       
++ q_bar_out = 1.800e+00       
++ q_out = 9.077e-09       
++ vd = 1.800e+00       
++ xi4^net13 = 1.800e+00       
++ xi3^net13 = 1.765e+00       
++ xi1^net18 = 1.800e+00       
++ xi1^net6 = 7.162e-09       
++ xi0^net18 = 9.601e-08       
++ xi0^net6 = 4.800e-08       
+***   END: Saved Operating Point ***                     

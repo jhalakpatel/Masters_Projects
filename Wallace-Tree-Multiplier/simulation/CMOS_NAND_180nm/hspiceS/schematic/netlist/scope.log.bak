@@ -1,0 +1,103 @@
+Mdi:ArrangeIcons
+wm geometry . 900x785+0+84
+Mdi:ArrangeIcons
+wm geometry . 900x785+2+84
+Mdi:ArrangeIcons
+wm geometry . 900x785+33+84
+Mdi:ArrangeIcons
+wm geometry . 900x785+46+84
+Mdi:ArrangeIcons
+wm geometry . 900x785+78+84
+Mdi:ArrangeIcons
+wm geometry . 900x785+116+82
+Mdi:ArrangeIcons
+wm geometry . 900x785+123+80
+Mdi:ArrangeIcons
+wm geometry . 900x785+124+79
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+ScopeSigMgr:loadpffile /home/ecegrid/a/559mg3/cadence/simulation/CMOS_NAND_180nm/hspiceS/schematic/netlist/nanosim.fsdb 1 openonly
+# PF:1
+pf:read PF:1 out
+# WF:1:1
+Graph addsignal WF:1:1 -region d -yview real(y) -xview real(x) -tracehi 1
+# Signal0
+pf:read PF:1 b
+# WF:1:2
+Graph addsignal WF:1:2 -region d -yview real(y) -xview real(x) -tracehi 1
+# Signal1
+pf:read PF:1 a
+# WF:1:3
+Graph addsignal WF:1:3 -region d -yview real(y) -xview real(x) -tracehi 1
+# Signal2
+pf:read PF:1 v(a)
+# WF:1:4
+Graph addsignal WF:1:4 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal3
+pf:read PF:1 v(b)
+# WF:1:5
+Graph addsignal WF:1:5 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal4
+pf:read PF:1 v(out)
+# WF:1:6
+Graph addsignal WF:1:6 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal5
+Mdi:FullSize
+wm geometry .sigmgr 376x204+639+185
+wm geometry .sigmgr 376x204+638+186
+wm geometry .sigmgr 376x204+638+187
+wm geometry .sigmgr 376x204+638+188
+wm geometry .sigmgr 376x204+638+190
+wm geometry .sigmgr 376x204+638+191
+wm geometry .sigmgr 376x204+638+192
+wm geometry .sigmgr 376x204+638+194
+wm geometry .sigmgr 376x204+638+197
+wm geometry .sigmgr 376x204+638+201
+wm geometry .sigmgr 376x204+638+207
+wm geometry .sigmgr 376x204+642+214
+wm geometry .sigmgr 376x204+648+223
+wm geometry .sigmgr 376x204+653+232
+wm geometry .sigmgr 376x204+659+243
+wm geometry .sigmgr 376x204+664+255
+wm geometry .sigmgr 376x204+672+267
+wm geometry .sigmgr 376x204+680+280
+wm geometry .sigmgr 376x204+688+293
+wm geometry .sigmgr 376x204+696+303
+wm geometry .sigmgr 376x204+705+315
+wm geometry .sigmgr 376x204+717+327
+wm geometry .sigmgr 376x204+738+345
+wm geometry .sigmgr 376x204+767+367
+wm geometry .sigmgr 376x204+797+391
+wm geometry .sigmgr 376x204+827+415
+wm geometry .sigmgr 376x204+861+439
+wm geometry .sigmgr 376x204+892+457
+wm geometry .sigmgr 376x204+900+475
+wm geometry .sigmgr 376x204+947+490
+wm geometry .sigmgr 376x204+997+512
+wm geometry .sigmgr 376x204+1023+535
+wm geometry .sigmgr 376x204+1052+550
+wm geometry .sigmgr 376x204+1085+566
+wm geometry .sigmgr 376x204+1115+578
+wm geometry .sigmgr 376x204+1145+591
+wm geometry .sigmgr 376x204+1168+600
+wm geometry .sigmgr 376x204+1191+609
+wm geometry .sigmgr 376x204+1214+617
+wm geometry .sigmgr 376x204+1229+621
+wm geometry .sigmgr 376x204+1239+623
+wm geometry .sigmgr 376x204+1250+626
+wm geometry .sigmgr 376x204+1257+626
+wm geometry .sigmgr 376x204+1262+626
+wm geometry .sigmgr 376x204+1264+626
+wm geometry .sigmgr 376x204+1280+626
+wm geometry .sigmgr 376x204+1280+625
+wm geometry .sigmgr 376x204+1280+623
+Mdi:ArrangeIcons
+wm geometry . 1280x969+0+0
+Graph axisconfig {AxisX(0) AxisY(0,0) AxisY(1,0) AxisY(2,0)} -range {{330n 660n } {0.7825 1.69 } {0.7825 1.69 } {0.7825 1.69 }}
+Graph axisconfig {AxisX(0) AxisY(0,0) AxisY(1,0) AxisY(2,0)} -range {all all all all} -zoomed {0 0 0 0}
+.frame1.mdi.mdi1.work.graph0 save -file /home/ecegrid/a/559mg3/cadence/simulation/CMOS_NAND_180nm/hspiceS/schematic/netlist/nanosim_schematic_graph.png -format png  -x 0 -y 0 -w 1268 -h 845 -colormode color

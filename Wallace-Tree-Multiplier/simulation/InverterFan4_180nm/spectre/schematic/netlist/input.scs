@@ -1,0 +1,44 @@
+// Generated for: spectre
+// Generated on: Oct 29 18:15:06 2014
+// Design library name: hw1
+// Design cell name: InverterFan4_180nm
+// Design view name: schematic
+simulator lang=spectre
+global 0 vdd!
+
+// Library name: hw1
+// Cell name: Inverter_180nm
+// View name: schematic
+subckt Inverter_180nm In Out
+    P0 (Out In vdd! vdd!) tsmc18dP w=810.0n l=180.0n as=3.645e-13 \
+        ad=3.645e-13 ps=2.52u pd=2.52u m=1 region=sat
+    N0 (Out In 0 0) tsmc18dN w=270.0n l=180.0n as=1.215e-13 ad=1.215e-13 \
+        ps=1.44u pd=1.44u m=1 region=sat
+ends Inverter_180nm
+// End of subcircuit definition.
+
+// Library name: hw1
+// Cell name: InverterFan4_180nm
+// View name: schematic
+I4 (Out_inv Out\<3\>) Inverter_180nm
+I3 (Out_inv Out\<2\>) Inverter_180nm
+I2 (Out_inv Out\<1\>) Inverter_180nm
+I1 (Out_inv Out\<0\>) Inverter_180nm
+I0 (In Out_inv) Inverter_180nm
+include "./_graphical_stimuli.scs"
+simulatorOptions options reltol=1e-3 vabstol=1e-6 iabstol=1e-12 temp=27 \
+    tnom=27 scalem=1.0 scale=1.0 gmin=1e-12 rforce=1 maxnotes=5 maxwarns=5 \
+    digits=5 cols=80 pivrel=1e-3 sensfile="../psf/sens.output" \
+    checklimitdest=psf 
+tran tran stop=10u write="spectre.ic" writefinal="spectre.fc" \
+    annotate=status maxiters=5 
+finalTimeOP info what=oppoint where=rawfile
+dcOp dc write="spectre.dc" maxiters=150 maxsteps=10000 annotate=status
+dcOpInfo info what=oppoint where=rawfile
+modelParameter info what=models where=rawfile
+element info what=inst where=rawfile
+outputParameter info what=output where=rawfile
+designParamVals info what=parameters where=rawfile
+primitives info what=primitives where=rawfile
+subckts info what=subckts  where=rawfile
+saveOptions options save=allpub pwr=all currents=all

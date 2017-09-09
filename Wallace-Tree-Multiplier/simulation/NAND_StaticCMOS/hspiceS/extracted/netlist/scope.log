@@ -1,0 +1,70 @@
+Mdi:ArrangeIcons
+wm geometry . 900x785+1+85
+Mdi:ArrangeIcons
+wm geometry . 900x785+1+86
+Mdi:ArrangeIcons
+wm geometry . 900x785+1+88
+Mdi:ArrangeIcons
+wm geometry . 900x785+19+89
+Mdi:ArrangeIcons
+wm geometry . 900x785+23+89
+Mdi:ArrangeIcons
+wm geometry . 900x785+27+91
+Mdi:ArrangeIcons
+wm geometry . 900x785+28+91
+Mdi:ArrangeIcons
+wm geometry . 900x785+32+91
+Mdi:ArrangeIcons
+wm geometry . 900x785+44+93
+Mdi:ArrangeIcons
+wm geometry . 900x785+50+93
+Mdi:ArrangeIcons
+wm geometry . 900x785+56+94
+Mdi:ArrangeIcons
+wm geometry . 900x785+63+94
+Mdi:ArrangeIcons
+wm geometry . 900x785+82+94
+Mdi:ArrangeIcons
+wm geometry . 900x785+95+94
+Mdi:ArrangeIcons
+wm geometry . 900x785+108+94
+Mdi:ArrangeIcons
+wm geometry . 900x785+128+94
+Mdi:ArrangeIcons
+wm geometry . 900x785+138+94
+Mdi:ArrangeIcons
+wm geometry . 900x785+148+94
+Mdi:ArrangeIcons
+wm geometry . 900x785+158+94
+Mdi:ArrangeIcons
+wm geometry . 900x785+174+94
+Mdi:ArrangeIcons
+wm geometry . 900x785+180+94
+Mdi:ArrangeIcons
+wm geometry . 900x785+190+94
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+wm geometry . 900x785+192+94
+Mdi:ArrangeIcons
+wm geometry . 900x785+193+94
+Mdi:ArrangeIcons
+wm geometry . 900x785+196+94
+Mdi:ArrangeIcons
+wm geometry . 900x785+198+93
+Mdi:ArrangeIcons
+wm geometry . 900x785+199+93
+ScopeSigMgr:loadpffile /home/ecegrid/a/559mg3/cadence/simulation/NAND_StaticCMOS/hspiceS/extracted/netlist/nanosim.fsdb 1 openonly
+# PF:1
+pf:read PF:1 out_nand21
+# WF:1:1
+Graph addsignal WF:1:1 -region d -yview real(y) -xview real(x) -tracehi 1
+# Signal0
+pf:read PF:1 b_in
+# WF:1:2
+Graph addsignal WF:1:2 -region d -yview real(y) -xview real(x) -tracehi 1
+# Signal1
+pf:read PF:1 a_in
+# WF:1:3
+Graph addsignal WF:1:3 -region d -yview real(y) -xview real(x) -tracehi 1
+# Signal2
+Mdi:FullSize

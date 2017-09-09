@@ -1,0 +1,10 @@
+HEADER
+"PSFversion" "1.00"
+"design" "(\"Proj_lib\" \"FF_Positive_edge\" \"extracted\" \"\")"
+"simulator" "hspiceS"
+"temperature" "25"
+"host" ""
+"date" "Nov 25 23:05:16 2014"
+"title" ""
+"analysisList" "()"
+END

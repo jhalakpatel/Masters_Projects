@@ -1,0 +1,8 @@
+simulator( 'hspiceS )
+design(	 "/home/ecegrid/a/559mg3/cadence/simulation/Doubled_C2MOS_Latch/hspiceS/schematic/netlist/Doubled_C2MOS_Latch.C")
+resultsDir( "/home/ecegrid/a/559mg3/cadence/simulation/Doubled_C2MOS_Latch/hspiceS/schematic" )
+analysis('tran ?from "0n"  ?to "60n"  ?by "1n"  )
+temp( 25 ) 
+run()
+selectResult( 'tran )
+plot(getData("/GD") getData("/VD") getData("/clk") getData("/D_in") getData("/Q_OUT") )

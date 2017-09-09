@@ -1,0 +1,8 @@
+CADENCE IHNL01066
+
+Proj_lib Inverter_180nm schematic cds0
+Proj_lib OR21_StaticCMOS schematic cds1
+Proj_lib AND21_StaticCMOS schematic cds2
+Proj_lib XOR21_StaticCMOS schematic cds3
+Proj_lib HALF_ADDER_22_STATIC_CMOS schematic cds4
+Proj_lib FULL_ADDER_32_STATIC_CMOS schematic cds5

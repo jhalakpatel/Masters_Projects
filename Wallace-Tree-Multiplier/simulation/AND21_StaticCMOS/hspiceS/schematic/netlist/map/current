@@ -1,0 +1,28 @@
+( ( nil
+  version "2.1"
+  mapType "incremental"
+  blockName "AND21_StaticCMOS"
+  repList "hspiceS spice cmos_sch cmos.sch schematic"
+  stopList "hspiceS spice"
+  globalList "gnd! vdd!"
+  hierDelim "^"
+  netlistDir "/home/ecegrid/a/559mg3/cadence/simulation/AND21_StaticCMOS/hspiceS/schematic/netlist"
+ )
+( instViewTable
+ )
+( net
+ )
+( inst
+ )
+( model
+( "Proj_lib/Inverter_180nm/schematic" "Inverter_180nm" )
+( "gnd!" "0" )
+( "Proj_lib/AND21_StaticCMOS/schematic" "AND21_StaticCMOS" )
+ )
+( term
+ )
+( param
+ )
+( "Inverter_180nm" "ihnl/cds0/map" )
+( "AND21_StaticCMOS" "ihnl/cds1/map" )
+ )

@@ -1,0 +1,22 @@
+( ( nil
+  version "2.1"
+  mapType "incremental"
+  repList "hspiceS spice cmos_sch cmos.sch schematic"
+  stopList "hspiceS spice"
+  hierDelim "^"
+ )
+( net
+( "Q_BAR_OUT_DFF_MS_CVSL" "1" )
+( "gnd!" "0" )
+( "Q_OUT_DFF_MS_CVSL" "2" )
+( "vdd!" "vdd!" )
+ )
+( inst
+ )
+( model
+ )
+( term
+ )
+( param
+ )
+ )

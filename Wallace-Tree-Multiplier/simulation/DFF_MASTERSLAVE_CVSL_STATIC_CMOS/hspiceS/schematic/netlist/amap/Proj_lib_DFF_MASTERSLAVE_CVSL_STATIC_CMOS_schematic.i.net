@@ -1,0 +1,13 @@
+HEADER
+"PSFversion" "1.00"
+"net74v" "net74"
+"net82v" "net82"
+"net112v" "net112"
+"net090v" "net090"
+"net86v" "net86"
+"net84v" "net84"
+"net105v" "net105"
+"D_INv" "D_IN"
+"1v" "Q_BAR_OUT_DFF_MS_CVSL"
+"2v" "Q_OUT_DFF_MS_CVSL"
+"CLKv" "CLK"

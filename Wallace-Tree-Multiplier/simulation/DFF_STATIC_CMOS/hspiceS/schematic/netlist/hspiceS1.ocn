@@ -1,0 +1,8 @@
+simulator( 'hspiceS )
+design(	 "/home/ecegrid/a/559mg3/cadence/simulation/DFF_STATIC_CMOS/hspiceS/schematic/netlist/DFF_STATIC_CMOS.C")
+resultsDir( "/home/ecegrid/a/559mg3/cadence/simulation/DFF_STATIC_CMOS/hspiceS/schematic" )
+analysis('tran ?from "0n"  ?to "120n"  ?by "1n"  )
+temp( 25 ) 
+run()
+selectResult( 'tran )
+plot(getData("/CLK") getData("/D_IN") getData("/Q_OUT") )

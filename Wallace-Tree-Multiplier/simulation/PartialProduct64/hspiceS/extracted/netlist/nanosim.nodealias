@@ -1,0 +1,30 @@
+;! nodealias_format 5.3
+; --------------------------------------------------------
+;|                                                        |
+;|           NanoSim Version G-2012.06 (RHEL64)           |
+;| Copyright (c) 2012 Synopsys Inc., All Rights Reserved. |
+;|                                                        |
+; --------------------------------------------------------
+;
+;Built by nsmgr   on Fri May 18 18:17:12 PDT 2012
+; Fri Dec  5 22:15:41 EST 2014
+; Machine Name: ecegrid-thin6.ecn.purdue.edu
+; 
+; A node (net) in a circuit can have alias node names because:
+; 1. there are hierarchical alias names from instances of subcircuits;
+; 2. the very small resistors are shorted;
+; 3. there are DC voltage sources of 0 Volt connected to the node;
+; 4. the node is replaced by the back-annotated RC network;
+; 5. the RC network is reduced.
+;
+; The following node names specified in the spice netlists, spf files,
+; or config commands are not primary names. Their primary names are
+; printed for cross reference in the following syntax:
+;
+;     <primary node_name>  <the alias node name>
+;
+; The first field of each line is the primary node name picked by the
+; netlist parser and the second field is the original node name used
+; in the spice netlists, spf files or config commands.
+;
+;

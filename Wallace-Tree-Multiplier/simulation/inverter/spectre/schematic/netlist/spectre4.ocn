@@ -1,0 +1,30 @@
+simulator( 'spectre )
+design(	 "/home/ecegrid/a/559mg3/cadence/simulation/Inverter/spectre/schematic/netlist/netlist")
+resultsDir( "/home/ecegrid/a/559mg3/cadence/simulation/Inverter/spectre/schematic" )
+analysis('dc ?saveOppoint t  )
+analysis('tran ?stop "10u"  )
+saveOption( 'pwr "all" )
+temp( 27 ) 
+run()
+modelFile( 
+    '("/home/ecegrid/a/559mg3/MOS_DESIGN_LAB/home_work/cds.lib" "")
+)
+run()
+modelFile( 
+    '("/home/ecegrid/a/559mg3/MOS_DESIGN_LAB/home_work/cds.lib" "")
+)
+run()
+modelFile( 
+    '("/home/ecegrid/a/559mg3/MOS_DESIGN_LAB/cds.lib" "")
+)
+run()
+modelFile( 
+    '("/package/eda/cells/ncsu-cdk-1.5.1/local/models/hspice/public/publicModel/tsmc18dP" "")
+    '("/package/eda/cells/ncsu-cdk-1.5.1/local/models/hspice/public/publicModel/tsmc18dN" "")
+)
+run()
+modelFile( 
+    '("/package/eda/cells/ncsu-cdk-1.5.1/local/models/hspice/public/publicModel/tsmc18dP" "")
+    '("/package/eda/cells/ncsu-cdk-1.5.1/local/models/hspice/public/publicModel/tsmc18dN" "")
+)
+run()

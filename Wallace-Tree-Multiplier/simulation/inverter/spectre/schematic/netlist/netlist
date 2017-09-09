@@ -1,0 +1,8 @@
+
+// Library name: hw1
+// Cell name: Inverter
+// View name: schematic
+P0 (OUT IN vdd! vdd!) tsmc18dP w=900n l=180.0n as=4.05e-13 ad=4.05e-13 \
+        ps=2.7u pd=2.7u m=1 region=sat
+N1 (OUT IN 0 0) tsmc18dN w=360.0n l=180.0n as=1.62e-13 ad=1.62e-13 \
+        ps=1.62u pd=1.62u m=1 region=sat

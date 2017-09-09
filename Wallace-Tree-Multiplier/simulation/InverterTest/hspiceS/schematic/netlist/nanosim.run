@@ -1,0 +1,2 @@
+cd /home/ecegrid/a/559mg3/cadence/simulation/InverterTest/hspiceS/schematic/netlist
+nanosim  -nspice ./nanosim.sp -nvec ./nanosim.vec -C ./nanosim.cfg -o ./nanosim 

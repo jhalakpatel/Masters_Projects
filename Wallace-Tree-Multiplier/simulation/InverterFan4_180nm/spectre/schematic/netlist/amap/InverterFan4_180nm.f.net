@@ -1,0 +1,10 @@
+HEADER
+"PSFversion" "1.00"
+"Out<0>v" "Out\\<0\\>"
+"Out<1>v" "Out\\<1\\>"
+"Out<2>v" "Out\\<2\\>"
+"Out<3>v" "Out\\<3\\>"
+"Inv" "In"
+"Out_invv" "Out_inv"
+"gnd!v" "0"
+"vdd!v" "vdd!"

@@ -1,0 +1,12 @@
+/package/eda/synopsys/ns-G-2012.06/amd64/ns/exec//gentech -f hspice64 -i ./tt_tech_tsmc18dp p 1.62 0.18 2 -y tsmc18dp -q -s 
+ --------------------------------------------------------
+|                                                        |
+|           GENTECH Version G-2012.06 (RHEL64)           |
+| Copyright (c) 2012 Synopsys Inc., All Rights Reserved. |
+|                                                        |
+ --------------------------------------------------------
+
+Built by nsmgr   on Fri May 18 18:04:57 PDT 2012
+
+technology.prm is up to date...
+gentech: Finished successfully...

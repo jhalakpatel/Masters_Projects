@@ -1,0 +1,36 @@
+( ( nil
+  version "2.1"
+  mapType "incremental"
+  blockName "Decoder"
+  repList "hspiceS spice cmos_sch cmos.sch schematic"
+  stopList "hspiceS spice"
+  hierDelim "^"
+  netlistDir "/home/ecegrid/a/559mg3/cadence/simulation/Decoder/hspiceS/schematic/netlist"
+ )
+( instViewTable
+ )
+( net
+ )
+( inst
+ )
+( model
+( "Proj_lib/XOR21_StaticCMOS/schematic" "XOR21_StaticCMOS" )
+( "Proj_lib/DFF_STATIC_CMOS/schematic" "DFF_STATIC_CMOS" )
+( "Proj_lib/Inverter_180nm/schematic" "Inverter_180nm" )
+( "Proj_lib/AND21_StaticCMOS/schematic" "AND21_StaticCMOS" )
+( "Proj_lib/FF_Positive_edge/schematic" "FF_Positive_edge" )
+( "Proj_lib/Decoder/schematic" "Decoder" )
+( "Proj_lib/NAND_StaticCMOS/schematic" "NAND_StaticCMOS" )
+ )
+( term
+ )
+( param
+ )
+( "FF_Positive_edge" "ihnl/cds3/map" )
+( "DFF_STATIC_CMOS" "ihnl/cds2/map" )
+( "Inverter_180nm" "ihnl/cds1/map" )
+( "XOR21_StaticCMOS" "ihnl/cds5/map" )
+( "Decoder" "ihnl/cds6/map" )
+( "AND21_StaticCMOS" "ihnl/cds4/map" )
+( "NAND_StaticCMOS" "ihnl/cds0/map" )
+ )

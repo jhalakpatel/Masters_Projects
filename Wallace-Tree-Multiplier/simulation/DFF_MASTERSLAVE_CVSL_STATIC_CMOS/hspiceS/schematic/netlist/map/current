@@ -1,0 +1,28 @@
+( ( nil
+  version "2.1"
+  mapType "incremental"
+  blockName "DFF_MASTERSLAVE_CVSL_STATIC_CMOS"
+  repList "hspiceS spice cmos_sch cmos.sch schematic"
+  stopList "hspiceS spice"
+  globalList "gnd! vdd!"
+  hierDelim "^"
+  netlistDir "/home/ecegrid/a/559mg3/cadence/simulation/DFF_MASTERSLAVE_CVSL_STATIC_CMOS/hspiceS/schematic/netlist"
+ )
+( instViewTable
+ )
+( net
+ )
+( inst
+ )
+( model
+( "Proj_lib/Inverter_180nm/schematic" "Inverter_180nm" )
+( "gnd!" "0" )
+( "Proj_lib/DFF_MASTERSLAVE_CVSL_STATIC_CMOS/schematic" "sub2" )
+ )
+( term
+ )
+( param
+ )
+( "Inverter_180nm" "ihnl/cds0/map" )
+( "sub2" "ihnl/cds1/map" )
+ )

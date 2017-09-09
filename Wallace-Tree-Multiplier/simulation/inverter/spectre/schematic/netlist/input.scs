@@ -1,0 +1,34 @@
+// Generated for: spectre
+// Generated on: Oct 29 18:49:45 2014
+// Design library name: hw1
+// Design cell name: Inverter
+// Design view name: schematic
+simulator lang=spectre
+global 0 vdd!
+include "/package/eda/cells/ncsu-cdk-1.5.1/local/models/hspice/public/publicModel/tsmc18dP"
+include "/package/eda/cells/ncsu-cdk-1.5.1/local/models/hspice/public/publicModel/tsmc18dN"
+
+// Library name: hw1
+// Cell name: Inverter
+// View name: schematic
+P0 (OUT IN vdd! vdd!) tsmc18dP w=900n l=180.0n as=4.05e-13 ad=4.05e-13 \
+        ps=2.7u pd=2.7u m=1 region=sat
+N1 (OUT IN 0 0) tsmc18dN w=360.0n l=180.0n as=1.62e-13 ad=1.62e-13 \
+        ps=1.62u pd=1.62u m=1 region=sat
+include "./_graphical_stimuli.scs"
+simulatorOptions options reltol=1e-3 vabstol=1e-6 iabstol=1e-12 temp=27 \
+    tnom=27 scalem=1.0 scale=1.0 gmin=1e-12 rforce=1 maxnotes=5 maxwarns=5 \
+    digits=5 cols=80 pivrel=1e-3 sensfile="../psf/sens.output" \
+    checklimitdest=psf 
+tran tran stop=10u write="spectre.ic" writefinal="spectre.fc" \
+    annotate=status maxiters=5 
+finalTimeOP info what=oppoint where=rawfile
+dcOp dc write="spectre.dc" maxiters=150 maxsteps=10000 annotate=status
+dcOpInfo info what=oppoint where=rawfile
+modelParameter info what=models where=rawfile
+element info what=inst where=rawfile
+outputParameter info what=output where=rawfile
+designParamVals info what=parameters where=rawfile
+primitives info what=primitives where=rawfile
+subckts info what=subckts  where=rawfile
+saveOptions options save=allpub pwr=all

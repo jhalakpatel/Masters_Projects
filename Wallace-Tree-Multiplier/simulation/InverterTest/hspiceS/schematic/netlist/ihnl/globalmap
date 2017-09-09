@@ -1,0 +1,11 @@
+CADENCE IHNL01060
+$model
+jhalak_lib/InverterTest/schematic InverterTest
+jhalak_lib/inverterp/schematic inverterp
+$endmodel
+$net
+vdd! vdd!
+gnd! 0
+$endnet
+$param
+$endparam

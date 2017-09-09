@@ -1,0 +1,88 @@
+Mdi:ArrangeIcons
+ScopeSigMgr:loadpffile /home/ecegrid/a/559mg3/cadence/simulation/CMOS_NAND_180nm/hspiceS/schematic/netlist/nanosim.fsdb 1 openonly
+# PF:1
+pf:read PF:1 a
+# WF:1:1
+Graph addsignal WF:1:1 -region d -yview real(y) -xview real(x) -tracehi 1
+# Signal0
+pf:read PF:1 b
+# WF:1:2
+Graph addsignal WF:1:2 -region d -yview real(y) -xview real(x) -tracehi 1
+# Signal1
+pf:read PF:1 out
+# WF:1:3
+Graph addsignal WF:1:3 -region d -yview real(y) -xview real(x) -tracehi 1
+# Signal2
+pf:read PF:1 v(a)
+# WF:1:4
+Graph addsignal WF:1:4 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal3
+pf:read PF:1 v(b)
+# WF:1:5
+Graph addsignal WF:1:5 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal4
+pf:read PF:1 v(out)
+# WF:1:6
+Graph addsignal WF:1:6 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal5
+Mdi:FullSize
+Graph:SetCMap 2
+.frame1.mdi.mdi1.work.graph0 save -file /home/ecegrid/a/559mg3/GRAPHS/NAND_SCHEMATIC_GRAPH.png -format png  -x 0 -y 0 -w 888 -h 661 -colormode color
+Mdi:ArrangeIcons
+wm geometry . 900x785+261+90
+Mdi:ArrangeIcons
+wm geometry . 900x785+225+95
+Mdi:ArrangeIcons
+wm geometry . 900x785+18+144
+Mdi:ArrangeIcons
+wm geometry . 900x785+-49+155
+Mdi:ArrangeIcons
+wm geometry . 900x785+-85+250
+Mdi:ArrangeIcons
+wm geometry . 900x785+-87+273
+Mdi:ArrangeIcons
+wm geometry . 900x785+-87+288
+Mdi:ArrangeIcons
+wm geometry . 900x785+-87+334
+Mdi:ArrangeIcons
+wm geometry . 900x785+-87+377
+Mdi:ArrangeIcons
+wm geometry . 900x785+-87+379
+Mdi:ArrangeIcons
+wm geometry . 900x785+-87+381
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+wm geometry . 900x785+-87+379
+Mdi:ArrangeIcons
+wm geometry . 900x785+-104+367
+Mdi:ArrangeIcons
+wm geometry . 900x785+-126+343
+Mdi:ArrangeIcons
+wm geometry . 900x785+-172+297
+Mdi:ArrangeIcons
+wm geometry . 900x785+-204+265
+Mdi:ArrangeIcons
+wm geometry . 900x785+-205+263
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+ScopeSigMgr:Unload 0 {{(1) nanosim.fsdb}}
+Graph0 delsignal Signal0
+Graph0 delsignal Signal1
+Graph0 delsignal Signal2
+Graph0 delsignal Signal3
+Graph0 delsignal Signal4
+Graph0 delsignal Signal5

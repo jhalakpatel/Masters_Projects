@@ -1,0 +1,4 @@
+simulator( 'hspiceS )
+createFinalNetlist()
+createFinalNetlist()
+createFinalNetlist()

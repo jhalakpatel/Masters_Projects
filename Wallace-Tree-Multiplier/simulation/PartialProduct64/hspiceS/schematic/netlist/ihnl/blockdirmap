@@ -1,0 +1,13 @@
+CADENCE IHNL010611
+
+Proj_lib Inverter_180nm schematic cds0
+Proj_lib TSPC_FF_PositiveEdge schematic cds1
+Proj_lib HALF_ADDER_22_STATIC_CMOS schematic cds2
+Proj_lib Full_Adder_Mirror_StaticCMOS schematic cds3
+Proj_lib AND21_StaticCMOS schematic cds4
+Proj_lib Doubled_C2MOS_Latch schematic cds5
+Proj_lib NAND_StaticCMOS schematic cds6
+Proj_lib XOR21_StaticCMOS schematic cds7
+Proj_lib Decoder schematic cds8
+Proj_lib RIPPLE_CARRY_ADDER schematic cds9
+Proj_lib PartialProduct64 schematic cds10

@@ -1,0 +1,20 @@
+( ( nil
+  version "2.1"
+  mapType "incremental"
+  repList "hspiceS spice cmos_sch cmos.sch schematic"
+  stopList "hspiceS spice"
+  hierDelim "^"
+ )
+( net
+( "C_OUT_FULL_ADDER32" "1" )
+( "S_OUT_FULL_ADDER32" "2" )
+ )
+( inst
+ )
+( model
+ )
+( term
+ )
+( param
+ )
+ )

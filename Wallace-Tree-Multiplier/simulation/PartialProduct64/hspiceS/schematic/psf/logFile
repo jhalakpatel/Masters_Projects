@@ -1,0 +1,32 @@
+header
+"PSFversion" "1.00" 
+"simulator" "HSPICE"
+"version" "E-2010.12-SP2 64-BIT" 
+"rundate" "17:35:31 11/27/2014 " 
+"runtitle" "* # file name: /home/ecegrid/a/559mg3/cadence/simulation/partialpr" 
+"runtype" "logFile"
+TYPE
+"analysisInst" STRUCT(
+"analysisType" STRING *
+"dataFile" STRING *
+"format" STRING *
+"parent" STRING *
+"sweepVariable" ARRAY ( * ) STRING *
+"description" STRING * )
+VALUE
+"opBegin" "analysisInst" ( 
+"Operating Point"
+"PartialProduct64.op0"
+"PSF"
+""
+()
+"Operating Point"
+)
+"summary" "analysisInst" ( 
+"Summary Information"
+"PartialProduct64.su0"
+"PSF"
+""
+()
+"Summary Information"
+)

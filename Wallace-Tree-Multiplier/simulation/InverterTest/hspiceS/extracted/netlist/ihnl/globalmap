@@ -1,0 +1,8 @@
+CADENCE IHNL01060
+$model
+hw1/InverterTest/extracted InverterTest
+$endmodel
+$net
+$endnet
+$param
+$endparam

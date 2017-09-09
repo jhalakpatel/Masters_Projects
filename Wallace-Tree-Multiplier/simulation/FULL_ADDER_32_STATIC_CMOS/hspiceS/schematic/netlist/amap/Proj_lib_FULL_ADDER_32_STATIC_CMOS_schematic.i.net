@@ -1,0 +1,10 @@
+HEADER
+"PSFversion" "1.00"
+"C_INv" "C_IN"
+"net15v" "net15"
+"net16v" "net16"
+"B_INv" "B_IN"
+"A_INv" "A_IN"
+"net6v" "net6"
+"1v" "C_OUT_FULL_ADDER32"
+"2v" "S_OUT_FULL_ADDER32"

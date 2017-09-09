@@ -1,0 +1,21 @@
+* # File name: /home/ecegrid/a/559mg3/cadence/simulation/Inverter/hspiceS/
+# schematic/netlist/Inverter.C.raw
+# Netlist output for hspiceS.
+# Generated on Oct 24 23:56:46 2014
+
+# global net definitions
+.GLOBAL vdd!
+USE hw1_Inverter_schematic
+
+
+USEM tsmc18dP tsmc18dP
+USEM tsmc18dN tsmc18dN
+
+# Include files
+
+
+
+
+
+
+# End of Netlist

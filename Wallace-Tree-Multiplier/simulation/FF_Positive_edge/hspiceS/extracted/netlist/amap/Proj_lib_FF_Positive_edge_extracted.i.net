@@ -1,0 +1,13 @@
+HEADER
+"PSFversion" "1.00"
+"D_INv" "D_IN"
+"clkv" "clk"
+"VDv" "VD"
+"Q_OUTv" "Q_OUT"
+"GDv" "GD"
+"1v" "6"
+"2v" "7"
+"3v" "8"
+"4v" "9"
+"5v" "10"
+"11v" "11"

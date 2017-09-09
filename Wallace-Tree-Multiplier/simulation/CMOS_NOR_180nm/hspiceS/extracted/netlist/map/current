@@ -1,0 +1,24 @@
+( ( nil
+  version "2.1"
+  mapType "incremental"
+  blockName "CMOS_NOR_180nm"
+  repList "hspiceS spice cmos_sch cmos.sch schematic"
+  stopList "hspiceS spice"
+  hierDelim "^"
+  netlistDir "/home/ecegrid/a/559mg3/cadence/simulation/CMOS_NOR_180nm/hspiceS/extracted/netlist"
+ )
+( instViewTable
+ )
+( net
+ )
+( inst
+ )
+( model
+( "hw1/CMOS_NOR_180nm/extracted" "CMOS_NOR_180nm" )
+ )
+( term
+ )
+( param
+ )
+( "CMOS_NOR_180nm" "ihnl/cds0/map" )
+ )

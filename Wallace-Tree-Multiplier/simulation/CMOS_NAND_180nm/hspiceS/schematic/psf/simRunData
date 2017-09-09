@@ -1,0 +1,10 @@
+HEADER
+"PSFversion" "1.00"
+"design" "(\"hw1\" \"CMOS_NAND_180nm\" \"schematic\" \"\")"
+"simulator" "hspiceS"
+"temperature" "25"
+"host" ""
+"date" "Oct 25 06:41:05 2014"
+"title" ""
+"analysisList" "()"
+END

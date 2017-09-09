@@ -1,0 +1,8 @@
+simulator( 'hspiceS )
+design(	 "/home/ecegrid/a/559mg3/cadence/simulation/DFF_MASTERSLAVE_CVSL_STATIC_CMOS/hspiceS/schematic/netlist/DFF_MASTERSLAVE_CVSL_STATIC_CMOS.C")
+resultsDir( "/home/ecegrid/a/559mg3/cadence/simulation/DFF_MASTERSLAVE_CVSL_STATIC_CMOS/hspiceS/schematic" )
+analysis('tran ?from "0n"  ?to "60n"  ?by "1n"  )
+temp( 25 ) 
+run()
+selectResult( 'tran )
+plot(getData("/D_IN") getData("/net84") getData("/CLK") getData("/Q_BAR_OUT_DFF_MS_CVSL") )

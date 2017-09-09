@@ -1,0 +1,174 @@
+ --------------------------------------------------------
+|                                                        |
+|           NanoSim Version G-2012.06 (RHEL64)           |
+| Copyright (c) 2012 Synopsys Inc., All Rights Reserved. |
+|                                                        |
+ --------------------------------------------------------
+
+Built by nsmgr   on Fri May 18 18:17:12 PDT 2012
+Sat Oct 25 03:33:41 EDT 2014
+Machine Name: ee207lnx15.ecn.purdue.edu
+
+Command line options:  -n nanosim.sp -c nanosim.cfg1 -nvec nanosim.vec -out out
+
+
+The 64-bit version of the simulator is running.
+
+
+Initializing system messages took 0.000 s
+
+LICENSE Information: 
+-- Key: TIMEMILL__NSADDON	            
+-- Version: 2012.06
+
+Installing interactive/configuration commands ... 
+Installing commands took 0.010 s
+
+
+Start netlist compilation at Sat Oct 25 03:33:41 2014
+
+Compiling "nanosim.sp" (SPICE)
+Compiling "/package/eda/cells/ncsu-cdk-1.5.1/local/models/hspice/public/publicModel/tsmc25N" (SPICE)
+Compiling "/package/eda/cells/ncsu-cdk-1.5.1/local/models/hspice/public/publicModel/tsmc25P" (SPICE)
+Compiling "nanosim.vec" (VECTOR)
+
+
+
+Parsing netlist finished in 0 seconds
+
+Circuit temperature from netlist                  :       25.000
+
+
+Netlist compilation will be case insensitive.
+All letters will be converted to lower case.
+Building instance tree finished in 0 seconds
+
+Finish netlist compilation at Sat Oct 25 03:33:41 2014
+
+Netlist compilation took 0.020 s
+NOTICE:Techfile Voltage (*nanosim tech="voltage") set to  2.5V ... 
+
+This simulation uses HSPICE models
+
+Building node/element arrays took 0.020 s
+
+Reading configuration files ...
+Reading configuration files took 0.000000 s
+
+
+# of CMOS elements                                        :           10
+# of dc voltage sources                                   :            1
+# of stimulus elements                                    :            1
+# of elements                                             :           12
+# of used elements                                        :           11
+# of nodes                                                :            9
+# of subckt                                               :            2
+# of top-level instances                                  :            7
+# of capacitors from netlist                              :            2
+     # of Ground CAPS from netlist                        :            2
+     # of Coupling CAPS from netlist                      :            0
+
+
+Circuit partitioning ...
+
+Among 5 stages, there are: 
+           5 pwl stages 
+           0 grouped pwl stages
+           0 analog stages 
+           0 NR stages 
+           0 grouped analog stages
+           0 rc stages 
+           0 ud stages 
+           0 ADFMI functional model stages
+           1 nodes in the largest pwl stage
+           0 nodes in the largest digital stage
+
+           5 stages (5 pwl/analog stages) with 0-9 nodes
+
+
+Among 9 nodes, there are: 
+           9 pwl nodes
+           0 analog (accurate) nodes
+           0 rc nodes
+           0 ud nodes
+
+           0 cut nodes 
+           0 mem_cut nodes 
+           0 no_clamp nodes 
+           5 nodes in stages
+           4 voltage source nodes
+           2 constant nodes
+           0 NR nodes
+
+Among 12 elements, there are: 
+          10 elements in stages
+          10 pwl elements 
+           0 synchronous elements 
+           0 SMS elements 
+           0 analog (accurate) elements
+           0 rc elements 
+           0 ud elements 
+           0 ADFMI functional model elements 
+           0 VERILOGA model elements 
+           0 behavioral model elements 
+
+           0 mna elements
+           0 NR elements
+           0 mos transistors identified as keepers
+           0 keepers removed
+           0 keepers reduced
+
+
+Circuit partitioning took 0.000 s
+Constructing matrix ...
+Matrix ordering and construction took 0.000 s
+Levelizing stages ...
+Levelizing stages took 0.000 s
+DC initialization ...
+
+Finishing initialization (level 0 -- 2)
+0 dynamic stages assigned in DC Initialization
+
+Number of residual dc events scheduled          : 0
+Number of ic nodes scheduled                    : 0
+DC initialization took 0.000 s
+Allocating 96 bytes of shared memory ....
+Allocating 96 bytes of shared memory ....
+Allocating 96 bytes of shared memory ....
+
+Simulation begins in pwl mode ...
+Simulation ends at 1000.000 ns
+
+Simulation took 0.000 s
+
+Simulation time resolution                      : 1.000e-02 ns
+Print time resolution                           : 1.000e-02 ns
+Number of PWL matrix solutions                  : 1012
+Number of PWL MOS model lookups                 : 1503
+Number of time steps                            : 1012
+Number of iterations                            : 0
+Number of rejected time steps                   : 0
+
+Global simulation parameters used:
+
+SPD             0.1V     ASPD            0.1V
+SIM_DESV       0.25V     SIM_AESV      0.125V
+VDS_MIN  0.000636446V     AVDS_MIN      1e-08V
+SSC (steady state current)         0.1uA
+SUBI (subthreshold current)          1uA
+DC CURRENT                           1uA
+
+	       1.0 real	       0.4 user	       0.1 sys
+
+Signal data is saved in nanosim.out
+nanosim: WARNING: BDC : No path found between rising edge of in_0 and falling edge of out_0
+
+nanosim: WARNING: BDC : No path found between falling edge of in_0 and rising edge of out_0
+
+nanosim: WARNING: BDC : No path found between rising edge of in_1 and rising edge of out_1
+
+nanosim: WARNING: BDC : No path found between falling edge of in_1 and falling edge of out_1
+
+
+No errors reported in the .err file (nanosim.err)
+

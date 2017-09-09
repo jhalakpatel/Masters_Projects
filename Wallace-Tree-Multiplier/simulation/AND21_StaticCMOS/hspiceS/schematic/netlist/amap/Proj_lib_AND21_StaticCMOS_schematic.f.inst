@@ -1,0 +1,12 @@
+HEADER
+"PSFversion" "1.00"
+"I2v" "XI2"
+"I2n" "Proj_lib_Inverter_180nm_schematic"
+"N1v" "MN1"
+"N1n" "NCSU_Analog_Parts_nmos4_symbol"
+"N0v" "MN0"
+"N0n" "NCSU_Analog_Parts_nmos4_symbol"
+"P1v" "MP1"
+"P1n" "NCSU_Analog_Parts_pmos4_symbol"
+"P0v" "MP0"
+"P0n" "NCSU_Analog_Parts_pmos4_symbol"

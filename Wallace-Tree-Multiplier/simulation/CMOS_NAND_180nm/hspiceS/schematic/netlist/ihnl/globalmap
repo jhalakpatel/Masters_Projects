@@ -1,0 +1,10 @@
+CADENCE IHNL01060
+$model
+hw1/CMOS_NAND_180nm/schematic CMOS_NAND_180nm
+$endmodel
+$net
+vdd! vdd!
+gnd! 0
+$endnet
+$param
+$endparam

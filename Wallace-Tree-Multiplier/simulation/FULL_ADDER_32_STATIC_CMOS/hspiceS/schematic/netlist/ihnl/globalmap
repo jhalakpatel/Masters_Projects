@@ -1,0 +1,15 @@
+CADENCE IHNL01060
+$model
+Proj_lib/OR21_StaticCMOS/schematic OR21_StaticCMOS
+Proj_lib/Inverter_180nm/schematic Inverter_180nm
+Proj_lib/HALF_ADDER_22_STATIC_CMOS/schematic sub1
+Proj_lib/AND21_StaticCMOS/schematic AND21_StaticCMOS
+Proj_lib/FULL_ADDER_32_STATIC_CMOS/schematic sub2
+Proj_lib/XOR21_StaticCMOS/schematic XOR21_StaticCMOS
+$endmodel
+$net
+vdd! vdd!
+gnd! 0
+$endnet
+$param
+$endparam

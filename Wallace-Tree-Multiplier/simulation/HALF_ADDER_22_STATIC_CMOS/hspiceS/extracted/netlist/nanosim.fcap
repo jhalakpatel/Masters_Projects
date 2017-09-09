@@ -1,0 +1,39 @@
+; --------------------------------------------------------
+;|                                                        |
+;|           NanoSim Version G-2012.06 (RHEL64)           |
+;| Copyright (c) 2012 Synopsys Inc., All Rights Reserved. |
+;|                                                        |
+; --------------------------------------------------------
+;
+;Built by nsmgr   on Fri May 18 18:17:12 PDT 2012
+; Wed Nov 26 16:46:07 EST 2014
+; Machine Name: ecegrid-thin4.ecn.purdue.edu
+; 
+; ratio = TotalCap / NodeCap
+; where TotalCap is the capacitances between two terminals
+; and NodeCap is node capacitance.
+; Both TotalCap and NodeCap are estimation of capacitive effects.
+;
+ratio=0.0130775 Cap = 0.0752328fF NodeCap = 5.75286fF c32
+ratio=0.0189169 Cap = 0.100022fF NodeCap = 5.28746fF c40
+ratio=0.0189169 Cap = 0.100022fF NodeCap = 5.28746fF c49
+ratio=0.018726 Cap = 0.100022fF NodeCap = 5.34136fF c41
+ratio=0.0130969 Cap = 0.0699552fF NodeCap = 5.34136fF c50
+ratio=0.11107 Cap = 0.454845fF NodeCap = 4.68072fF c22
+ratio=0.11107 Cap = 0.0650448fF NodeCap = 4.68072fF c43
+ratio=0.0272918 Cap = 0.127745fF NodeCap = 4.68072fF c52
+ratio=0.00638833 Cap = 0.0349776fF NodeCap = 5.47523fF c39
+ratio=0.00638833 Cap = 0.0349776fF NodeCap = 5.47523fF c48
+
+# of capacitors from netlist                              :           40
+     # of Ground CAPS from netlist                        :           14
+     # of Coupling CAPS from netlist                      :           26
+# of capacitors converted from diodes                     :            0
+     # of Ground CAPS converted from diodes               :            0
+     # of Coupling CAPS converted from diodes             :            0
+# of Coupling CAPS from netlist and converted diodes      :           26
+     # of Coupling CAPS kept (listed here)                :           10
+     # of Coupling CAPS put into SMS Mode                 :            0
+     # of Coupling CAPS split to ground                   :           16
+# of MOSFETS converted to Ground CAPS                     :            0
+# of MOSFETS used as Coupling CAPS (listed here)          :            0

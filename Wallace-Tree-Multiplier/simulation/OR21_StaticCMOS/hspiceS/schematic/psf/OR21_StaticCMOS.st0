@@ -1,0 +1,67 @@
+***** HSPICE -- E-2010.12-SP2 64-BIT (May 23 2011) linux ******
+ Input File: raw/OR21_StaticCMOS
+ lic:
+ lic: FLEXlm: v10.8
+ lic: USER:   559mg3               HOSTNAME: ecegrid-thin4.ecn.purdue.edu
+ lic: HOSTID:                      PID:      28033
+ lic: Using FLEXlm license file:
+ lic: 1718@marina.ecn.purdue.edu
+ lic: Checkout 1 hspice
+ lic: License/Maintenance for hspice will expire on 14-sep-2015/2014.09
+ lic: 1(in_use)/50(total) FLOATING license(s) on SERVER marina.ecn.purdue.edu
+ lic:
+ init: begin read circuit files,  cpu clock=  0.00E+00
+       option search   = /package/eda/synopsys/hspice-E-2010.12-SP2/hspic
+                         e/parts/ad
+       option search   = /package/eda/synopsys/hspice-E-2010.12-SP2/hspic
+                         e/parts/behave
+       option search   = /package/eda/synopsys/hspice-E-2010.12-SP2/hspic
+                         e/parts/bjt
+       option search   = /package/eda/synopsys/hspice-E-2010.12-SP2/hspic
+                         e/parts/burr_brn
+       option search   = /package/eda/synopsys/hspice-E-2010.12-SP2/hspic
+                         e/parts/comlinear
+       option search   = /package/eda/synopsys/hspice-E-2010.12-SP2/hspic
+                         e/parts/dio
+       option search   = /package/eda/synopsys/hspice-E-2010.12-SP2/hspic
+                         e/parts/fet
+       option search   = /package/eda/synopsys/hspice-E-2010.12-SP2/hspic
+                         e/parts/lin_tech
+       option search   = /package/eda/synopsys/hspice-E-2010.12-SP2/hspic
+                         e/parts/pci
+       option search   = /package/eda/synopsys/hspice-E-2010.12-SP2/hspic
+                         e/parts/signet
+       option search   = /package/eda/synopsys/hspice-E-2010.12-SP2/hspic
+                         e/parts/ti
+       option search   = /package/eda/synopsys/hspice-E-2010.12-SP2/hspic
+                         e/parts/tline
+       option search   = /package/eda/synopsys/hspice-E-2010.12-SP2/hspic
+                         e/parts/xilinx
+       option runlvl
+       option ingold   =     2.00
+       option artist   =     2.00
+       option psf      =     2.00
+       option probe    =     0.00
+ init: end read circuit files,  cpu clock=  0.00E+00 memory=       149 kb
+ init: begin check errors,  cpu clock=  0.00E+00
+ init: end check errors,  cpu clock=  1.00E-02 memory=       149 kb
+ init: begin setup matrix, pivot=     0 cpu clock=  1.00E-02
+       establish matrix -- done,  cpu clock=  1.00E-02 memory=       152 kb
+       re-order matrix -- done,  cpu clock=  1.00E-02 memory=       152 kb
+ init: end setup matrix,  cpu clock=  1.00E-02 memory=       167 kb
+ dcop: begin dcop,  cpu clock=  1.00E-02
+ dcop: end dcop,  cpu clock=  1.00E-02 memory=       167 kb  tot_iter=       3
+ sweep: tran tran0    begin, stop_t=  6.00E-08 #sweeps=  61 cpu clock=  1.00E-02
+ tran: time= 7.7736E-09 tot_iter=      60 conv_iter=      21 cpu clock= 1.00E-02
+ tran: time= 1.2183E-08 tot_iter=      94 conv_iter=      35 cpu clock= 1.00E-02
+ tran: time= 1.8176E-08 tot_iter=     164 conv_iter=      61 cpu clock= 1.00E-02
+ tran: time= 2.7033E-08 tot_iter=     210 conv_iter=      78 cpu clock= 1.00E-02
+ tran: time= 3.1100E-08 tot_iter=     212 conv_iter=      79 cpu clock= 1.00E-02
+ tran: time= 3.6100E-08 tot_iter=     246 conv_iter=      94 cpu clock= 1.00E-02
+ tran: time= 4.2349E-08 tot_iter=     367 conv_iter=     139 cpu clock= 1.00E-02
+ tran: time= 4.8761E-08 tot_iter=     372 conv_iter=     141 cpu clock= 1.00E-02
+ tran: time= 5.5480E-08 tot_iter=     409 conv_iter=     156 cpu clock= 1.00E-02
+ tran: time= 6.0000E-08 tot_iter=     468 conv_iter=     179 cpu clock= 2.00E-02
+ sweep: tran tran0    end,  cpu clock=  2.00E-02 memory=       168 kb
+>info:         ***** hspice job concluded
+ lic: Release hspice token(s)

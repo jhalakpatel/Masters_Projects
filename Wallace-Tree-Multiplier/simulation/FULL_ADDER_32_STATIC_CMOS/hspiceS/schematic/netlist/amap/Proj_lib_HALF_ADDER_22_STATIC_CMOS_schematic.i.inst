@@ -1,0 +1,10 @@
+HEADER
+"PSFversion" "1.00"
+"XI1v" "I1"
+"XI1n" "Proj_lib_AND21_StaticCMOS_schematic"
+"XI0v" "I0"
+"XI0n" "Proj_lib_XOR21_StaticCMOS_schematic"
+"(FUNCTION (plus (root \"I1/OUT_AND21\")))v" "C_OUT_HALF_ADDER22"
+"(FUNCTION (plus (root \"I0/OUT_XOR21\")))v" "S_OUT_HALF_ADDER22"
+"(FUNCTION (plus (root \"I0/B_IN\") (root \"I1/B_IN\")))v" "B_IN"
+"(FUNCTION (plus (root \"I0/A_IN\") (root \"I1/A_IN\")))v" "A_IN"

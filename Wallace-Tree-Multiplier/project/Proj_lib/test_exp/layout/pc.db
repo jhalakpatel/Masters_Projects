@@ -1,0 +1,19 @@
+#
+Proj_lib HALF_ADDER_22_STATIC_CMOS layout
+I5
+I9
+I7
+I8
+I6
+#
+Proj_lib Full_Adder_Mirror_StaticCMOS layout
+I10
+I14
+I13
+I12
+I11
+I4
+I0
+I3
+I2
+I1

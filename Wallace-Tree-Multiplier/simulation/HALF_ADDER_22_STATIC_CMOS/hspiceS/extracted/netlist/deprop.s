@@ -1,0 +1,1 @@
+/package/eda/cadence/IC5141.151/tools.lnx86/dfII/etc/cdsSpice/dotS/deprop.s

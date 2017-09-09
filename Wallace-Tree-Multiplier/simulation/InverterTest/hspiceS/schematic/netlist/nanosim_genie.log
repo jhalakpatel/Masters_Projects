@@ -1,0 +1,18 @@
+
+Start netlist compilation at Sat Oct 18 22:00:20 2014
+
+Compiling "/home/ecegrid/a/559mg3/cadence/simulation/InverterTest/hspiceS/schematic/netlist/nanosim.sp"
+Compiling "/package/eda/cells/ncsu-cdk-1.5.1/local/models/hspice/public/publicModel/tsmc25N"
+Compiling "/package/eda/cells/ncsu-cdk-1.5.1/local/models/hspice/public/publicModel/tsmc25P"
+Compiling "/home/ecegrid/a/559mg3/cadence/simulation/InverterTest/hspiceS/schematic/netlist/nanosim.vec"
+
+
+
+Parsing netlist finished in 0 seconds
+
+Circuit temperature from netlist                  :       25.000
+
+Building instance tree finished in 0 seconds
+
+Finish netlist compilation at Sat Oct 18 22:00:20 2014
+

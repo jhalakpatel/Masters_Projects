@@ -1,0 +1,8 @@
+simulator( 'spectre )
+design(	 "/home/ecegrid/a/559mg3/cadence/simulation/inverter/spectre/schematic/netlist/netlist")
+resultsDir( "/home/ecegrid/a/559mg3/cadence/simulation/inverter/spectre/schematic" )
+analysis('dc ?saveOppoint t  )
+analysis('tran ?stop "10u"  )
+saveOption( 'pwr "all" )
+temp( 27 ) 
+run()

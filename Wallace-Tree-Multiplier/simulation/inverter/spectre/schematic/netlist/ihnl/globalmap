@@ -1,0 +1,10 @@
+CADENCE IHNL01060
+$model
+hw1/Inverter/schematic Inverter
+$endmodel
+$net
+vdd! vdd!
+gnd! 0
+$endnet
+$param
+$endparam

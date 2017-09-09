@@ -1,0 +1,76 @@
+Mdi:ArrangeIcons
+ScopeSigMgr:loadpffile /home/ecegrid/a/559mg3/cadence/simulation/CMOS_NOR_180nm/hspiceS/extracted/netlist/nanosim.fsdb 1 openonly
+# PF:1
+pf:read PF:1 a
+# WF:1:1
+Graph addsignal WF:1:1 -region d -yview real(y) -xview real(x) -tracehi 1
+# Signal0
+pf:read PF:1 b
+# WF:1:2
+Graph addsignal WF:1:2 -region d -yview real(y) -xview real(x) -tracehi 1
+# Signal1
+pf:read PF:1 out
+# WF:1:3
+Graph addsignal WF:1:3 -region d -yview real(y) -xview real(x) -tracehi 1
+# Signal2
+pf:read PF:1 v(a)
+# WF:1:4
+Graph addsignal WF:1:4 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal3
+pf:read PF:1 v(b)
+# WF:1:5
+Graph addsignal WF:1:5 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal4
+pf:read PF:1 v(out)
+# WF:1:6
+Graph addsignal WF:1:6 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal5
+Mdi:FullSize
+ScopeSigMgr:Unload 0 {{(1) nanosim.fsdb}}
+Mdi:FullSize
+Graph:SetCMap 2
+Mdi:ArrangeIcons
+wm geometry . 1280x919+0+25
+.frame1.mdi.mdi1.work.graph0 save -file /home/ecegrid/a/559mg3/NOR_GRAPH.png -format png  -x 0 -y 0 -w 1268 -h 795 -colormode color
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+wm geometry . 900x785+444+337
+Mdi:ArrangeIcons
+wm geometry . 900x785+279+267
+Mdi:ArrangeIcons
+wm geometry . 900x785+191+197
+Mdi:ArrangeIcons
+wm geometry . 900x785+137+143
+Mdi:ArrangeIcons
+wm geometry . 900x785+121+126
+Mdi:ArrangeIcons
+wm geometry . 900x785+109+110
+Mdi:ArrangeIcons
+wm geometry . 900x785+102+101
+Mdi:ArrangeIcons
+wm geometry . 900x785+101+99
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+ScopeSigMgr:Unload 0 {{(1) nanosim.fsdb}}
+Graph0 delsignal Signal0
+Graph0 delsignal Signal1
+Graph0 delsignal Signal2
+Graph0 delsignal Signal3
+Graph0 delsignal Signal4
+Graph0 delsignal Signal5

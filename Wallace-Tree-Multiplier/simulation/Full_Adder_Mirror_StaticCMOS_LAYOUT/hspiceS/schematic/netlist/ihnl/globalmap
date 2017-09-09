@@ -1,0 +1,8 @@
+CADENCE IHNL01060
+$model
+Proj_lib/Full_Adder_Mirror_StaticCMOS_LAYOUT/schematic sub3
+$endmodel
+$net
+$endnet
+$param
+$endparam

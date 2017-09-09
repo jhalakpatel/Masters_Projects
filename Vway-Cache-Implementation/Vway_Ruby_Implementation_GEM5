@@ -1,0 +1,1493 @@
+diff -r 5ce0c4e42f93 configs/common/Options.py
+--- a/configs/common/Options.py	Fri Oct 19 10:16:18 2012 -0400
++++ b/configs/common/Options.py	Fri Dec 11 23:45:02 2015 -0500
+@@ -46,9 +46,9 @@
+     parser.add_option("--num-dirs", type="int", default=1)
+     parser.add_option("--num-l2caches", type="int", default=1)
+     parser.add_option("--num-l3caches", type="int", default=1)
+-    parser.add_option("--l1d_size", type="string", default="64kB")
+-    parser.add_option("--l1i_size", type="string", default="32kB")
+-    parser.add_option("--l2_size", type="string", default="2MB")
++    parser.add_option("--l1d_size", type="string", default="16kB")
++    parser.add_option("--l1i_size", type="string", default="16kB")
++    parser.add_option("--l2_size", type="string", default="256kB")
+     parser.add_option("--l3_size", type="string", default="16MB")
+     parser.add_option("--l1d_assoc", type="int", default=2)
+     parser.add_option("--l1i_assoc", type="int", default=2)
+@@ -62,6 +62,9 @@
+                       then the number of threads per cpu is same as the
+                       number of programs.""")
+ 
++    parser.add_option("--replacement_policy", type="string", default="LRU")
++    parser.add_option("--tdr", type="int", default=2)
++
+     # Run duration options
+     parser.add_option("-m", "--maxtick", type="int", default=m5.MaxTick,
+                       metavar="T", help="Stop after T ticks")
+diff -r 5ce0c4e42f93 configs/ruby/MESI_CMP_directory.py
+--- a/configs/ruby/MESI_CMP_directory.py	Fri Oct 19 10:16:18 2012 -0400
++++ b/configs/ruby/MESI_CMP_directory.py	Fri Dec 11 23:45:02 2015 -0500
+@@ -43,18 +43,18 @@
+ # Note: the L2 Cache latency is not currently used
+ #
+ class L2Cache(RubyCache):
+-    latency = 15
++    latency = 6
+ 
+ def define_options(parser):
+     return
+ 
+ def create_system(options, system, piobus, dma_ports, ruby_system):
+-    
++
+     if buildEnv['PROTOCOL'] != 'MESI_CMP_directory':
+         panic("This script requires the MESI_CMP_directory protocol to be built.")
+ 
+     cpu_sequencers = []
+-    
++
+     #
+     # The ruby network creation expects the list of nodes in the system to be
+     # consistent with the NetDest list.  Therefore the l1 controller nodes must be
+@@ -70,20 +70,28 @@
+     # controller constructors are called before the network constructor
+     #
+     l2_bits = int(math.log(options.num_l2caches, 2))
+-    block_size_bits = int(math.log(options.cacheline_size, 2))
+-    
++    block_size_bits_l1 = int(math.log(options.cacheline_size, 2))
++
++    block_size_bits_l2 = int(math.log(2 * options.cacheline_size, 2))
++
+     cntrl_count = 0
+-    
++
+     for i in xrange(options.num_cpus):
+         #
+         # First create the Ruby objects associated with this cpu
+         #
+         l1i_cache = L1Cache(size = options.l1i_size,
+                             assoc = options.l1i_assoc,
+-                            start_index_bit = block_size_bits)
++                            start_index_bit = block_size_bits_l1,
++                            replacement_policy = "LRU",
++                            tdr = 1
++                            )
+         l1d_cache = L1Cache(size = options.l1d_size,
+                             assoc = options.l1d_assoc,
+-                            start_index_bit = block_size_bits)
++                            start_index_bit = block_size_bits_l1,
++                            replacement_policy = "LRU",
++                            tdr = 1
++                            )
+ 
+         l1_cntrl = L1Cache_Controller(version = i,
+                                       cntrl_id = cntrl_count,
+@@ -105,16 +113,16 @@
+             cpu_seq.pio_port = piobus.slave
+ 
+         exec("system.l1_cntrl%d = l1_cntrl" % i)
+-        
++
+         #
+         # Add controllers and sequencers to the appropriate lists
+         #
+         cpu_sequencers.append(cpu_seq)
+         l1_cntrl_nodes.append(l1_cntrl)
+-        
++
+         cntrl_count += 1
+ 
+-    l2_index_start = block_size_bits + l2_bits
++    l2_index_start = block_size_bits_l2 + l2_bits
+ 
+     for i in xrange(options.num_l2caches):
+         #
+@@ -122,16 +130,19 @@
+         #
+         l2_cache = L2Cache(size = options.l2_size,
+                            assoc = options.l2_assoc,
+-                           start_index_bit = l2_index_start)
++                           start_index_bit = l2_index_start,
++                           replacement_policy = options.replacement_policy,
++                           tdr = options.tdr,
++                           )
+ 
+         l2_cntrl = L2Cache_Controller(version = i,
+                                       cntrl_id = cntrl_count,
+                                       L2cacheMemory = l2_cache,
+                                       ruby_system = ruby_system)
+-        
++
+         exec("system.l2_cntrl%d = l2_cntrl" % i)
+         l2_cntrl_nodes.append(l2_cntrl)
+-        
++
+         cntrl_count += 1
+ 
+     phys_mem_size = sum(map(lambda mem: mem.range.size(),
+@@ -170,7 +181,7 @@
+         #
+         dma_seq = DMASequencer(version = i,
+                                ruby_system = ruby_system)
+-        
++
+         dma_cntrl = DMA_Controller(version = i,
+                                    cntrl_id = cntrl_count,
+                                    dma_sequencer = dma_seq,
+diff -r 5ce0c4e42f93 configs/spec2k6/run.py
+--- a/configs/spec2k6/run.py	Fri Oct 19 10:16:18 2012 -0400
++++ b/configs/spec2k6/run.py	Fri Dec 11 23:45:02 2015 -0500
+@@ -1,34 +1,34 @@
+-# Copyright (c) 2012 Purdue University                                            
+-# All rights reserved.                                                            
+-#                                                                                 
+-# Redistribution and use in source and binary forms, with o without               
+-# modification, are permitted provided that the following coditions are           
+-# met: redistributions of source code must retain the above cpyright              
+-# notice, this list of conditions and the following disclaimer                    
+-# redistributions in binary form must reproduce the above copyrght                
+-# notice, this list of conditions and the following disclaimer i the              
+-# documentation and/or other materials provided with the distribuion;             
+-# neither the name of the copyright holders nor the names of its                  
+-# contributors may be used to endorse or promote products derived fom             
+-# this software without specific prior written permission.                        
+-#                                                                                 
+-# THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS             
+-# "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT               
+-# LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR           
+-# A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT            
+-# OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,           
+-# SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT                
+-# LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,           
+-# DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY           
+-# THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT             
+-# (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE           
+-# OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.            
+-#                                                                                 
+-# Authors: Malek Musleh                                                           
+-### The following file was referenced from the following site:                    
+-### http://www.m5sim.org/SPEC_CPU2006_benchmarks                                  
+-###                                                                               
+-### and subsequent changes were made    
++# Copyright (c) 2012 Purdue University
++# All rights reserved.
++#
++# Redistribution and use in source and binary forms, with o without
++# modification, are permitted provided that the following coditions are
++# met: redistributions of source code must retain the above cpyright
++# notice, this list of conditions and the following disclaimer
++# redistributions in binary form must reproduce the above copyrght
++# notice, this list of conditions and the following disclaimer i the
++# documentation and/or other materials provided with the distribuion;
++# neither the name of the copyright holders nor the names of its
++# contributors may be used to endorse or promote products derived fom
++# this software without specific prior written permission.
++#
++# THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
++# "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
++# LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
++# A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
++# OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
++# SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
++# LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
++# DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
++# THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
++# (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
++# OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
++#
++# Authors: Malek Musleh
++### The following file was referenced from the following site:
++### http://www.m5sim.org/SPEC_CPU2006_benchmarks
++###
++### and subsequent changes were made
+ 
+ import os
+ import optparse
+@@ -153,7 +153,7 @@
+ 
+ np = options.num_cpus
+ system = System(cpu = [CPUClass(cpu_id=i) for i in xrange(np)],
+-                physmem = SimpleMemory(range=AddrRange("512MB")),
++                physmem = SimpleMemory(range=AddrRange("2048MB")),
+                 membus = CoherentBus(), mem_mode = test_mem_mode)
+ 
+ for i in xrange(np):
+@@ -184,6 +184,5 @@
+         system.cpu[i].itb.walker.port = ruby_port.slave
+         system.cpu[i].dtb.walker.port = ruby_port.slave
+ 
+-
+ root = Root(full_system = False, system = system)
+ Simulation.run(options, root, system, FutureClass)
+diff -r 5ce0c4e42f93 configs/spec2k6/spec2k6.py
+--- a/configs/spec2k6/spec2k6.py	Fri Oct 19 10:16:18 2012 -0400
++++ b/configs/spec2k6/spec2k6.py	Fri Dec 11 23:45:02 2015 -0500
+@@ -1,34 +1,34 @@
+ 
+ 
+-# Copyright (c) 2012 Purdue University                
+-# All rights reserved.                                                         
+-# 
++# Copyright (c) 2012 Purdue University
++# All rights reserved.
++#
+ # Redistribution and use in source and binary forms, with or without
+ # modification, are permitted provided that the following conditions are
+ # met: redistributions of source code must retain the above copyright
+-# notice, this list of conditions and the following disclaimer;               
+-# redistributions in binary form must reproduce the above copyright            
+-# notice, this list of conditions and the following disclaimer in the          
++# notice, this list of conditions and the following disclaimer;
++# redistributions in binary form must reproduce the above copyright
++# notice, this list of conditions and the following disclaimer in the
+ # documentation and/or other materials provided with the distribution;
+ # neither the name of the copyright holders nor the names of its
+ # contributors may be used to endorse or promote products derived from
+ # this software without specific prior written permission.
+ #
+-# THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS         
+-# "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT         
++# THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
++# "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ # LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+-# A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT         
++# A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+ # OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+ # SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+ # LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+ # DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+ # THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+ # (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+-# OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. 
+-#            
+-# Authors: Malek Musleh   
++# OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
++#
++# Authors: Malek Musleh
+ 
+-### The following file was referenced from the following site: 
++### The following file was referenced from the following site:
+ ### http://www.m5sim.org/SPEC_CPU2006_benchmarks
+ ###
+ ### and subsequent changes were made
+@@ -54,23 +54,26 @@
+ perlbench = LiveProcess()
+ perlbench_dir = '400.perlbench/'
+ perlbench.executable =  bench_dir+perlbench_dir+'/exe/perlbench'
+-perlbench.cmd = [perlbench.executable] + ['-I./lib', 'attrs.pl']
+-perlbench.output = 'attrs.out'
++perlbench_input = bench_dir+perlbench_dir+'data/ref/input/checkspam.pl'
++lib = bench_dir+perlbench_dir+'data/all/input/lib'
++perlbench.cmd = [perlbench.executable] + ['-I'+lib, perlbench_input ]
++perlbench.cmd = perlbench.cmd + ['2500','5','25','11','150','1','1','1','1']
++perlbench.output = 'checkspam.out'
+ 
+ #401.bzip2
+ bzip2 = LiveProcess()
+ bzip2_dir = '401.bzip2/'
+ bzip2.executable =  bench_dir+bzip2_dir+'/exe/bzip2'
+ data=bench_dir+bzip2_dir+'data/ref/input/input.source'
+-bzip2.cmd = [bzip2.executable] + [data, '1']
++bzip2.cmd = [bzip2.executable] + [data, '280']
+ bzip2.output = 'input.source.out'
+ 
+ #403.gcc
+ gcc = LiveProcess()
+ gcc_dir = '403.gcc/'
+-gcc.executable =  bench_dir+gcc_dir+'/exe/gcc'
+-data=bench_dir+'/data/ref/input/166.i'
+-output=output_dir+'/gcc/166.s'
++gcc.executable =  bench_dir+gcc_dir+'exe/gcc'
++data=bench_dir+gcc_dir+'data/ref/input/166.i'
++output=output_dir+'gcc/166.s'
+ gcc.cmd = [gcc.executable] + [data]+['-o',output] + ['-quiet'] + ['-funroll-loops'] + ['-fforce-mem'] + ['-fcse-follow-jumps'] + ['-fcse-skip-blocks'] + ['-fexpensive-optimizations'] + ['-fstrength-reduce'] + ['-fpeephole']  + ['-fschedule-insns'] + ['-finline-functions'] + ['-fschedule-insns2']
+ 
+ #410.bwaves
+@@ -114,8 +117,8 @@
+ #435.gromacs
+ gromacs = LiveProcess()
+ gromacs_dir='435.gromacs/'
+-gromacs.executable = bench_dir+gromacs_dir+gromacs_dir+'/exe/gromacs'
+-data=bench_dir+gromacs_dir+'/data/ref/input/gromacs.tpr'
++gromacs.executable = bench_dir+gromacs_dir+'/exe/gromacs'
++data='./gromacs.tpr'
+ gromacs.cmd = [gromacs.executable] + ['-silent','-deffnm',data,'-nice','0']
+ 
+ #436.cactusADM
+@@ -163,7 +166,8 @@
+ soplex=LiveProcess()
+ soplex_dir = '450.soplex/'
+ soplex.executable = bench_dir+soplex_dir+'/exe/soplex'
+-data=bench_dir+soplex_dir+'/data/ref/input/ref.mps'
++data='./ref.mps'
++#data=bench_dir+soplex_dir+'/data/ref/input/ref.mps'
+ soplex.cmd = [soplex.executable]+['-m10000',data]
+ soplex.output = 'test.out'
+ 
+@@ -185,10 +189,10 @@
+ 
+ #456.hmmer
+ hmmer=LiveProcess()
+-hmmr_dir = '456.hmmr/'
+-hmmer.executable = bench_dir+hmmr_dir+'/exe/hmmer'
+-data=bench_dir+hmmr_dir+'/data/ref/input/nph3.hmm'
+-hmmer.cmd = [hmmer.executable]+['--fixed', '0', '--mean', '325', '--num', '5000', '--sd', '200', '--seed', '0', data]
++hmmr_dir = '456.hmmer/'
++hmmer.executable = bench_dir+hmmr_dir+'exe/hmmr'
++data=bench_dir+hmmr_dir+'data/ref/input/retro.hmm'
++hmmer.cmd = [hmmer.executable]+['--fixed', '0', '--mean', '500', '--num', '500000', '--sd', '350', '--seed', '0', data]
+ hmmer.output = 'bombesin.out'
+ 
+ #458.sjeng
+@@ -210,16 +214,16 @@
+ libquantum=LiveProcess()
+ libquantum_dir ='462.libquantum/'
+ libquantum.executable = bench_dir+libquantum_dir+'/exe/libquantum'
+-libquantum.cmd = [libquantum.executable],'33','5'
++libquantum.cmd = [libquantum.executable],'1397','8'
+ libquantum.output = 'ref.out'
+ 
+ #464.h264ref
+ h264ref=LiveProcess()
+ h264_dir = '464.h264ref/'
+-h264ref.executable = bench_dir+h264_dir+'/exe/h264'
+-data=bench_dir+h264_dir+'/data/ref/input/foreman_ref_encoder_baseline.cfg'
++h264ref.executable = bench_dir+h264_dir+'exe/h264ref'
++data=bench_dir+h264_dir+'/data/ref/input/sss_encoder_main.cfg'
+ h264ref.cmd = [h264ref.executable]+['-d',data]
+-h264ref.output = 'foreman_ref_encoder_baseline.out'
++h264ref.output = 'sss_encoder_main.out'
+ 
+ #470.lbm
+ lbm=LiveProcess()
+diff -r 5ce0c4e42f93 src/cpu/o3/O3CPU.py
+--- a/src/cpu/o3/O3CPU.py	Fri Oct 19 10:16:18 2012 -0400
++++ b/src/cpu/o3/O3CPU.py	Fri Dec 11 23:45:02 2015 -0500
+@@ -114,7 +114,7 @@
+     numPhysFloatRegs = Param.Unsigned(256, "Number of physical floating point "
+                                       "registers")
+     numIQEntries = Param.Unsigned(64, "Number of instruction queue entries")
+-    numROBEntries = Param.Unsigned(192, "Number of reorder buffer entries")
++    numROBEntries = Param.Unsigned(128, "Number of reorder buffer entries")
+ 
+     instShiftAmt = Param.Unsigned(2, "Number of bits to shift instructions by")
+ 
+diff -r 5ce0c4e42f93 src/mem/Bus.py
+--- a/src/mem/Bus.py	Fri Oct 19 10:16:18 2012 -0400
++++ b/src/mem/Bus.py	Fri Dec 11 23:45:02 2015 -0500
+@@ -50,8 +50,8 @@
+     # Override the default clock
+     clock = '1GHz'
+     header_cycles = Param.Cycles(1, "cycles of overhead per transaction")
+-    width = Param.Unsigned(8, "bus width (bytes)")
+-    block_size = Param.Unsigned(64, "The default block size if not set by " \
++    width = Param.Unsigned(16, "bus width (bytes)")
++    block_size = Param.Unsigned(128, "The default block size if not set by " \
+                                     "any connected module")
+ 
+     # The default port can be left unconnected, or be used to connect
+diff -r 5ce0c4e42f93 src/mem/SConscript
+--- a/src/mem/SConscript	Fri Oct 19 10:16:18 2012 -0400
++++ b/src/mem/SConscript	Fri Dec 11 23:45:02 2015 -0500
+@@ -94,6 +94,8 @@
+ DebugFlag('RubyStats')
+ DebugFlag('RubyResourceStalls')
+ 
++DebugFlag('jp')
++
+ CompoundFlag('Ruby', [ 'RubyQueue', 'RubyNetwork', 'RubyTester',
+     'RubyGenerated', 'RubySlicc', 'RubySystem', 'RubyCache',
+     'RubyMemory', 'RubyDma', 'RubyPort', 'RubySequencer', 'RubyCacheTrace'])
+diff -r 5ce0c4e42f93 src/mem/SimpleMemory.py
+--- a/src/mem/SimpleMemory.py	Fri Oct 19 10:16:18 2012 -0400
++++ b/src/mem/SimpleMemory.py	Fri Dec 11 23:45:02 2015 -0500
+@@ -45,7 +45,7 @@
+ class SimpleMemory(AbstractMemory):
+     type = 'SimpleMemory'
+     port = SlavePort("Slave ports")
+-    latency = Param.Latency('30ns', "Request to response latency")
++    latency = Param.Latency('300ns', "Request to response latency")
+     latency_var = Param.Latency('0ns', "Request to response latency variance")
+     # The memory bandwidth limit default is set to 12.8GB/s which is
+     # representative of a x64 DDR3-1600 channel.
+diff -r 5ce0c4e42f93 src/mem/protocol/MESI_CMP_directory-L2cache.sm
+--- a/src/mem/protocol/MESI_CMP_directory-L2cache.sm	Fri Oct 19 10:16:18 2012 -0400
++++ b/src/mem/protocol/MESI_CMP_directory-L2cache.sm	Fri Dec 11 23:45:02 2015 -0500
+@@ -365,31 +365,79 @@
+         if (is_valid(cache_entry)) {
+           // The L2 contains the block, so proceeded with handling the request
+           trigger(L1Cache_request_type_to_event(in_msg.Type, in_msg.Address,
+-                                                in_msg.Requestor, cache_entry),
+-                  in_msg.Address, cache_entry, tbe);
++                                                in_msg.Requestor, cache_entry), in_msg.Address, cache_entry, tbe);
+         } else {
+-          if (L2cacheMemory.cacheAvail(in_msg.Address)) {
+-            // L2 does't have the line, but we have space for it in the L2
+-            trigger(L1Cache_request_type_to_event(in_msg.Type, in_msg.Address,
+-                                                  in_msg.Requestor, cache_entry),
+-                    in_msg.Address, cache_entry, tbe);
+-          } else {
+-            // No room in the L2, so we need to make room before handling the request
+-            Entry L2cache_entry := getCacheEntry(L2cacheMemory.cacheProbe(in_msg.Address));
+-            if (isDirty(L2cache_entry)) {
+-              trigger(Event:L2_Replacement, L2cacheMemory.cacheProbe(in_msg.Address),
+-                      L2cache_entry, L2_TBEs[L2cacheMemory.cacheProbe(in_msg.Address)]);
++            // if we have the mapping available 
++            if (L2cacheMemory.VwayTagEntryAvail(in_msg.Address)) {
++                // The L2 contains the block, as indicated by the tag store entry : consider data to be valid
++                trigger(L1Cache_request_type_to_event(in_msg.Type, in_msg.Address, in_msg.Requestor, cache_entry), in_msg.Address, cache_entry, tbe);
+             } else {
+-              trigger(Event:L2_Replacement_clean, L2cacheMemory.cacheProbe(in_msg.Address),
+-                      L2cache_entry, L2_TBEs[L2cacheMemory.cacheProbe(in_msg.Address)]);
+-            }
++
++                // we have to evict data entry for sure
++                
++                if (L2cacheMemory.tagStoreWayAvail(in_msg.Address)){
++  
++                    if (L2cacheMemory.isDataEntryAvail()) {
++                        // Data entry is available and tag store is available - allocate with new tag store entry allocatede
++                        trigger(L1Cache_request_type_to_event(in_msg.Type, in_msg.Address, in_msg.Requestor, cache_entry), in_msg.Address, cache_entry, tbe);
++                    
++                    } else {
++                        // no data store entry remaining
++                        // need to evict atleast one entry
++                    
++                        // call RR Replacement 
++                        L2cacheMemory.RRCacheEviction(in_msg.Address);          /* REUSE REPLACEMENT BASED EVICTION */
++           
++                        // get the cache entry to be evicted
++                        Entry L2cache_entry := getCacheEntry(L2cacheMemory.cacheProbe(in_msg.Address));
++                    
++                        if (is_valid(L2cache_entry)) {
++                            if (isDirty(L2cache_entry)) {
++                                    trigger(Event:L2_Replacement, L2cacheMemory.cacheProbe(in_msg.Address),
++                                            L2cache_entry, L2_TBEs[L2cacheMemory.cacheProbe(in_msg.Address)]);
++                            } else {
++                                    trigger(Event:L2_Replacement_clean, L2cacheMemory.cacheProbe(in_msg.Address),
++                                            L2cache_entry, L2_TBEs[L2cacheMemory.cacheProbe(in_msg.Address)]);
++                            }
++                        } else {
++                                trigger(L1Cache_request_type_to_event(in_msg.Type, in_msg.Address,
++                                                            in_msg.Requestor, L2cache_entry), in_msg.Address, L2cache_entry, tbe);
++                        }
++                     }
++                } else {
++                    
++                    // store not available but data entry may be available
++
++                        // tag store not available
++                        // data entry not available
++
++                        // call LRU Replacement and update the tag store to modify
++                        L2cacheMemory.LRUCacheEviction(in_msg.Address);          /* LRU REPLACEMENT BASED EVICTION */
++           
++                        // get the cache entry to be evicted
++                        Entry L2cache_entry := getCacheEntry(L2cacheMemory.cacheProbe(in_msg.Address));
++
++                        if (is_valid(L2cache_entry)) {
++
++                            // write back based on the L2 entry
++                            if (isDirty(L2cache_entry)) {
++                                  trigger(Event:L2_Replacement, L2cacheMemory.cacheProbe(in_msg.Address),
++                                           L2cache_entry, L2_TBEs[L2cacheMemory.cacheProbe(in_msg.Address)]);
++                            } else {
++                                   trigger(Event:L2_Replacement_clean, L2cacheMemory.cacheProbe(in_msg.Address),
++                                           L2cache_entry, L2_TBEs[L2cacheMemory.cacheProbe(in_msg.Address)]);
++                             }
++                        } else {
++                              DPRINTF(RubySlicc, "JHALAK : L2 cache entry not valid , LRU eviction\n");
++                                trigger(L1Cache_request_type_to_event(in_msg.Type, in_msg.Address,
++                                                      in_msg.Requestor, L2cache_entry), in_msg.Address, L2cache_entry, tbe);
++                        }
++                }
++             }
+           }
+-        }
+-      }
+-    }
++       }
++     }
+   }
+-
+-
+   // ACTIONS
+ 
+   action(a_issueFetchToMemory, "a", desc="fetch data from memory") {
+@@ -921,7 +969,6 @@
+     jj_popL1RequestQueue;
+   }
+ 
+-
+   transition(SS, L1_GETX, SS_MB) {
+     d_sendDataToRequestor;
+     // fw_sendFwdInvToSharers;
+@@ -981,7 +1028,6 @@
+     rr_deallocateL2CacheBlock;
+   }
+ 
+-
+   // transitions from MT
+ 
+   transition(MT, L1_GETX, MT_MB) {
+diff -r 5ce0c4e42f93 src/mem/protocol/RubySlicc_Types.sm
+--- a/src/mem/protocol/RubySlicc_Types.sm	Fri Oct 19 10:16:18 2012 -0400
++++ b/src/mem/protocol/RubySlicc_Types.sm	Fri Dec 11 23:45:02 2015 -0500
+@@ -140,6 +140,19 @@
+ }
+ 
+ structure (CacheMemory, external = "yes") {
++  
++  /* GEM5 JHALAK */
++  bool isDataEntryAvail();
++  bool VwayTagEntryAvail(Address);
++  Address prevGetEntry();
++  void prevStoreEntry(Address);
++  bool VWAY_RRcacheAvail(Address);
++  bool tagStoreWayAvail(Address);
++  void LRUCacheEviction(Address);
++  void RRCacheEviction(Address);
++  bool presentInDataStoreBuffer(Address);
++  
++  /* GEM5 JHALAK */
+   bool cacheAvail(Address);
+   Address cacheProbe(Address);
+   AbstractCacheEntry allocate(Address, AbstractCacheEntry);
+diff -r 5ce0c4e42f93 src/mem/ruby/profiler/CacheProfiler.cc
+--- a/src/mem/ruby/profiler/CacheProfiler.cc	Fri Oct 19 10:16:18 2012 -0400
++++ b/src/mem/ruby/profiler/CacheProfiler.cc	Fri Dec 11 23:45:02 2015 -0500
+@@ -49,7 +49,9 @@
+ {
+     out << "Cache Stats: " << m_description << endl;
+     string description = "  " + m_description;
+-
++    out << description << "_L2CacheAvailNoAddNoInvWay:" << m_L2CacheAvailNoAddNoInvWay << endl;
++    out << description << "_L2CacheAvailInvWayFound:" << m_L2CacheAvailInvWayFound << endl;
++    out << description << "_L2CacheAvailHits:" << m_L2CacheAvailHits << endl;
+     out << description << "_total_misses: " << m_misses << endl;
+     out << description << "_total_demand_misses: " << m_demand_misses << endl;
+     out << description << "_total_prefetches: " << m_prefetches << endl;
+@@ -117,6 +119,10 @@
+     for (int i = 0; i < int(GenericRequestType_NUM); i++) {
+         m_genericRequestType[i] = 0;
+     }
++    m_L2CacheAvailHits = 0;
++    m_L2CacheAvailInvWayFound = 0;
++    m_L2CacheAvailNoAddNoInvWay = 0;
++    
+     m_misses = 0;
+     m_demand_misses = 0;
+     m_prefetches = 0;
+diff -r 5ce0c4e42f93 src/mem/ruby/profiler/CacheProfiler.hh
+--- a/src/mem/ruby/profiler/CacheProfiler.hh	Fri Oct 19 10:16:18 2012 -0400
++++ b/src/mem/ruby/profiler/CacheProfiler.hh	Fri Dec 11 23:45:02 2015 -0500
+@@ -59,6 +59,11 @@
+ 
+     void print(std::ostream& out) const;
+ 
++    // GEM JHALAK
++    int64 m_L2CacheAvailHits;
++    int64 m_L2CacheAvailInvWayFound;
++    int64 m_L2CacheAvailNoAddNoInvWay;
++
+   private:
+     // Private copy constructor and assignment operator
+     CacheProfiler(const CacheProfiler& obj);
+@@ -67,6 +72,7 @@
+ 
+     std::string m_description;
+     int64 m_misses;
++
+     int64 m_demand_misses;
+     int64 m_prefetches;
+     int64 m_sw_prefetches;
+diff -r 5ce0c4e42f93 src/mem/ruby/slicc_interface/AbstractCacheEntry.cc
+--- a/src/mem/ruby/slicc_interface/AbstractCacheEntry.cc	Fri Oct 19 10:16:18 2012 -0400
++++ b/src/mem/ruby/slicc_interface/AbstractCacheEntry.cc	Fri Dec 11 23:45:02 2015 -0500
+@@ -33,6 +33,9 @@
+     m_Permission = AccessPermission_NotPresent;
+     m_Address.setAddress(0);
+     m_locked = -1;
++
++    // added for data store entry
++    m_rptr = -1; 
+ }
+ 
+ AbstractCacheEntry::~AbstractCacheEntry()
+diff -r 5ce0c4e42f93 src/mem/ruby/slicc_interface/AbstractCacheEntry.hh
+--- a/src/mem/ruby/slicc_interface/AbstractCacheEntry.hh	Fri Oct 19 10:16:18 2012 -0400
++++ b/src/mem/ruby/slicc_interface/AbstractCacheEntry.hh	Fri Dec 11 23:45:02 2015 -0500
+@@ -56,6 +56,9 @@
+                     // by CacheMemory
+     int m_locked; // Holds info whether the address is locked,
+                   // required for implementing LL/SC
++
++    int m_rptr;     // reverse pointer to tag store entry in a set 
++                    // might need to make it struct with a set and index to a tag store entry
+ };
+ 
+ inline std::ostream&
+diff -r 5ce0c4e42f93 src/mem/ruby/system/Cache.py
+--- a/src/mem/ruby/system/Cache.py	Fri Oct 19 10:16:18 2012 -0400
++++ b/src/mem/ruby/system/Cache.py	Fri Dec 11 23:45:02 2015 -0500
+@@ -37,7 +37,9 @@
+     size = Param.MemorySize("capacity in bytes");
+     latency = Param.Int("");
+     assoc = Param.Int("");
+-    replacement_policy = Param.String("PSEUDO_LRU", "");
++    replacement_policy = Param.String("");
++    tdr = Param.Int("");
++    #replacement_policy = Param.String("PSEUDO_LRU", "");
+     start_index_bit = Param.Int(6, "index start, default 6 for 64-byte line");
+     is_icache = Param.Bool(False, "is instruction only cache");
+ 
+diff -r 5ce0c4e42f93 src/mem/ruby/system/CacheMemory.cc
+--- a/src/mem/ruby/system/CacheMemory.cc	Fri Oct 19 10:16:18 2012 -0400
++++ b/src/mem/ruby/system/CacheMemory.cc	Fri Dec 11 23:45:02 2015 -0500
+@@ -35,6 +35,9 @@
+ #include "mem/ruby/system/CacheMemory.hh"
+ #include "mem/ruby/system/System.hh"
+ 
++#include "debug/jp.hh"
++#include "mem/ruby/system/TagStruct.hh"
++
+ using namespace std;
+ 
+ ostream&
+@@ -64,6 +67,7 @@
+     m_start_index_bit = p->start_index_bit;
+     m_is_instruction_only_cache = p->is_icache;
+     m_resource_stalls = p->resourceStalls;
++    m_tdr = p->tdr;
+ }
+ 
+ void
+@@ -81,7 +85,36 @@
+     else if (m_policy == "LRU")
+         m_replacementPolicy_ptr =
+             new LRUPolicy(m_cache_num_sets, m_cache_assoc);
+-    else
++/* GEM_JHALAK */
++    else if (m_policy == "VWAY_RR") {
++       
++        // tag struct entry
++        TagStruct tag_entry;
++
++        tag_entry.valid_bit = false;
++        tag_entry.fptr = -1;
++        
++        /* initialize the tag store structure */
++        tag_store_entry.resize(m_tdr*m_cache_num_sets);      /* increase the number of sets in the tag store entry based on "tage to data ratio (TDR)" */
++        
++        for (int i = 0; i < m_tdr*m_cache_num_sets; i++) {
++            tag_store_entry[i].resize(m_cache_assoc);       /* associativity remains the same */
++            for (int j = 0; j < m_cache_assoc; j++) {
++                //DPRINTF(Vway, "tag_store_entry[%d][%d]\n",i,j);
++                tag_store_entry[i][j] = tag_entry;
++            }
++        }
++
++        /* instantiate the replacement policy pointer */
++        m_replacementPolicy_ptr = new RRPolicy(m_cache_num_sets, m_cache_assoc);
++    
++        /* initialize the last accessed way */
++        vway_last_set_accessed.resize(m_cache_num_sets);
++        for (int i = 0; i < m_cache_num_sets; i++) {
++            vway_last_set_accessed[i] = 0;              /* first access the even enties */
++        }
++
++    } else
+         assert(false);
+ 
+     m_cache.resize(m_cache_num_sets);
+@@ -111,7 +144,32 @@
+ {
+     assert(address == line_address(address));
+     return address.bitSelect(m_start_index_bit,
+-                             m_start_index_bit + m_cache_num_set_bits - 1);
++                             m_start_index_bit + m_cache_num_set_bits - 1 + (m_tdr - 1));
++}
++
++Address
++CacheMemory::prevGetEntry(void){
++    return BuffEntry;
++}
++
++void
++CacheMemory::prevStoreEntry(const Address& address){
++    BuffEntry = address;
++}
++
++Index
++CacheMemory::findVwayDataTagFromAddress(const Address& address) const
++{
++    /* get the tag store entry index */
++    Index tagStoreIndex = findTagStoreEntry(address); 
++        
++    Index tagStoreSet = tagStoreIndex / m_cache_assoc;    // get the tag store set
++    Index tagStoreWay = tagStoreIndex % m_cache_assoc;    // get tag store way for a set
++
++    // get location in the data store entry based on fptr 
++    Index global_loc = tag_store_entry[tagStoreSet][tagStoreWay].fptr;
++            
++    return global_loc;
+ }
+ 
+ // Given a cache index: returns the index of the tag in a set.
+@@ -122,10 +180,24 @@
+     assert(tag == line_address(tag));
+     // search the set for the tags
+     m5::hash_map<Address, int>::const_iterator it = m_tag_index.find(tag);
+-    if (it != m_tag_index.end())
+-        if (m_cache[cacheSet][it->second]->m_Permission !=
+-            AccessPermission_NotPresent)
+-            return it->second;
++    if (it != m_tag_index.end()) {
++        
++        if (m_policy == "VWAY_RR") {
++            Index global_loc = findVwayDataTagFromAddress(tag);
++            Index actualCacheSet = global_loc/m_cache_assoc;
++            Index actualCacheWay = global_loc%m_cache_assoc;
++           
++            if (m_cache[actualCacheSet][actualCacheWay]->m_Permission !=
++                AccessPermission_NotPresent) {
++                    return global_loc;
++            }
++        } else {    
++            if (m_cache[cacheSet][it->second]->m_Permission !=
++                AccessPermission_NotPresent) {
++                    return it->second;
++            }
++        }
++    }
+     return -1; // Not found
+ }
+ 
+@@ -137,9 +209,19 @@
+ {
+     assert(tag == line_address(tag));
+     // search the set for the tags
++    
+     m5::hash_map<Address, int>::const_iterator it = m_tag_index.find(tag);
+-    if (it != m_tag_index.end())
+-        return it->second;
++    if (it != m_tag_index.end()) {
++          
++        if (m_policy == "VWAY_RR") {
++            Index global_loc = findVwayDataTagFromAddress(tag);
++           
++            return global_loc;
++        } else {    
++            return it->second;
++        }
++    }
++
+     return -1; // Not found
+ }
+ 
+@@ -150,7 +232,13 @@
+     assert(address == line_address(address));
+     DPRINTF(RubyCache, "address: %s\n", address);
+     Index cacheSet = addressToCacheSet(address);
+-    int loc = findTagInSet(cacheSet, address);
++    int loc = findTagInSet(cacheSet, address);  // for Vway cache will return global index into the data store
++    
++    if (m_policy == "VWAY_RR") {
++        cacheSet = loc/m_cache_assoc;    // get actual data store set
++        loc = loc % m_cache_assoc;              // get data store way
++    }
++
+     if (loc != -1) {
+         // Do we even have a tag match?
+         AbstractCacheEntry* entry = m_cache[cacheSet][loc];
+@@ -179,8 +267,13 @@
+     Index cacheSet = addressToCacheSet(address);
+     int loc = findTagInSet(cacheSet, address);
+ 
++    if (m_policy == "VWAY_RR") {
++        cacheSet = loc/m_cache_assoc;    // get actual data store set
++        loc = loc % m_cache_assoc;              // get data store way
++    }
++
+     if (loc != -1) {
+-        // Do we even have a tag match?
++        // Do we even have a tag match?:
+         AbstractCacheEntry* entry = m_cache[cacheSet][loc];
+         m_replacementPolicy_ptr->touch(cacheSet, loc, curTick());
+         data_ptr = &(entry->getDataBlk());
+@@ -201,6 +294,11 @@
+     Index cacheSet = addressToCacheSet(address);
+     int loc = findTagInSet(cacheSet, address);
+ 
++    if (m_policy == "VWAY_RR") {
++        cacheSet = loc/m_cache_assoc;    // get actual data store set
++        loc = loc % m_cache_assoc;              // get data store way
++    }
++
+     if (loc == -1) {
+         // We didn't find the tag
+         DPRINTF(RubyCache, "No tag match for address: %s\n", address);
+@@ -210,72 +308,321 @@
+     return true;
+ }
+ 
+-// Returns true if there is:
++// Reuse Replacement based eviction : all the data store entries are filled up and space left in tag ways
++void
++CacheMemory::RRCacheEviction(const Address& address)
++{
++    assert(address == line_address(address));       
++    assert(!VwayTagEntryAvail(address));            // tag entry should not be available
++    assert(tagStoreWayAvail(address));              // tag way should be available
++    //assert(!isDataEntryAvail());                  // no data entry should be available
++
++    /* call reuse replacement policy for eviction */
++    data_store_global_index = ((RRPolicy*)m_replacementPolicy_ptr)->rrGetVictim();    /* get the index in the data store entry to evict; also update the rr_rct_ref_index to evict the dataentry from m_cache */
++
++    DPRINTF(jp, "RR_EVICTION : Global index to evict : %d\n", data_store_global_index);
++}
++
++// LRU based eviction
++void
++CacheMemory::LRUCacheEviction(const Address& address)
++{
++    
++    assert(address == line_address(address));
++    assert(!VwayTagEntryAvail(address));          // tag entry should not be available
++    assert(!tagStoreWayAvail(address));          // tag way should not ba available
++    //assert(!isDataEntryAvail());                // no data entry should be available
++
++    // get tag store set to evict
++    Index cacheSet =  addressToCacheSet(address);
++
++    // as tag store way not available, calling LRU replacement policy on all the tag store entries belonging to extended tag stores
++    tag_store_index_to_modify = ((RRPolicy*)m_replacementPolicy_ptr)->lruGetVictim(tag_store_entry, cacheSet);    /* get the index in the data store entry to evict; also update the rr_rct_ref_index to evict the dataentry from m_cache */
++
++    DPRINTF(jp, "LRU_EVICTION : Tag Store Entry to Modify %d\n", tag_store_index_to_modify);
++}
++
++bool
++CacheMemory::tagStoreWayAvail(const Address& address) const
++{
++    assert(address == line_address(address));
++
++    /* get the cache set corresponding to the address */
++    Index cacheSet = addressToCacheSet(address);
++    
++    for (int j = 0; j < m_cache_assoc; j++) {
++            if ((tag_store_entry[cacheSet][j]).valid_bit == false) {
++                return true;
++            }
++    }
++    // if all the entries are valid in any of the tag store entry
++    return false;
++}
++
++Index
++CacheMemory::findTagStoreEntry(const Address& address) const
++{
++   
++    assert(address == line_address(address));
++
++    Index tag_store_entry_index;
++    /* get the cache set corresponding to the address */
++    Index cacheSet = addressToCacheSet(address);
++
++    for (int j = 0; j < m_cache_assoc; j++) {
++            // if the address is present in any of the tag store entry 
++            if ((tag_store_entry[cacheSet][j].tag == address) && (tag_store_entry[cacheSet][j].valid_bit == true)) {
++                tag_store_entry_index = cacheSet * m_cache_assoc + j;
++                return tag_store_entry_index;
++            }
++    }
++    // address not present in any of the tag store entry
++    panic("find tag store entry didn't find an available entry");
++}
++
++bool 
++CacheMemory::isDataEntryAvail(){
++    for(int i =0; i <m_cache_num_sets; i++) {
++        for (int j = 0; j < m_cache_assoc; j++) {
++            if (m_cache[i][j] == NULL) {
++                return true;
++            }
++        }
++    }
++
++    return false;
++}
++
++bool 
++CacheMemory::VwayTagEntryAvail(const Address& address) const
++{
++    DPRINTF(jp, "vway tag entry available : %d\n", address);
++    
++    assert(address == line_address(address));
++    Index cacheSet = addressToCacheSet(address);
++    for (int j =0; j<m_cache_assoc; j++){
++            if ((tag_store_entry[cacheSet][j].tag == address) && (tag_store_entry[cacheSet][j].valid_bit == true)) {
++                //DPRINTF(jp, "VWAY found the tag .. ***** GREAT ******\n");
++                return true;
++            }
++    }
++
++    return false;
++}
++
++// Returns true if there is:m_replacementPolicy_ptr
+ //   a) a tag match on this address or there is
+ //   b) an unused line in the same cache "way"
+ bool
+ CacheMemory::cacheAvail(const Address& address) const
+ {
+     assert(address == line_address(address));
+-
+     Index cacheSet = addressToCacheSet(address);
+-
++    
++    DPRINTF(jp, "cache avail : %d\n", address);
++    
+     for (int i = 0; i < m_cache_assoc; i++) {
+         AbstractCacheEntry* entry = m_cache[cacheSet][i];
+         if (entry != NULL) {
+             if (entry->m_Address == address ||
+                 entry->m_Permission == AccessPermission_NotPresent) {
+-                // Already in the cache or we found an empty entry
++                /* when already found in the cache */
++                // basically no one should call this
+                 return true;
+             }
+         } else {
++            /* when allocate() calls it always return true from here */
+             return true;
+         }
+     }
++    /* when probe call the cacheAvail : it should return false from here : which means the entry is ready for eviction for normal policy */
+     return false;
+ }
+ 
++// return tag store set corresponding to data store set 
++Index
++CacheMemory::allocateTagStoreEntry(Index cacheSet) {
++
++    for (int j = 0; j < m_cache_assoc; j++) {
++            if (tag_store_entry[cacheSet][j].valid_bit == false) {
++                Index tag_store_index = cacheSet * m_cache_assoc + j;       // get tag store entry for the set based on current index
++                return tag_store_index;
++            }
++     }
++     assert(0); // kill the execution 
++     return -1;
++}
++
++bool
++CacheMemory::presentInDataStoreBuffer(const Address& address) {
++
++    if (dataBufferAddress == address) {
++        return true;
++    } 
++
++    return false;
++}
++
++
++
+ AbstractCacheEntry*
+ CacheMemory::allocate(const Address& address, AbstractCacheEntry* entry)
+ {
++    DPRINTF(jp, "allocating entry : %d\n", address);
++   
++    // tag should not be present which we are trying to allocate
++    assert(!isTagPresent(address));
++   
++    // validate the address
+     assert(address == line_address(address));
+-    assert(!isTagPresent(address));
+-    assert(cacheAvail(address));
+-    DPRINTF(RubyCache, "address: %s\n", address);
+ 
+-    // Find the first open slot
++    if (m_policy == "VWAY_RR") {
++        // check if data entry is available for allocation
++        //assert(isDataEntryAvail());
++    } else {
++        // check if the data entry available
++        assert(cacheAvail(address));                // location is available in data store entry to accomodate the tag
++    }
++
++    // get the possible cachSet in tag store entry where the address can go
+     Index cacheSet = addressToCacheSet(address);
+-    std::vector<AbstractCacheEntry*> &set = m_cache[cacheSet];
+-    for (int i = 0; i < m_cache_assoc; i++) {
+-        if (!set[i] || set[i]->m_Permission == AccessPermission_NotPresent) {
+-            set[i] = entry;  // Init entry
+-            set[i]->m_Address = address;
+-            set[i]->m_Permission = AccessPermission_Invalid;
+-            DPRINTF(RubyCache, "Allocate clearing lock for addr: %x\n",
+-                    address);
+-            set[i]->m_locked = -1;
+-            m_tag_index[address] = i;
++    Index tag_store_entry_index;
+ 
+-            m_replacementPolicy_ptr->touch(cacheSet, i, curTick());
++    if (m_policy == "VWAY_RR") {
++        // find empty tag store entry
++        if (tagStoreWayAvail(address)== true) {
++            // eviction should be using RR eviction or there are empty tag entry available
++            tag_store_entry_index = allocateTagStoreEntry(cacheSet);            // allocate an available entry
++        } else {
++            // no tag store way available, eviction through LRU eviction policy
++            tag_store_entry_index = tag_store_index_to_modify;                  // re-allocate a previous entry
++        }
+ 
+-            return entry;
++        // search complete data store to find an empty entry
++        for (int k = 0; k < m_cache_num_sets; k++) {
++            std::vector<AbstractCacheEntry*> &set = m_cache[k];
++    
++            // if not open slot is found it is going to panic 
++            for (int i = 0; i < m_cache_assoc; i++) {
++    
++                if (!set[i] || set[i]->m_Permission == AccessPermission_NotPresent) {
++                    
++                    if (data_store_global_index == k * m_cache_assoc + i) {
++                        //DPRINTF(jp, "if it equals then allocation is happening after RR or LRU eviction to the data entry : %d\n", data_store_global_index);
++                    }
++                    
++                    set[i] = entry;  // Init entry
++                    set[i]->m_Address = address;
++                    set[i]->m_Permission = AccessPermission_Invalid;            // not sure ???
++
++                    /* for the open slot in the data entry, find the tag store entry */
++                    // as there are more number of tage store entry --> it will be found for sure
++                    set[i]->m_rptr = tag_store_entry_index; // set the reverse pointer
++                        
++                    Index tagStoreSet = tag_store_entry_index / m_cache_assoc;
++
++                    Index invalid_way = tag_store_entry_index % m_cache_assoc;
++
++                    // update TAG STORE ENTRY 
++                    tag_store_entry[tagStoreSet][invalid_way].valid_bit = true;                /* set the valid bit to true */
++
++                    tag_store_entry[tagStoreSet][invalid_way].fptr = k * m_cache_assoc + i;    /* set the fptr to point to the global data entry index */
++
++                    tag_store_entry[tagStoreSet][invalid_way].tag = address;                    /* store the address into tag bit  */
++          
++                    //DPRINTF(jp, "Allocate address : %x at TAG index : %d with global index : %d\n", address, tag_store_entry_index, k*m_cache_assoc + i);
++                    DPRINTF(RubyCache, "Allocate clearing lock for addr: %x\n",
++                            address);
++           
++                    set[i]->m_locked = -1;
++                    m_tag_index[address] = i;
++
++                    m_replacementPolicy_ptr->touch(k, i, curTick());
++
++                    return entry;
++                 }
++            }
++        }
++    } else {
++    
++        DPRINTF(RubyCache, "address: %s\n", address);
++
++        /* get corresponding set entry pointer array */
++        std::vector<AbstractCacheEntry*> &set = m_cache[cacheSet];
++    
++        // underying assumption is that it will for sure get an open slot 
++        // if not open slot is found it is going to panic 
++        for (int i = 0; i < m_cache_assoc; i++) {
++            if (!set[i] || set[i]->m_Permission == AccessPermission_NotPresent) {
++                set[i] = entry;  // Init entry
++                set[i]->m_Address = address;
++                set[i]->m_Permission = AccessPermission_Invalid;
++
++                DPRINTF(RubyCache, "Allocate clearing lock for addr: %x\n",
++                        address);
++                set[i]->m_locked = -1;
++                m_tag_index[address] = i;
++
++                m_replacementPolicy_ptr->touch(cacheSet, i, curTick());
++
++                return entry;
++            }
+         }
+     }
++
+     panic("Allocate didn't find an available entry");
+ }
+ 
+ void
+ CacheMemory::deallocate(const Address& address)
+ {
++    
++    DPRINTF(jp, "deallocating \n");
++    
+     assert(address == line_address(address));
+-    assert(isTagPresent(address));
+     DPRINTF(RubyCache, "address: %s\n", address);
+-    Index cacheSet = addressToCacheSet(address);
+-    int loc = findTagInSet(cacheSet, address);
+-    if (loc != -1) {
+-        delete m_cache[cacheSet][loc];
+-        m_cache[cacheSet][loc] = NULL;
+-        m_tag_index.erase(address);
++
++    if (m_policy == "VWAY_RR") {
++      
++       // tag should be present to get removed
++       assert(VwayTagEntryAvail(address));
++       
++       /* get the tag store entry index */
++       Index tagStoreIndex = findTagStoreEntry(address); 
++        
++       Index tagStoreSet = tagStoreIndex / m_cache_assoc;    // get the tag store set
++       Index tagStoreWay = tagStoreIndex % m_cache_assoc;    // get tag store way for a set
++
++       // get location in the data store entry based on fptr 
++       int global_loc = tag_store_entry[tagStoreSet][tagStoreWay].fptr;
++        
++       if (global_loc != -1) {
++
++          Index dataStoreSet = global_loc / m_cache_assoc;      // get data store set
++          Index dataStoreWay = global_loc % m_cache_assoc;      // get data store way for a set
++
++          // reset the tag store entrys
++          tag_store_entry[tagStoreSet][tagStoreWay].valid_bit = false;
++        
++          //DPRINTF(jp, "Deallocate address : %x at TAG index : %d with global index : %d\n", address, tagStoreIndex, global_loc);
++          
++          delete m_cache[dataStoreSet][dataStoreWay];
++          m_cache[dataStoreSet][dataStoreWay] = NULL;
++          m_tag_index.erase(address);
++        }
++    
++    } else {
++        
++        Index cacheSet = addressToCacheSet(address);
++        assert(isTagPresent(address));
++        
++        int loc = findTagInSet(cacheSet, address);
++        
++        if (loc != -1) {
++            delete m_cache[cacheSet][loc];
++            m_cache[cacheSet][loc] = NULL;
++            m_tag_index.erase(address);
++        }
+     }
+ }
+ 
+@@ -284,21 +631,46 @@
+ CacheMemory::cacheProbe(const Address& address) const
+ {
+     assert(address == line_address(address));
+-    assert(!cacheAvail(address));
++    Index cacheSet = addressToCacheSet(address);
+ 
+-    Index cacheSet = addressToCacheSet(address);
+-    return m_cache[cacheSet][m_replacementPolicy_ptr->getVictim(cacheSet)]->
+-        m_Address;
++    DPRINTF(jp, "cache probe\n");
++    
++    if (m_policy == "VWAY_RR") {
++        
++        // check whether the VWAY tag entry available or not
++        Index global_data_index = ((RRPolicy*)m_replacementPolicy_ptr)->getVictim(cacheSet);
++        Index data_way = global_data_index % m_cache_assoc; 
++        Index data_set = global_data_index / m_cache_assoc;
++       
++        // address to be evicted should be available in the Vway Tag store structure
++        assert(VwayTagEntryAvail(m_cache[data_set][data_way]->m_Address));
++        
++        return m_cache[data_set][data_way]->m_Address;
++    
++    } else {
++        assert(!cacheAvail(address));
++        
++        /* returns the cache entry to be evicted, we have already made changes to the TAG STORE and DATA STORE before evicting this entry */
++        return m_cache[cacheSet][m_replacementPolicy_ptr->getVictim(cacheSet)]->m_Address;
++    }    
+ }
+ 
+ // looks an address up in the cache
+ AbstractCacheEntry*
+ CacheMemory::lookup(const Address& address)
+ {
++    
++    DPRINTF(jp, "cache memory lookup\n");
++    
+     assert(address == line_address(address));
+     Index cacheSet = addressToCacheSet(address);
+     int loc = findTagInSet(cacheSet, address);
+     if(loc == -1) return NULL;
++    
++    if (m_policy == "VWAY_RR") {
++        cacheSet = loc/m_cache_assoc;    // get actual data store set
++        loc = loc % m_cache_assoc;              // get data store way
++    }
+     return m_cache[cacheSet][loc];
+ }
+ 
+@@ -306,10 +678,18 @@
+ const AbstractCacheEntry*
+ CacheMemory::lookup(const Address& address) const
+ {
++    DPRINTF(jp, "cache memory lookup\n");
++    
+     assert(address == line_address(address));
+     Index cacheSet = addressToCacheSet(address);
+     int loc = findTagInSet(cacheSet, address);
++   
+     if(loc == -1) return NULL;
++    
++    if (m_policy == "VWAY_RR") {
++        cacheSet = loc/m_cache_assoc;    // get actual data store set
++        loc = loc % m_cache_assoc;              // get data store way
++    }
+     return m_cache[cacheSet][loc];
+ }
+ 
+@@ -320,6 +700,11 @@
+     Index cacheSet = addressToCacheSet(address);
+     int loc = findTagInSet(cacheSet, address);
+ 
++    if (m_policy == "VWAY_RR") {
++        cacheSet = loc/m_cache_assoc;    // get actual data store set
++        loc = loc % m_cache_assoc;              // get data store way
++    }
++
+     if(loc != -1)
+         m_replacementPolicy_ptr->touch(cacheSet, loc, curTick());
+ }
+@@ -348,7 +733,6 @@
+     uint64 warmedUpBlocks = 0;
+     uint64 totalBlocks M5_VAR_USED = (uint64)m_cache_num_sets
+                                                   * (uint64)m_cache_assoc;
+-
+     for (int i = 0; i < m_cache_num_sets; i++) {
+         for (int j = 0; j < m_cache_assoc; j++) {
+             if (m_cache[i][j] != NULL) {
+@@ -425,6 +809,12 @@
+     assert(address == line_address(address));
+     Index cacheSet = addressToCacheSet(address);
+     int loc = findTagInSet(cacheSet, address);
++    
++    if (m_policy == "VWAY_RR") {
++        cacheSet = loc/m_cache_assoc;    // get actual data store set
++        loc = loc % m_cache_assoc;              // get data store way
++    }
++    
+     assert(loc != -1);
+     m_cache[cacheSet][loc]->m_locked = context;
+ }
+@@ -436,6 +826,12 @@
+     assert(address == line_address(address));
+     Index cacheSet = addressToCacheSet(address);
+     int loc = findTagInSet(cacheSet, address);
++    
++    if (m_policy == "VWAY_RR") {
++        cacheSet = loc/m_cache_assoc;    // get actual data store set
++        loc = loc % m_cache_assoc;              // get data store way
++    }
++    
+     assert(loc != -1);
+     m_cache[cacheSet][loc]->m_locked = -1;
+ }
+@@ -446,6 +842,12 @@
+     assert(address == line_address(address));
+     Index cacheSet = addressToCacheSet(address);
+     int loc = findTagInSet(cacheSet, address);
++    
++    if (m_policy == "VWAY_RR") {
++        cacheSet = loc/m_cache_assoc;    // get actual data store set
++        loc = loc % m_cache_assoc;              // get data store way
++    }
++    
+     assert(loc != -1);
+     DPRINTF(RubyCache, "Testing Lock for addr: %llx cur %d con %d\n",
+             address, m_cache[cacheSet][loc]->m_locked, context);
+@@ -477,6 +879,7 @@
+ 
+ void
+ CacheMemory::regStats() {
++    
+     using namespace Stats;
+ 
+     numDataArrayReads
+@@ -513,23 +916,49 @@
+ bool
+ CacheMemory::checkResourceAvailable(CacheResourceType res, Address addr)
+ {
++
+     if (!m_resource_stalls) {
+         return true;
+     }
+ 
+     if (res == CacheResourceType_TagArray) {
+-        if (tagArray.tryAccess(addressToCacheSet(addr))) return true;
+-        else {
+-            DPRINTF(RubyResourceStalls, "Tag array stall on addr %s in set %d\n", addr, addressToCacheSet(addr));
+-            numTagArrayStalls++;
+-            return false;
++        if (m_policy == "VWAY_RR") {
++
++            Index global_loc = findVwayDataTagFromAddress(addr);
++            Index cacheSet = global_loc / m_cache_assoc;
++
++            if (tagArray.tryAccess(cacheSet)) return true;
++            else {
++                DPRINTF(RubyResourceStalls, "Tag array stall on addr %s in set %d\n", addr, cacheSet);
++                numTagArrayStalls++;
++                return false;
++            }
++        } else {
++            if (tagArray.tryAccess(addressToCacheSet(addr))) return true;
++            else {
++                DPRINTF(RubyResourceStalls, "Tag array stall on addr %s in set %d\n", addr, addressToCacheSet(addr));
++                numTagArrayStalls++;
++                return false;
++            }
+         }
+     } else if (res == CacheResourceType_DataArray) {
+-        if (dataArray.tryAccess(addressToCacheSet(addr))) return true;
+-        else {
+-            DPRINTF(RubyResourceStalls, "Data array stall on addr %s in set %d\n", addr, addressToCacheSet(addr));
+-            numDataArrayStalls++;
+-            return false;
++        if (m_policy == "VWAY_RR") {
++            Index global_loc = findVwayDataTagFromAddress(addr);
++            Index cacheSet = global_loc / m_cache_assoc;
++
++            if (dataArray.tryAccess(cacheSet)) return true;
++            else {
++                DPRINTF(RubyResourceStalls, "Tag array stall on addr %s in set %d\n", addr, cacheSet);
++                numDataArrayStalls++;
++                return false;
++            }
++        } else {
++            if (dataArray.tryAccess(addressToCacheSet(addr))) return true;
++            else {
++                DPRINTF(RubyResourceStalls, "Data array stall on addr %s in set %d\n", addr, addressToCacheSet(addr));
++                numDataArrayStalls++;
++                return false;
++            }
+         }
+     } else {
+         assert(false);
+diff -r 5ce0c4e42f93 src/mem/ruby/system/CacheMemory.hh
+--- a/src/mem/ruby/system/CacheMemory.hh	Fri Oct 19 10:16:18 2012 -0400
++++ b/src/mem/ruby/system/CacheMemory.hh	Fri Dec 11 23:45:02 2015 -0500
+@@ -49,6 +49,9 @@
+ #include "params/RubyCache.hh"
+ #include "sim/sim_object.hh"
+ 
++#include "mem/ruby/system/TagStruct.hh"
++#include "mem/ruby/system/RRPolicy.hh"
++
+ class CacheMemory : public SimObject
+ {
+   public:
+@@ -75,6 +78,8 @@
+     //   b) an unused line in the same cache "way"
+     bool cacheAvail(const Address& address) const;
+ 
++
++
+     // find an unused entry and sets the tag appropriate for the address
+     AbstractCacheEntry* allocate(const Address& address, AbstractCacheEntry* new_entry);
+     void allocateVoid(const Address& address, AbstractCacheEntry* new_entry)
+@@ -88,6 +93,64 @@
+     // Returns with the physical address of the conflicting cache line
+     Address cacheProbe(const Address& address) const;
+ 
++    /*------------------------- GEM JHALAK ----------------------- */
++
++    int m_tdr;
++
++    Index data_store_global_index;
++
++    Index tag_store_index_to_modify;
++
++    bool VwayTagEntryAvail(const Address& address) const;
++
++    bool presentInDataStoreBuffer(const Address& address);
++
++    // vway available : check all the data entry for empty L2 way
++    bool VWAY_RRcacheAvail(const Address& address) const;
++    
++    // local reuse replacement : get victim function call 
++    void RRCacheEviction(const Address& address);
++    
++    // lru replacement : get victim function call 
++    void LRUCacheEviction(const Address& address);
++    
++    // check if tag way is available or not 
++    bool tagStoreWayAvail(const Address& address) const;
++
++    // allocate tag store entry
++    Index allocateTagStoreEntry(Index cacheSet);
++
++    // find tag store entry
++    Index findTagStoreEntry(const Address& address) const;
++    
++    // check if tag is available or not
++    bool tagCacheAvail(const Address& address);
++  
++    // finding data entry address for a address
++    Index findVwayDataTagFromAddress(const Address& address) const;
++
++    /* create a tag store entry */
++    //std::vector<std::vector<TagStruct*> > tag_store_entry; 
++    
++    /* to keep track of alternating entries in tag store */ 
++    std::vector<int> vway_last_set_accessed;
++
++    /*------------------------- GEM JHALAK ----------------------- */
++
++    bool isDataEntryAvail();
++    
++    Address BuffEntry;
++
++    Address prevGetEntry(void);
++
++    void prevStoreEntry(const Address& address);
++
++    Address dataBufferAddress;
++
++    Address data_entry_removed_address_lru;
++
++    Index data_entry_removed_index_lru;
++
+     // looks an address up in the cache
+     AbstractCacheEntry* lookup(const Address& address);
+     const AbstractCacheEntry* lookup(const Address& address) const;
+@@ -154,6 +217,9 @@
+     m5::hash_map<Address, int> m_tag_index;
+     std::vector<std::vector<AbstractCacheEntry*> > m_cache;
+ 
++    /* create a tag store entry */
++    std::vector<std::vector<TagStruct> > tag_store_entry; 
++    
+     AbstractReplacementPolicy *m_replacementPolicy_ptr;
+ 
+     CacheProfiler* m_profiler_ptr;
+@@ -168,6 +234,7 @@
+     int m_cache_assoc;
+     int m_start_index_bit;
+     bool m_resource_stalls;
++    
+ };
+ 
+ #endif // __MEM_RUBY_SYSTEM_CACHEMEMORY_HH__
+diff -r 5ce0c4e42f93 src/mem/ruby/system/RubySystem.py
+--- a/src/mem/ruby/system/RubySystem.py	Fri Oct 19 10:16:18 2012 -0400
++++ b/src/mem/ruby/system/RubySystem.py	Fri Dec 11 23:45:02 2015 -0500
+@@ -36,7 +36,7 @@
+     randomization = Param.Bool(False,
+         "insert random delays on message enqueue times");
+     clock = '1GHz'
+-    block_size_bytes = Param.Int(64,
++    block_size_bytes = Param.Int(128,
+         "default cache block size; must be a power of two");
+     mem_size = Param.MemorySize("total memory size of the system");
+     stats_filename = Param.String("ruby.stats",

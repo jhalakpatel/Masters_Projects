@@ -1,0 +1,8 @@
+simulator( 'hspiceS )
+design(	 "/home/ecegrid/a/559mg3/cadence/simulation/OR21_StaticCMOS/hspiceS/schematic/netlist/OR21_StaticCMOS.C")
+resultsDir( "/home/ecegrid/a/559mg3/cadence/simulation/OR21_StaticCMOS/hspiceS/schematic" )
+analysis('tran ?from "0n"  ?to "60n"  ?by "1n"  )
+temp( 25 ) 
+run()
+selectResult( 'tran )
+plot(getData("/A_IN") getData("/B_IN") getData("/OUT_OR21") )

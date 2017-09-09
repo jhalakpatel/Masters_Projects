@@ -1,0 +1,88 @@
+Mdi:ArrangeIcons
+ScopeSigMgr:loadpffile /home/ecegrid/a/559mg3/cadence/simulation/CMOS_NOR_180nm/hspiceS/schematic/netlist/nanosim.fsdb 1 openonly
+# PF:1
+pf:read PF:1 a
+# WF:1:1
+Graph addsignal WF:1:1 -region d -yview real(y) -xview real(x) -tracehi 1
+# Signal0
+pf:read PF:1 b
+# WF:1:2
+Graph addsignal WF:1:2 -region d -yview real(y) -xview real(x) -tracehi 1
+# Signal1
+pf:read PF:1 v(a)
+# WF:1:3
+Graph addsignal WF:1:3 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal2
+pf:read PF:1 v(b)
+# WF:1:4
+Graph addsignal WF:1:4 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal3
+pf:read PF:1 v(out)
+# WF:1:5
+Graph addsignal WF:1:5 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal4
+pf:read PF:1 out
+# WF:1:6
+Graph addsignal WF:1:6 -region d -yview real(y) -xview real(x) -tracehi 1
+# Signal5
+Mdi:FullSize
+wm geometry .sigmgr._PF:1 208x315+641+513
+wm geometry .sigmgr._PF:1 208x315+644+516
+wm geometry .sigmgr._PF:1 208x315+647+519
+wm geometry .sigmgr._PF:1 208x315+651+528
+wm geometry .sigmgr._PF:1 208x315+654+532
+wm geometry .sigmgr._PF:1 208x315+657+537
+wm geometry .sigmgr._PF:1 208x315+662+546
+wm geometry .sigmgr._PF:1 208x315+665+551
+wm geometry .sigmgr._PF:1 208x315+667+555
+wm geometry .sigmgr._PF:1 208x315+672+563
+wm geometry .sigmgr._PF:1 208x315+677+570
+wm geometry .sigmgr._PF:1 208x315+682+577
+wm geometry .sigmgr._PF:1 208x315+687+584
+wm geometry .sigmgr._PF:1 208x315+692+592
+wm geometry .sigmgr._PF:1 208x315+702+602
+wm geometry .sigmgr._PF:1 208x315+707+607
+wm geometry .sigmgr._PF:1 208x315+720+618
+wm geometry .sigmgr._PF:1 208x315+731+625
+wm geometry .sigmgr._PF:1 208x315+736+627
+wm geometry .sigmgr._PF:1 208x315+743+628
+wm geometry .sigmgr._PF:1 208x315+748+628
+wm geometry .sigmgr._PF:1 208x315+753+628
+wm geometry .sigmgr._PF:1 208x315+754+628
+wm geometry .sigmgr._PF:1 208x315+756+628
+wm geometry .sigmgr._PF:1 208x315+764+628
+wm geometry .sigmgr._PF:1 208x315+770+628
+wm geometry .sigmgr._PF:1 208x315+778+644
+wm geometry .sigmgr._PF:1 208x315+792+647
+wm geometry .sigmgr._PF:1 208x315+821+654
+wm geometry .sigmgr._PF:1 208x315+833+654
+wm geometry .sigmgr._PF:1 208x315+849+654
+wm geometry .sigmgr._PF:1 208x315+868+654
+wm geometry .sigmgr._PF:1 208x315+888+654
+wm geometry .sigmgr._PF:1 208x315+905+693
+wm geometry .sigmgr._PF:1 208x315+922+702
+wm geometry .sigmgr._PF:1 208x315+937+709
+wm geometry .sigmgr._PF:1 208x315+947+716
+wm geometry .sigmgr._PF:1 208x315+968+723
+wm geometry .sigmgr._PF:1 208x315+972+725
+wm geometry .sigmgr._PF:1 208x315+976+727
+wm geometry .sigmgr._PF:1 208x315+983+727
+wm geometry .sigmgr._PF:1 208x315+988+727
+wm geometry .sigmgr._PF:1 208x315+993+727
+wm geometry .sigmgr._PF:1 208x315+1002+724
+wm geometry .sigmgr._PF:1 208x315+1006+721
+wm geometry .sigmgr._PF:1 208x315+1022+706
+wm geometry .sigmgr._PF:1 208x315+1027+698
+wm geometry .sigmgr._PF:1 208x315+1033+690
+wm geometry .sigmgr._PF:1 208x315+1039+682
+wm geometry .sigmgr._PF:1 208x315+1052+656
+wm geometry .sigmgr._PF:1 208x315+1056+648
+wm geometry .sigmgr._PF:1 208x315+1060+632
+wm geometry .sigmgr._PF:1 208x315+1062+619
+wm geometry .sigmgr._PF:1 208x315+1064+614
+wm geometry .sigmgr._PF:1 208x315+1066+604
+wm geometry .sigmgr._PF:1 208x315+1066+603
+wm geometry .sigmgr._PF:1 208x315+1066+601
+Graph:SetCMap 2
+.frame1.mdi.mdi1.work.graph0 save -file /home/ecegrid/a/559mg3/GRAPHS/NOR_SCHEMATIC_GRAPH.png -format png  -x 0 -y 0 -w 888 -h 661 -colormode color
+ScopeSigMgr:Unload 0 {{(1) nanosim.fsdb}}

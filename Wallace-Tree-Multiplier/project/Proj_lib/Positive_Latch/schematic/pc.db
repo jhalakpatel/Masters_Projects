@@ -1,0 +1,20 @@
+#
+Proj_lib Inverter_180nm symbol
+I2
+#
+Proj_lib NAND_StaticCMOS symbol
+I7
+I10
+I9
+I8
+#ISCELL
+basic opin symbol
+PIN1
+#ISCELL
+basic iopin symbolr
+PIN5
+PIN4
+#ISCELL
+basic ipin symbol
+PIN0
+PIN3

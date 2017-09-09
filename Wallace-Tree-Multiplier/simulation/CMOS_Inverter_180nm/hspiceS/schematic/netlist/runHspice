@@ -1,0 +1,4 @@
+#! /bin/csh -f
+# This script can be used to rerun the last simulation
+
+hspice raw/CMOS_Inverter_180nm  >../psf/hspice.out

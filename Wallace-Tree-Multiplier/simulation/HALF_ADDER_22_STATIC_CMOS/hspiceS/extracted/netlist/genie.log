@@ -1,0 +1,18 @@
+
+Start netlist compilation at Wed Nov 26 15:39:13 2014
+
+Compiling "/tmp/gentech_genie36096.spi"
+Compiling "tt_inc"
+
+
+
+Parsing netlist finished in 0 seconds
+Default circuit temperature                       :       25.000
+Total # of elements                               :            0
+Total # of nodes                                  :            0
+Total # of subckt                                 :            1
+Total # of top-level instances                    :            0
+Building instance tree finished in 0 seconds
+
+Finish netlist compilation at Wed Nov 26 15:39:13 2014
+

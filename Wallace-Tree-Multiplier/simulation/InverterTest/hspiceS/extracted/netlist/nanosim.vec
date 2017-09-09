@@ -1,0 +1,20 @@
+type nsvt
+signal IN_0 IN_1
+period 20
+fall 1
+rise 1
+radix 1 1
+0 0
+0 1
+1 0
+0 1
+1 0
+0 1
+1 0
+0 1
+1 0
+1 0
+0 1
+1 0
+0 1
+1 0

@@ -1,0 +1,16 @@
+* "simulator" "HSPICE" 
+* "version" "E-2010.12-SP2 64-BIT"
+* "format" "HSP"
+* "rundate" "23:56:47 10/24/2014 "
+* "netlist" "raw/Inverter "
+* "runtitle" "* # file name: /home/ecegrid/a/559mg3/cadence/simulation/inverter/hspi"
+* time =  0.000e+00       
+* temperature =  2.500e+01       
+*** BEGIN: Saved Operating Point ***                     
+.option 
++ gmindc= 1.000e-12       
+.nodeset
++ in = 0.000e+00       
++ out = 2.500e+00       
++ vdd! = 2.500e+00       
+***   END: Saved Operating Point ***                     

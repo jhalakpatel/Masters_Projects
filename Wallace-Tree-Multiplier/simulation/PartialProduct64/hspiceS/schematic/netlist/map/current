@@ -1,0 +1,44 @@
+( ( nil
+  version "2.1"
+  mapType "incremental"
+  blockName "PartialProduct64"
+  repList "hspiceS spice cmos_sch cmos.sch schematic"
+  stopList "hspiceS spice"
+  hierDelim "^"
+  netlistDir "/home/ecegrid/a/559mg3/cadence/simulation/PartialProduct64/hspiceS/schematic/netlist"
+ )
+( instViewTable
+ )
+( net
+ )
+( inst
+ )
+( model
+( "Proj_lib/XOR21_StaticCMOS/schematic" "XOR21_StaticCMOS" )
+( "Proj_lib/Full_Adder_Mirror_StaticCMOS/schematic" "sub2" )
+( "Proj_lib/HALF_ADDER_22_STATIC_CMOS/schematic" "sub1" )
+( "Proj_lib/RIPPLE_CARRY_ADDER/schematic" "sub4" )
+( "Proj_lib/Inverter_180nm/schematic" "Inverter_180nm" )
+( "Proj_lib/Doubled_C2MOS_Latch/schematic" "sub3" )
+( "Proj_lib/TSPC_FF_PositiveEdge/schematic" "sub0" )
+( "Proj_lib/AND21_StaticCMOS/schematic" "AND21_StaticCMOS" )
+( "Proj_lib/PartialProduct64/schematic" "PartialProduct64" )
+( "Proj_lib/Decoder/schematic" "Decoder" )
+( "Proj_lib/NAND_StaticCMOS/schematic" "NAND_StaticCMOS" )
+ )
+( term
+ )
+( param
+ )
+( "Inverter_180nm" "ihnl/cds0/map" )
+( "sub3" "ihnl/cds5/map" )
+( "sub0" "ihnl/cds1/map" )
+( "XOR21_StaticCMOS" "ihnl/cds7/map" )
+( "sub4" "ihnl/cds9/map" )
+( "sub1" "ihnl/cds2/map" )
+( "Decoder" "ihnl/cds8/map" )
+( "PartialProduct64" "ihnl/cds10/map" )
+( "AND21_StaticCMOS" "ihnl/cds4/map" )
+( "sub2" "ihnl/cds3/map" )
+( "NAND_StaticCMOS" "ihnl/cds6/map" )
+ )

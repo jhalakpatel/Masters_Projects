@@ -1,0 +1,4 @@
+print_meas_cmt
+print_meas_path
+meas_n2n_delay IN_0 - OUT_0 -
+meas_n2n_delay IN_1 - OUT_1 -

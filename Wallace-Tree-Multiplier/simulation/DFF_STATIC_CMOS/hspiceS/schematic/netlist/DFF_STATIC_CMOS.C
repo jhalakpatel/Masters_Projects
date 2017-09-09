@@ -1,0 +1,22 @@
+* # File name: /home/ecegrid/a/559mg3/cadence/simulation/DFF_STATIC_CMOS/
+# hspiceS/schematic/netlist/DFF_STATIC_CMOS.C.raw
+# Netlist output for hspiceS.
+# Generated on Nov 26 20:57:55 2014
+
+USE Proj_lib_DFF_STATIC_CMOS_schematic
+
+USE Proj_lib_Inverter_180nm_schematic sub2
+USE Proj_lib_NOR21_STATIC_CMOS_schematic sub1
+USE Proj_lib_AND21_StaticCMOS_schematic sub3
+
+USEM tsmc18dP tsmc18dP
+USEM tsmc18dN tsmc18dN
+
+# Include files
+
+
+
+
+
+
+# End of Netlist

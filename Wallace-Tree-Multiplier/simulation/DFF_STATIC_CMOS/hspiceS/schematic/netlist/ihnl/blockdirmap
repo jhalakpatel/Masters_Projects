@@ -1,0 +1,6 @@
+CADENCE IHNL01064
+
+Proj_lib NOR21_STATIC_CMOS schematic cds0
+Proj_lib Inverter_180nm schematic cds1
+Proj_lib AND21_StaticCMOS schematic cds2
+Proj_lib DFF_STATIC_CMOS schematic cds3

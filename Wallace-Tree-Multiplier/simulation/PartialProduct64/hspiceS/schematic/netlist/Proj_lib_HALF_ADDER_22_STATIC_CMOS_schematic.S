@@ -1,0 +1,53 @@
+# File name: Proj_lib_HALF_ADDER_22_STATIC_CMOS_schematic.S.
+# Subcircuit for cell: HALF_ADDER_22_STATIC_CMOS.
+# Generated for: hspiceS.
+# Generated on Dec  5 18:39:56 2014.
+
+# terminal mapping: A_IN = A_IN
+#                   B_IN = B_IN
+#                   C_OUT_HALF_ADDER22 = 2
+#                   GD = GD
+#                   S_OUT_HALF_ADDER22 = 1
+#                   VD = VD
+.SUBCKT &1 A_IN B_IN 2 GD 1 VD 
+MN9 2 net52 GD GD  tsmc18dN  L=180e-9 W=270e-9 AD=121.5e-15 AS=121.5e-15 &
+PD=1.44e-6 PS=1.44e-6 M=1 
+MN6 net26 B_IN GD GD  tsmc18dN  L=180e-9 W=270e-9 AD=121.5e-15 AS=121.5e-&
+15 PD=1.44e-6 PS=1.44e-6 M=1 
+MN7 net25 B_IN GD GD  tsmc18dN  L=180e-9 W=270e-9 AD=121.5e-15 AS=121.5e-&
+15 PD=1.44e-6 PS=1.44e-6 M=1 
+MN8 net52 A_IN net25 GD  tsmc18dN  L=180e-9 W=270e-9 AD=121.5e-15 &
+AS=121.5e-15 PD=1.44e-6 PS=1.44e-6 M=1 
+MN0 1 net26 net34 GD  tsmc18dN  L=180e-9 W=270e-9 AD=121.5e-15 AS=121.5e-&
+15 PD=1.44e-6 PS=1.44e-6 M=1 
+MN1 net34 net46 GD GD  tsmc18dN  L=180e-9 W=270e-9 AD=121.5e-15 AS=121.5e-&
+15 PD=1.44e-6 PS=1.44e-6 M=1 
+MN2 net45 A_IN 1 GD  tsmc18dN  L=180e-9 W=270e-9 AD=121.5e-15 AS=121.5e-15 &
+PD=1.44e-6 PS=1.44e-6 M=1 
+MN3 GD B_IN net45 GD  tsmc18dN  L=180e-9 W=270e-9 AD=121.5e-15 AS=121.5e-&
+15 PD=1.44e-6 PS=1.44e-6 M=1 
+MN5 net46 A_IN GD GD  tsmc18dN  L=180e-9 W=270e-9 AD=121.5e-15 AS=121.5e-&
+15 PD=1.44e-6 PS=1.44e-6 M=1 
+MP9 2 net52 VD VD  tsmc18dP  L=180e-9 W=810e-9 AD=364.5e-15 AS=364.5e-15 &
+PD=2.52e-6 PS=2.52e-6 M=1 
+MP6 net26 B_IN VD VD  tsmc18dP  L=180e-9 W=810e-9 AD=364.5e-15 AS=364.5e-&
+15 PD=2.52e-6 PS=2.52e-6 M=1 
+MP7 VD B_IN net52 VD  tsmc18dP  L=180e-9 W=810e-9 AD=364.5e-15 AS=364.5e-&
+15 PD=2.52e-6 PS=2.52e-6 M=1 
+MP8 net52 A_IN VD VD  tsmc18dP  L=180e-9 W=810e-9 AD=364.5e-15 AS=364.5e-&
+15 PD=2.52e-6 PS=2.52e-6 M=1 
+MP3 VD net26 net77 VD  tsmc18dP  L=180e-9 W=270e-9 AD=121.5e-15 AS=121.5e-&
+15 PD=1.44e-6 PS=1.44e-6 M=1 
+MP2 net77 B_IN 1 VD  tsmc18dP  L=180e-9 W=270e-9 AD=121.5e-15 AS=121.5e-15 &
+PD=1.44e-6 PS=1.44e-6 M=1 
+MP1 1 A_IN net77 VD  tsmc18dP  L=180e-9 W=270e-9 AD=121.5e-15 AS=121.5e-15 &
+PD=1.44e-6 PS=1.44e-6 M=1 
+MP0 net77 net46 VD VD  tsmc18dP  L=180e-9 W=270e-9 AD=121.5e-15 AS=121.5e-&
+15 PD=1.44e-6 PS=1.44e-6 M=1 
+MP5 net46 A_IN VD VD  tsmc18dP  L=180e-9 W=810e-9 AD=364.5e-15 AS=364.5e-&
+15 PD=2.52e-6 PS=2.52e-6 M=1 
+
+
+
+# End of subcircuit definition.
+.ENDS &1

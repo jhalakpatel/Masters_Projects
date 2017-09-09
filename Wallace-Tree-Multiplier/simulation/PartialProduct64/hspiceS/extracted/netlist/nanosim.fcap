@@ -1,0 +1,105 @@
+; --------------------------------------------------------
+;|                                                        |
+;|           NanoSim Version G-2012.06 (RHEL64)           |
+;| Copyright (c) 2012 Synopsys Inc., All Rights Reserved. |
+;|                                                        |
+; --------------------------------------------------------
+;
+;Built by nsmgr   on Fri May 18 18:17:12 PDT 2012
+; Fri Dec  5 22:15:41 EST 2014
+; Machine Name: ecegrid-thin6.ecn.purdue.edu
+; 
+; ratio = TotalCap / NodeCap
+; where TotalCap is the capacitances between two terminals
+; and NodeCap is node capacitance.
+; Both TotalCap and NodeCap are estimation of capacitive effects.
+;
+ratio=0.0190911 Cap = 0.0793562fF NodeCap = 5.49961fF c8109
+ratio=0.0190911 Cap = 0.0256374fF NodeCap = 5.49961fF c8230
+ratio=0.0189952 Cap = 0.100022fF NodeCap = 5.26566fF c7011
+ratio=0.00214891 Cap = 0.0331898fF NodeCap = 15.445fF c8753
+ratio=0.0277417 Cap = 0.0752328fF NodeCap = 2.7119fF c6357
+ratio=0.028693 Cap = 0.0752328fF NodeCap = 2.62199fF c1723
+ratio=0.023274 Cap = 0.0210402fF NodeCap = 2.7119fF c6495
+ratio=0.023274 Cap = 0.0420768fF NodeCap = 2.7119fF c6396
+ratio=0.023274 Cap = 0.0420768fF NodeCap = 2.7119fF c8371
+ratio=0.023274 Cap = 0.0210402fF NodeCap = 2.7119fF c8452
+ratio=0.0240721 Cap = 0.0420768fF NodeCap = 2.62199fF c8372
+ratio=0.0240721 Cap = 0.0210402fF NodeCap = 2.62199fF c8453
+ratio=0.0330673 Cap = 0.0875088fF NodeCap = 2.64639fF c8373
+ratio=0.0240721 Cap = 0.0420768fF NodeCap = 2.62199fF c8522
+ratio=0.0240721 Cap = 0.0210402fF NodeCap = 2.62199fF c8558
+ratio=0.0240721 Cap = 0.0420768fF NodeCap = 2.62199fF c8369
+ratio=0.0240721 Cap = 0.0210402fF NodeCap = 2.62199fF c8450
+ratio=0.0240721 Cap = 0.0210402fF NodeCap = 2.62199fF c8557
+ratio=0.0240721 Cap = 0.0420768fF NodeCap = 2.62199fF c8521
+ratio=0.0236534 Cap = 0.0420768fF NodeCap = 2.66841fF c8613
+ratio=0.0236534 Cap = 0.0210402fF NodeCap = 2.66841fF c8659
+ratio=0.106907 Cap = 0.707491fF NodeCap = 7.22622fF c2473
+ratio=0.106907 Cap = 0.0650448fF NodeCap = 7.22622fF c2161
+ratio=0.0033865 Cap = 0.0523044fF NodeCap = 15.445fF c8227
+ratio=0.0290356 Cap = 0.0752328fF NodeCap = 10.342fF c8000
+ratio=0.0290356 Cap = 0.147999fF NodeCap = 10.342fF c8229
+ratio=0.0290356 Cap = 0.0770544fF NodeCap = 10.342fF c7008
+ratio=0.0123604 Cap = 0.0349776fF NodeCap = 7.43175fF c8108
+ratio=0.0123604 Cap = 0.0568818fF NodeCap = 7.43175fF c8740
+ratio=0.00397671 Cap = 0.0331898fF NodeCap = 15.445fF c8754
+ratio=0.00397671 Cap = 0.0282303fF NodeCap = 15.445fF c5684
+ratio=0.0131645 Cap = 0.0349776fF NodeCap = 2.65697fF c6384
+ratio=0.00927321 Cap = 0.0256374fF NodeCap = 2.76467fF c6444
+ratio=0.00945365 Cap = 0.0256374fF NodeCap = 2.7119fF c6447
+ratio=0.00945365 Cap = 0.0256374fF NodeCap = 2.7119fF c8427
+ratio=0.0232481 Cap = 0.0642735fF NodeCap = 2.76467fF c6445
+ratio=0.0237005 Cap = 0.0642735fF NodeCap = 2.7119fF c6448
+ratio=0.0237005 Cap = 0.0642735fF NodeCap = 2.7119fF c8428
+ratio=0.0102638 Cap = 0.0283761fF NodeCap = 2.76467fF c6446
+ratio=0.00778711 Cap = 0.0207792fF NodeCap = 2.66841fF c8614
+ratio=0.011397 Cap = 0.176026fF NodeCap = 15.445fF c8228
+ratio=0.00959028 Cap = 0.0256374fF NodeCap = 2.67327fF c6769
+ratio=0.00320802 Cap = 0.0495477fF NodeCap = 15.445fF c7047
+ratio=0.028693 Cap = 0.0752328fF NodeCap = 2.62199fF c6349
+ratio=0.0284709 Cap = 0.0752328fF NodeCap = 2.64245fF c6351
+ratio=0.0284285 Cap = 0.0752328fF NodeCap = 2.64639fF c6353
+ratio=0.0272122 Cap = 0.0752328fF NodeCap = 2.76467fF c6355
+ratio=0.0240721 Cap = 0.0210402fF NodeCap = 2.62199fF c6493
+ratio=0.0240721 Cap = 0.0420768fF NodeCap = 2.62199fF c6392
+ratio=0.0238858 Cap = 0.0420768fF NodeCap = 2.64245fF c6393
+ratio=0.0238858 Cap = 0.0210402fF NodeCap = 2.64245fF c6494
+ratio=0.0330673 Cap = 0.0875088fF NodeCap = 2.64639fF c6394
+ratio=0.0316525 Cap = 0.0875088fF NodeCap = 2.76467fF c6395
+ratio=0.0283152 Cap = 0.0752328fF NodeCap = 2.65697fF c6314
+ratio=0.00773965 Cap = 0.0204516fF NodeCap = 2.64245fF c6443
+ratio=0.0237552 Cap = 0.0210402fF NodeCap = 2.65697fF c6492
+ratio=0.0237552 Cap = 0.0420768fF NodeCap = 2.65697fF c6385
+ratio=0.0240721 Cap = 0.0210402fF NodeCap = 2.62199fF c6639
+ratio=0.0240721 Cap = 0.0420768fF NodeCap = 2.62199fF c6578
+ratio=0.0303236 Cap = 0.0800208fF NodeCap = 2.6389fF c6733
+ratio=0.0236104 Cap = 0.0420768fF NodeCap = 2.67327fF c6734
+ratio=0.0236104 Cap = 0.0210402fF NodeCap = 2.67327fF c6793
+ratio=0.00959028 Cap = 0.0256374fF NodeCap = 2.67327fF c6768
+ratio=0.028693 Cap = 0.0752328fF NodeCap = 2.62199fF c6526
+ratio=0.0281426 Cap = 0.0752328fF NodeCap = 2.67327fF c6680
+ratio=0.0285092 Cap = 0.0752328fF NodeCap = 2.6389fF c6679
+ratio=0.0654674 Cap = 0.192737fF NodeCap = 4.09318fF c7009
+ratio=0.0654674 Cap = 0.0752328fF NodeCap = 4.09318fF c6981
+ratio=0.0173233 Cap = 0.0898488fF NodeCap = 5.18659fF c7010
+ratio=0.0277417 Cap = 0.0752328fF NodeCap = 2.7119fF c8340
+ratio=0.028693 Cap = 0.0752328fF NodeCap = 2.62199fF c8342
+ratio=0.0284285 Cap = 0.0752328fF NodeCap = 2.64639fF c8344
+ratio=0.028693 Cap = 0.0752328fF NodeCap = 2.62199fF c8313
+ratio=0.00960774 Cap = 0.0256374fF NodeCap = 2.66841fF c8643
+ratio=0.028693 Cap = 0.0752328fF NodeCap = 2.62199fF c8481
+ratio=0.0281939 Cap = 0.0752328fF NodeCap = 2.66841fF c8582
+
+# of capacitors from netlist                              :         8994
+     # of Ground CAPS from netlist                        :         2184
+     # of Coupling CAPS from netlist                      :         6810
+# of capacitors converted from diodes                     :            0
+     # of Ground CAPS converted from diodes               :            0
+     # of Coupling CAPS converted from diodes             :            0
+# of Coupling CAPS from netlist and converted diodes      :         6810
+     # of Coupling CAPS kept (listed here)                :           76
+     # of Coupling CAPS put into SMS Mode                 :            0
+     # of Coupling CAPS split to ground                   :         6734
+# of MOSFETS converted to Ground CAPS                     :            0
+# of MOSFETS used as Coupling CAPS (listed here)          :            0

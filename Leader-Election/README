@@ -1,0 +1,4 @@
+1.Compile the java program using the makefile named 'makefile'
+2. run the run.sh file with the following parameters
+	./run.sh -h 'hostfile name' -f 'maxcrashes' -p 'port number' -u 'user name'
+

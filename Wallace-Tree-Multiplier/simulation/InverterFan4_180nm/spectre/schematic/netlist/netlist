@@ -1,0 +1,20 @@
+
+// Library name: hw1
+// Cell name: Inverter_180nm
+// View name: schematic
+subckt Inverter_180nm In Out
+    P0 (Out In vdd! vdd!) tsmc18dP w=810.0n l=180.0n as=3.645e-13 \
+        ad=3.645e-13 ps=2.52u pd=2.52u m=1 region=sat
+    N0 (Out In 0 0) tsmc18dN w=270.0n l=180.0n as=1.215e-13 ad=1.215e-13 \
+        ps=1.44u pd=1.44u m=1 region=sat
+ends Inverter_180nm
+// End of subcircuit definition.
+
+// Library name: hw1
+// Cell name: InverterFan4_180nm
+// View name: schematic
+I4 (Out_inv Out\<3\>) Inverter_180nm
+I3 (Out_inv Out\<2\>) Inverter_180nm
+I2 (Out_inv Out\<1\>) Inverter_180nm
+I1 (Out_inv Out\<0\>) Inverter_180nm
+I0 (In Out_inv) Inverter_180nm

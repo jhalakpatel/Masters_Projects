@@ -1,0 +1,32 @@
+* "simulator" "HSPICE" 
+* "version" "E-2010.12-SP2 64-BIT"
+* "format" "HSP"
+* "rundate" "15:03:43 11/12/2014 "
+* "netlist" "raw/Full_Adder_Mirror_StaticCMOS "
+* "runtitle" "* # file name: /home/ecegrid/a/559mg3/cadence/simulation/"
+* time =  0.000e+00       
+* temperature =  2.500e+01       
+*** BEGIN: Saved Operating Point ***                     
+.option 
++ gmindc= 1.000e-12       
+.nodeset
++ a_in = 0.000e+00       
++ b_in = 0.000e+00       
++ c_in = 0.000e+00       
++ carry_out = 2.400e-08       
++ gd = 0.000e+00       
++ net106 = 1.800e+00       
++ net111 = 1.800e+00       
++ net119 = 1.800e+00       
++ net135 = 1.800e+00       
++ net139 = 1.800e+00       
++ net174 = 3.067e-02       
++ net179 = 1.800e+00       
++ net186 = 3.728e-01       
++ net187 = 7.043e-02       
++ net191 = 1.415e+00       
++ net195 = 2.150e-01       
++ net99 = 1.800e+00       
++ sum_out = 2.400e-08       
++ vd = 1.800e+00       
+***   END: Saved Operating Point ***                     

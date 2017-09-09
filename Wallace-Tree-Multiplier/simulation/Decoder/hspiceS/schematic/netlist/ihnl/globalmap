@@ -1,0 +1,14 @@
+CADENCE IHNL01060
+$model
+Proj_lib/FF_Positive_edge/schematic FF_Positive_edge
+Proj_lib/Inverter_180nm/schematic Inverter_180nm
+Proj_lib/AND21_StaticCMOS/schematic AND21_StaticCMOS
+Proj_lib/NAND_StaticCMOS/schematic NAND_StaticCMOS
+Proj_lib/Decoder/schematic Decoder
+Proj_lib/XOR21_StaticCMOS/schematic XOR21_StaticCMOS
+Proj_lib/DFF_STATIC_CMOS/schematic DFF_STATIC_CMOS
+$endmodel
+$net
+$endnet
+$param
+$endparam

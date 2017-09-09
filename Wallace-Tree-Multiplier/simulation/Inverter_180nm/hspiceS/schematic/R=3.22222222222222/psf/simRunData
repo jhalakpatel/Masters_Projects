@@ -1,0 +1,10 @@
+HEADER
+"PSFversion" "1.00"
+"design" "(\"hw1\" \"Inverter_180nm\" \"schematic\" \"\")"
+"simulator" "hspiceS"
+"temperature" "25"
+"host" ""
+"date" "Oct 31 14:25:24 2014"
+"title" ""
+"analysisList" "()"
+END

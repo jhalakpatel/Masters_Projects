@@ -1,0 +1,2 @@
+(armSave "4.4")
+((Proj_lib_Inverter_180nm_schematic (nil subcktName "sub1" fileName Proj_lib_Inverter_180nm_schematic)) (Proj_lib_TSPC_FF_PositiveEdge_schematic (nil subcktName "sub2" fileName Proj_lib_TSPC_FF_PositiveEdge_schematic)))

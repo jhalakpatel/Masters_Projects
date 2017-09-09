@@ -1,0 +1,24 @@
+( ( nil
+  version "2.1"
+  mapType "incremental"
+  blockName "PartialProduct64"
+  repList "hspiceS spice cmos_sch cmos.sch schematic"
+  stopList "hspiceS spice"
+  hierDelim "^"
+  netlistDir "/home/ecegrid/a/559mg3/cadence/simulation/PartialProduct64/hspiceS/extracted/netlist"
+ )
+( instViewTable
+ )
+( net
+ )
+( inst
+ )
+( model
+( "Proj_lib/PartialProduct64/extracted" "PartialProduct64" )
+ )
+( term
+ )
+( param
+ )
+( "PartialProduct64" "ihnl/cds0/map" )
+ )

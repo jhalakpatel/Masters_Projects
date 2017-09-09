@@ -1,0 +1,152 @@
+***** HSPICE -- E-2010.12-SP2 64-BIT (May 23 2011) linux ******
+ Input File: spice.in
+ lic:
+ lic: FLEXlm: v10.8
+ lic: USER:   559mg3               HOSTNAME: ecegrid-thin2.ecn.purdue.edu
+ lic: HOSTID:                      PID:      4390
+ lic: Using FLEXlm license file:
+ lic: 1718@marina.ecn.purdue.edu
+ lic: Checkout 1 hspice
+ lic: License/Maintenance for hspice will expire on 14-sep-2015/2014.09
+ lic: 1(in_use)/50(total) FLOATING license(s) on SERVER marina.ecn.purdue.edu
+ lic:
+ init: begin read circuit files,  cpu clock=  0.00E+00
+       option search   = /package/eda/synopsys/hspice-E-2010.12-SP2/hspic
+                         e/parts/ad
+       option search   = /package/eda/synopsys/hspice-E-2010.12-SP2/hspic
+                         e/parts/behave
+       option search   = /package/eda/synopsys/hspice-E-2010.12-SP2/hspic
+                         e/parts/bjt
+       option search   = /package/eda/synopsys/hspice-E-2010.12-SP2/hspic
+                         e/parts/burr_brn
+       option search   = /package/eda/synopsys/hspice-E-2010.12-SP2/hspic
+                         e/parts/comlinear
+       option search   = /package/eda/synopsys/hspice-E-2010.12-SP2/hspic
+                         e/parts/dio
+       option search   = /package/eda/synopsys/hspice-E-2010.12-SP2/hspic
+                         e/parts/fet
+       option search   = /package/eda/synopsys/hspice-E-2010.12-SP2/hspic
+                         e/parts/lin_tech
+       option search   = /package/eda/synopsys/hspice-E-2010.12-SP2/hspic
+                         e/parts/pci
+       option search   = /package/eda/synopsys/hspice-E-2010.12-SP2/hspic
+                         e/parts/signet
+       option search   = /package/eda/synopsys/hspice-E-2010.12-SP2/hspic
+                         e/parts/ti
+       option search   = /package/eda/synopsys/hspice-E-2010.12-SP2/hspic
+                         e/parts/tline
+       option search   = /package/eda/synopsys/hspice-E-2010.12-SP2/hspic
+                         e/parts/xilinx
+       option runlvl
+       option scalm    =     1.00
+       option nomod
+       option limpts   =    1.000E+05
+       option numdgt   =     7.00
+       option nxx
+ init: end read circuit files,  cpu clock=  0.00E+00 memory=       149 kb
+ init: begin check errors,  cpu clock=  0.00E+00
+ init: end check errors,  cpu clock=  0.00E+00 memory=       149 kb
+ init: begin setup matrix, pivot=     0 cpu clock=  0.00E+00
+       establish matrix -- done,  cpu clock=  0.00E+00 memory=       151 kb
+       re-order matrix -- done,  cpu clock=  0.00E+00 memory=       151 kb
+ init: end setup matrix,  cpu clock=  0.00E+00 memory=       160 kb
+ sweep: voltage         voltage1         begin, #sweeps =  32
+ voltage: vds             =    0.00E+00
+ sweep: dc dc1    begin, #sweeps=  38 cpu clock=  0.00E+00
+ sweep: dc dc1    end,  cpu clock=  0.00E+00 memory=       161 kb
+ voltage: vds             =    7.20E-02
+ sweep: dc dc2    begin, #sweeps=  38 cpu clock=  0.00E+00
+ sweep: dc dc2    end,  cpu clock=  1.00E-02 memory=       161 kb
+ voltage: vds             =    1.44E-01
+ sweep: dc dc3    begin, #sweeps=  38 cpu clock=  1.00E-02
+ sweep: dc dc3    end,  cpu clock=  1.00E-02 memory=       161 kb
+ voltage: vds             =    2.16E-01
+ sweep: dc dc4    begin, #sweeps=  38 cpu clock=  1.00E-02
+ sweep: dc dc4    end,  cpu clock=  1.00E-02 memory=       161 kb
+ voltage: vds             =    2.88E-01
+ sweep: dc dc5    begin, #sweeps=  38 cpu clock=  1.00E-02
+ sweep: dc dc5    end,  cpu clock=  1.00E-02 memory=       161 kb
+ voltage: vds             =    3.60E-01
+ sweep: dc dc6    begin, #sweeps=  38 cpu clock=  1.00E-02
+ sweep: dc dc6    end,  cpu clock=  1.00E-02 memory=       161 kb
+ voltage: vds             =    4.32E-01
+ sweep: dc dc7    begin, #sweeps=  38 cpu clock=  1.00E-02
+ sweep: dc dc7    end,  cpu clock=  1.00E-02 memory=       161 kb
+ voltage: vds             =    5.04E-01
+ sweep: dc dc8    begin, #sweeps=  38 cpu clock=  1.00E-02
+ sweep: dc dc8    end,  cpu clock=  1.00E-02 memory=       161 kb
+ voltage: vds             =    5.76E-01
+ sweep: dc dc9    begin, #sweeps=  38 cpu clock=  1.00E-02
+ sweep: dc dc9    end,  cpu clock=  1.00E-02 memory=       161 kb
+ voltage: vds             =    6.48E-01
+ sweep: dc dc10   begin, #sweeps=  38 cpu clock=  1.00E-02
+ sweep: dc dc10   end,  cpu clock=  1.00E-02 memory=       161 kb
+ voltage: vds             =    7.20E-01
+ sweep: dc dc11   begin, #sweeps=  38 cpu clock=  1.00E-02
+ sweep: dc dc11   end,  cpu clock=  1.00E-02 memory=       161 kb
+ voltage: vds             =    7.92E-01
+ sweep: dc dc12   begin, #sweeps=  38 cpu clock=  1.00E-02
+ sweep: dc dc12   end,  cpu clock=  1.00E-02 memory=       161 kb
+ voltage: vds             =    8.64E-01
+ sweep: dc dc13   begin, #sweeps=  38 cpu clock=  1.00E-02
+ sweep: dc dc13   end,  cpu clock=  1.00E-02 memory=       161 kb
+ voltage: vds             =    9.36E-01
+ sweep: dc dc14   begin, #sweeps=  38 cpu clock=  1.00E-02
+ sweep: dc dc14   end,  cpu clock=  1.00E-02 memory=       161 kb
+ voltage: vds             =    1.01E+00
+ sweep: dc dc15   begin, #sweeps=  38 cpu clock=  1.00E-02
+ sweep: dc dc15   end,  cpu clock=  1.00E-02 memory=       161 kb
+ voltage: vds             =    1.08E+00
+ sweep: dc dc16   begin, #sweeps=  38 cpu clock=  1.00E-02
+ sweep: dc dc16   end,  cpu clock=  1.00E-02 memory=       161 kb
+ voltage: vds             =    1.15E+00
+ sweep: dc dc17   begin, #sweeps=  38 cpu clock=  1.00E-02
+ sweep: dc dc17   end,  cpu clock=  1.00E-02 memory=       161 kb
+ voltage: vds             =    1.22E+00
+ sweep: dc dc18   begin, #sweeps=  38 cpu clock=  1.00E-02
+ sweep: dc dc18   end,  cpu clock=  1.00E-02 memory=       161 kb
+ voltage: vds             =    1.30E+00
+ sweep: dc dc19   begin, #sweeps=  38 cpu clock=  1.00E-02
+ sweep: dc dc19   end,  cpu clock=  1.00E-02 memory=       161 kb
+ voltage: vds             =    1.37E+00
+ sweep: dc dc20   begin, #sweeps=  38 cpu clock=  1.00E-02
+ sweep: dc dc20   end,  cpu clock=  1.00E-02 memory=       161 kb
+ voltage: vds             =    1.44E+00
+ sweep: dc dc21   begin, #sweeps=  38 cpu clock=  1.00E-02
+ sweep: dc dc21   end,  cpu clock=  1.00E-02 memory=       161 kb
+ voltage: vds             =    1.51E+00
+ sweep: dc dc22   begin, #sweeps=  38 cpu clock=  1.00E-02
+ sweep: dc dc22   end,  cpu clock=  2.00E-02 memory=       161 kb
+ voltage: vds             =    1.58E+00
+ sweep: dc dc23   begin, #sweeps=  38 cpu clock=  2.00E-02
+ sweep: dc dc23   end,  cpu clock=  2.00E-02 memory=       161 kb
+ voltage: vds             =    1.66E+00
+ sweep: dc dc24   begin, #sweeps=  38 cpu clock=  2.00E-02
+ sweep: dc dc24   end,  cpu clock=  2.00E-02 memory=       161 kb
+ voltage: vds             =    1.73E+00
+ sweep: dc dc25   begin, #sweeps=  38 cpu clock=  2.00E-02
+ sweep: dc dc25   end,  cpu clock=  2.00E-02 memory=       161 kb
+ voltage: vds             =    1.80E+00
+ sweep: dc dc26   begin, #sweeps=  38 cpu clock=  2.00E-02
+ sweep: dc dc26   end,  cpu clock=  2.00E-02 memory=       161 kb
+ voltage: vds             =    1.87E+00
+ sweep: dc dc27   begin, #sweeps=  38 cpu clock=  2.00E-02
+ sweep: dc dc27   end,  cpu clock=  2.00E-02 memory=       161 kb
+ voltage: vds             =    1.94E+00
+ sweep: dc dc28   begin, #sweeps=  38 cpu clock=  2.00E-02
+ sweep: dc dc28   end,  cpu clock=  2.00E-02 memory=       161 kb
+ voltage: vds             =    2.02E+00
+ sweep: dc dc29   begin, #sweeps=  38 cpu clock=  2.00E-02
+ sweep: dc dc29   end,  cpu clock=  2.00E-02 memory=       161 kb
+ voltage: vds             =    2.09E+00
+ sweep: dc dc30   begin, #sweeps=  38 cpu clock=  2.00E-02
+ sweep: dc dc30   end,  cpu clock=  2.00E-02 memory=       161 kb
+ voltage: vds             =    2.16E+00
+ sweep: dc dc31   begin, #sweeps=  38 cpu clock=  2.00E-02
+ sweep: dc dc31   end,  cpu clock=  2.00E-02 memory=       161 kb
+ voltage: vds             =    2.23E+00
+ sweep: dc dc32   begin, #sweeps=  38 cpu clock=  2.00E-02
+ sweep: dc dc32   end,  cpu clock=  2.00E-02 memory=       161 kb
+ sweep: voltage         voltage         1 end
+>info:         ***** hspice job concluded
+ lic: Release hspice token(s)

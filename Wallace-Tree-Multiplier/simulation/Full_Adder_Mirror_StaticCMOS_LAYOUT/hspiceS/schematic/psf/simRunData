@@ -1,0 +1,10 @@
+HEADER
+"PSFversion" "1.00"
+"design" "(\"Proj_lib\" \"Full_Adder_Mirror_StaticCMOS_LAYOUT\" \"schematic\" \"\")"
+"simulator" "hspiceS"
+"temperature" "25"
+"host" ""
+"date" "Nov 11 15:49:34 2014"
+"title" ""
+"analysisList" "()"
+END

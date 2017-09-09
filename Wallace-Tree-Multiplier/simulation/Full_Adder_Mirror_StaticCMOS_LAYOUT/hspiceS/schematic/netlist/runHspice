@@ -1,0 +1,4 @@
+#! /bin/csh -f
+# This script can be used to rerun the last simulation
+
+hspice raw/Full_Adder_Mirror_StaticCMOS_LAYOUT  >../psf/hspice.out

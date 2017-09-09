@@ -1,0 +1,9 @@
+CADENCE IHNL01067
+
+Proj_lib NAND_StaticCMOS schematic cds0
+Proj_lib Inverter_180nm schematic cds1
+Proj_lib DFF_STATIC_CMOS schematic cds2
+Proj_lib FF_Positive_edge schematic cds3
+Proj_lib AND21_StaticCMOS schematic cds4
+Proj_lib XOR21_StaticCMOS schematic cds5
+Proj_lib Decoder schematic cds6

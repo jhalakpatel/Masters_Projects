@@ -1,0 +1,8 @@
+CADENCE IHNL01060
+$model
+Proj_lib/HALF_ADDER_22_STATIC_CMOS/extracted sub0
+$endmodel
+$net
+$endnet
+$param
+$endparam

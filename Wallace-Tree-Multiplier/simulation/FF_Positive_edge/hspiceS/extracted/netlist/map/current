@@ -1,0 +1,24 @@
+( ( nil
+  version "2.1"
+  mapType "incremental"
+  blockName "FF_Positive_edge"
+  repList "hspiceS spice cmos_sch cmos.sch schematic"
+  stopList "hspiceS spice"
+  hierDelim "^"
+  netlistDir "/home/ecegrid/a/559mg3/cadence/simulation/FF_Positive_edge/hspiceS/extracted/netlist"
+ )
+( instViewTable
+ )
+( net
+ )
+( inst
+ )
+( model
+( "Proj_lib/FF_Positive_edge/extracted" "FF_Positive_edge" )
+ )
+( term
+ )
+( param
+ )
+( "FF_Positive_edge" "ihnl/cds0/map" )
+ )

@@ -1,0 +1,88 @@
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+wm geometry . 900x785+1374+84
+Mdi:ArrangeIcons
+wm geometry . 900x785+1376+83
+Mdi:ArrangeIcons
+wm geometry . 900x785+1375+82
+Mdi:ArrangeIcons
+wm geometry . 900x785+1374+81
+Mdi:ArrangeIcons
+wm geometry . 900x785+1374+80
+Mdi:ArrangeIcons
+wm geometry . 900x785+1374+79
+Mdi:ArrangeIcons
+wm geometry . 900x785+1374+78
+Mdi:ArrangeIcons
+wm geometry . 900x785+1374+77
+Mdi:ArrangeIcons
+wm geometry . 900x785+1374+76
+Mdi:ArrangeIcons
+wm geometry . 900x785+1374+75
+Mdi:ArrangeIcons
+wm geometry . 900x785+1375+73
+Mdi:ArrangeIcons
+wm geometry . 900x785+1376+73
+Mdi:ArrangeIcons
+wm geometry . 900x785+1389+70
+Mdi:ArrangeIcons
+wm geometry . 900x785+1399+70
+Mdi:ArrangeIcons
+wm geometry . 900x785+1409+67
+Mdi:ArrangeIcons
+wm geometry . 900x785+1427+65
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+wm geometry . 900x785+1442+63
+Mdi:ArrangeIcons
+wm geometry . 900x785+1448+63
+Mdi:ArrangeIcons
+wm geometry . 900x785+1453+63
+Mdi:ArrangeIcons
+wm geometry . 900x785+1459+61
+Mdi:ArrangeIcons
+wm geometry . 900x785+1462+61
+Mdi:ArrangeIcons
+wm geometry . 900x785+1467+61
+Mdi:ArrangeIcons
+wm geometry . 900x785+1471+61
+Mdi:ArrangeIcons
+wm geometry . 900x785+1476+61
+Mdi:ArrangeIcons
+wm geometry . 900x785+1483+61
+Mdi:ArrangeIcons
+wm geometry . 900x785+1496+61
+Mdi:ArrangeIcons
+wm geometry . 900x785+1502+61
+Mdi:ArrangeIcons
+wm geometry . 900x785+1516+61
+Mdi:ArrangeIcons
+wm geometry . 900x785+1520+61
+Mdi:ArrangeIcons
+wm geometry . 900x785+1522+61
+Mdi:ArrangeIcons
+wm geometry . 900x785+1525+59
+Mdi:ArrangeIcons
+wm geometry . 900x785+1526+59
+Mdi:ArrangeIcons
+wm geometry . 900x785+1528+59
+Mdi:ArrangeIcons
+wm geometry . 900x785+1529+58
+ScopeSigMgr:loadpffile /home/ecegrid/a/559mg3/cadence/simulation/XOR21_StaticCMOS/hspiceS/extracted/netlist/nanosim.fsdb 1 openonly
+# PF:1
+pf:read PF:1 a_in
+# WF:1:1
+Graph addsignal WF:1:1 -region d -yview real(y) -xview real(x) -tracehi 1
+# Signal0
+pf:read PF:1 b_in
+# WF:1:2
+Graph addsignal WF:1:2 -region d -yview real(y) -xview real(x) -tracehi 1
+# Signal1
+pf:read PF:1 out_xor21
+# WF:1:3
+Graph addsignal WF:1:3 -region d -yview real(y) -xview real(x) -tracehi 1
+# Signal2
+ScopeSigMgr:Unload 0 {{(1) nanosim.fsdb}}
+Mdi:FullSize
+Graph axisconfig AxisX(0) -range {330n 660n }
+Graph axisconfig AxisX(0) -range all -zoomed 0

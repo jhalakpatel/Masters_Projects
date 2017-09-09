@@ -1,0 +1,6 @@
+simulator( 'hspiceS )
+design(	 "/home/ecegrid/a/559mg3/cadence/simulation/Decoder/hspiceS/schematic/netlist/Decoder.C")
+resultsDir( "/home/ecegrid/a/559mg3/cadence/simulation/Decoder/hspiceS/schematic" )
+analysis('tran ?from "0n"  ?to "60n"  ?by "1n"  )
+temp( 25 ) 
+run()

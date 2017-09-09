@@ -1,0 +1,10 @@
+CADENCE IHNL01060
+$model
+Wallace_MUL_Library/Domino_OR/schematic Domino_OR
+$endmodel
+$net
+vdd! vdd!
+gnd! 0
+$endnet
+$param
+$endparam

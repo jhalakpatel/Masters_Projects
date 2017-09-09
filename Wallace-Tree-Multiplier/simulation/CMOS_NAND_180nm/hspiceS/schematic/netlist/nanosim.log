@@ -1,0 +1,208 @@
+ --------------------------------------------------------
+|                                                        |
+|           NanoSim Version G-2012.06 (RHEL64)           |
+| Copyright (c) 2012 Synopsys Inc., All Rights Reserved. |
+|                                                        |
+ --------------------------------------------------------
+
+Built by nsmgr   on Fri May 18 18:17:12 PDT 2012
+Fri Oct 31 15:02:37 EDT 2014
+Machine Name: ecegrid-thin6.ecn.purdue.edu
+
+Command line options:  -n nanosim.sp -c nanosim.cfg -nvec nanosim.vec -out fsdb -z tt
+
+
+The 64-bit version of the simulator is running.
+
+
+Initializing system messages took 0.000 s
+
+LICENSE Information: 
+-- Key: TIMEMILL__NSADDON	            
+-- Version: 2012.06
+
+Installing interactive/configuration commands ... 
+Installing commands took 0.010 s
+
+
+Start netlist compilation at Fri Oct 31 15:02:38 2014
+
+Compiling "nanosim.sp" (SPICE)
+Compiling "/package/eda/cells/ncsu-cdk-1.5.1/local/models/hspice/public/publicModel/tsmc18dP" (SPICE)
+Compiling "/package/eda/cells/ncsu-cdk-1.5.1/local/models/hspice/public/publicModel/tsmc18dN" (SPICE)
+Compiling "nanosim.vec" (VECTOR)
+
+
+
+Parsing netlist finished in 0 seconds
+
+Circuit temperature from netlist                  :       25.000
+
+
+Netlist compilation will be case insensitive.
+All letters will be converted to lower case.
+Building instance tree finished in 0 seconds
+
+Finish netlist compilation at Fri Oct 31 15:02:38 2014
+
+Netlist compilation took 0.040 s
+NOTICE:Techfile Voltage (*nanosim tech="voltage") set to  2.5V ... 
+Found technology file: ./tt_tech_tsmc18dn...
+Found technology file: ./tt_tech_tsmc18dp...
+WARNING:NanoSim:0x211045e1:No suitable technology file found for mp1 (w=0.81u, l=0.18u) of model "tsmc18dp"... 
+Building node/element arrays took 0.010 s
+
+Reading configuration files ...
+Reading configuration files took 0.000000 s
+
+
+# of CMOS elements                                        :            4
+# of dc voltage sources                                   :            1
+# of stimulus elements                                    :            1
+# of elements                                             :            6
+# of used elements                                        :            5
+# of nodes                                                :            6
+# of subckt                                               :            1
+# of top-level instances                                  :            6
+
+
+Circuit partitioning ...
+
+Among 1 stages, there are: 
+           1 pwl stages 
+           0 grouped pwl stages
+           0 analog stages 
+           0 NR stages 
+           0 grouped analog stages
+           0 rc stages 
+           0 ud stages 
+           0 ADFMI functional model stages
+           2 nodes in the largest pwl stage
+           0 nodes in the largest digital stage
+
+           1 stages (1 pwl/analog stages) with 0-9 nodes
+
+
+Among 6 nodes, there are: 
+           6 pwl nodes
+           0 analog (accurate) nodes
+           0 rc nodes
+           0 ud nodes
+
+           0 cut nodes 
+           0 mem_cut nodes 
+           0 no_clamp nodes 
+           2 nodes in stages
+           4 voltage source nodes
+           2 constant nodes
+           0 NR nodes
+
+Among 6 elements, there are: 
+           4 elements in stages
+           4 pwl elements 
+           0 synchronous elements 
+           0 SMS elements 
+           0 analog (accurate) elements
+           0 rc elements 
+           0 ud elements 
+           0 ADFMI functional model elements 
+           0 VERILOGA model elements 
+           0 behavioral model elements 
+
+           0 mna elements
+           0 NR elements
+           0 mos transistors identified as keepers
+           0 keepers removed
+           0 keepers reduced
+
+
+Circuit partitioning took 0.000 s
+Constructing matrix ...
+Matrix ordering and construction took 0.000 s
+Profiling block-number for individual report_block_powr configuration commands (1 cmd's totally)  
+Cmd 1: 1 blocks from "report_block_powr total track_power=1 * "   
+Processing block power (number of blocks: 1) ...  
+
+
+After reading configuration file(s), 6 signals are identified to be printed:
+           3 logic signals
+           3 voltage signals
+
+Statistics of memory used for signal printing:
+      712256 bytes allocated in total, including:
+             96016 bytes allocated for node current/voltage/logic signals
+            352144 bytes allocated additionally for node current signals
+            264096 bytes allocated additionally for element branch current signals
+
+Levelizing stages ...
+Levelizing stages took 0.000 s
+DC initialization ...
+
+Finishing initialization (level 0 -- 0)
+0 dynamic stages assigned in DC Initialization
+
+Number of residual dc events scheduled          : 0
+Number of ic nodes scheduled                    : 0
+DC initialization took 0.000 s
+
+Simulation begins in pwl mode ...
+Simulation ends at 1000.000 ns
+
+Simulation took 0.020 s
+
+Current information calculated over the intervals:
+
+     0.00000e+00 -  1.00001e+03 ns
+
+
+
+
+Block: total
+    Number of nodes in block		:  2
+    Number of elements in block		:  4
+    Number of block supply nodes	:  1
+    Number of block ground nodes	:  1
+    Number of block biput nodes		:  0
+    Number of block input nodes		:  2
+    Number of block output nodes	:  0
+    Number of block stages		:  1
+    Number of block partial stages	:  0
+
+    Average supply current		: -0.852271 uA
+    RMS supply current			:  8.933579 uA
+
+    Average input current		: -0.014000 uA
+    RMS input current			:  1.685815 uA
+
+    Average output current		:  0.000000 uA
+    RMS output current			:  0.000000 uA
+
+    Average biput current		:  0.000000 uA
+    RMS biput current			:  0.000000 uA
+
+    Average block power			:  2.130679 uW
+    RMS block power			:  22.333949 uW
+
+Simulation time resolution                      : 1.000e-02 ns
+Print time resolution                           : 1.000e-02 ns
+Number of PWL matrix solutions                  : 474
+Number of PWL MOS model lookups                 : 1318
+Number of time steps                            : 474
+Number of iterations                            : 0
+Number of rejected time steps                   : 0
+
+Global simulation parameters used:
+
+SPD            0.25V     ASPD            0.1V
+SIM_DESV       0.25V     SIM_AESV      0.125V
+VDS_MIN  0.000309055V     AVDS_MIN      1e-08V
+SSC (steady state current)         0.1uA
+SUBI (subthreshold current)          1uA
+DC CURRENT                           1uA
+
+	       4.0 real	       0.7 user	       1.0 sys
+
+Signal data is saved in nanosim.fsdb
+
+No errors reported in the .err file (nanosim.err)
+

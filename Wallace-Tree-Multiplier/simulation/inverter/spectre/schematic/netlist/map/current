@@ -1,0 +1,26 @@
+( ( nil
+  version "2.1"
+  mapType "incremental"
+  blockName "Inverter"
+  repList "spectre cmos_sch cmos.sch schematic veriloga ahdl"
+  stopList "spectre"
+  globalList "gnd! vdd!"
+  hierDelim "."
+  netlistDir "/home/ecegrid/a/559mg3/cadence/simulation/Inverter/spectre/schematic/netlist"
+ )
+( instViewTable
+ )
+( net
+ )
+( inst
+ )
+( model
+( "hw1/Inverter/schematic" "Inverter" )
+( "gnd!" "0" )
+ )
+( term
+ )
+( param
+ )
+( "Inverter" "ihnl/cds0/map" )
+ )

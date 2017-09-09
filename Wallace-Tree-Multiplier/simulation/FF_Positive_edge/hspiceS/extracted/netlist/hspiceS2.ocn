@@ -1,0 +1,7 @@
+simulator( 'hspiceS )
+createFinalNetlist()
+design(	 "/home/ecegrid/a/559mg3/cadence/simulation/FF_Positive_edge/hspiceS/extracted/netlist/FF_Positive_edge.C")
+resultsDir( "/home/ecegrid/a/559mg3/cadence/simulation/FF_Positive_edge/hspiceS/extracted" )
+analysis('tran ?from "0n"  ?to "60n"  ?by "1n"  )
+temp( 25 ) 
+run()

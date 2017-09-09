@@ -1,0 +1,9 @@
+CADENCE IHNL01060
+$model
+Proj_lib/Inverter_180nm/schematic Inverter_180nm
+Proj_lib/XOR21_StaticCMOS/schematic XOR21_StaticCMOS
+$endmodel
+$net
+$endnet
+$param
+$endparam

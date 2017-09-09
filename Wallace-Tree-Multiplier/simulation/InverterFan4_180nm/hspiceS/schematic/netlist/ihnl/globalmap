@@ -1,0 +1,11 @@
+CADENCE IHNL01060
+$model
+hw1/InverterFan4_180nm/schematic sub2
+hw1/Inverter_180nm/schematic Inverter_180nm
+$endmodel
+$net
+vdd! vdd!
+gnd! 0
+$endnet
+$param
+$endparam

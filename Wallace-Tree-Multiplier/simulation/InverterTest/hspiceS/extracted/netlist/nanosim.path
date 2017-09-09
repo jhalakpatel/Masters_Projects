@@ -1,0 +1,104 @@
+ Path from in_1 to out_1 :
+    Node in_1 is rising at time 20.500ns
+    Node 2 is falling at time 20.560ns
+    Node 3 is rising at time 20.600ns
+    Node out_1 is falling at time 20.620ns
+ Path from in_0 to out_0 :
+    Node in_0 is rising at time 40.500ns
+    Node 1 is falling at time 40.560ns
+    Node out_0 is rising at time 40.590ns
+ Path from in_1 to out_1 :
+    Node in_1 is falling at time 40.500ns
+    Node 2 is rising at time 40.610ns
+    Node 3 is falling at time 40.640ns
+    Node out_1 is rising at time 40.660ns
+ Path from in_0 to out_0 :
+    Node in_0 is falling at time 60.500ns
+    Node 1 is rising at time 60.610ns
+    Node out_0 is falling at time 60.630ns
+ Path from in_1 to out_1 :
+    Node in_1 is rising at time 60.500ns
+    Node 2 is falling at time 60.560ns
+    Node 3 is rising at time 60.600ns
+    Node out_1 is falling at time 60.620ns
+ Path from in_0 to out_0 :
+    Node in_0 is rising at time 80.500ns
+    Node 1 is falling at time 80.560ns
+    Node out_0 is rising at time 80.590ns
+ Path from in_1 to out_1 :
+    Node in_1 is falling at time 80.500ns
+    Node 2 is rising at time 80.610ns
+    Node 3 is falling at time 80.640ns
+    Node out_1 is rising at time 80.660ns
+ Path from in_0 to out_0 :
+    Node in_0 is falling at time 100.500ns
+    Node 1 is rising at time 100.610ns
+    Node out_0 is falling at time 100.630ns
+ Path from in_1 to out_1 :
+    Node in_1 is rising at time 100.500ns
+    Node 2 is falling at time 100.560ns
+    Node 3 is rising at time 100.600ns
+    Node out_1 is falling at time 100.620ns
+ Path from in_0 to out_0 :
+    Node in_0 is rising at time 120.500ns
+    Node 1 is falling at time 120.560ns
+    Node out_0 is rising at time 120.590ns
+ Path from in_1 to out_1 :
+    Node in_1 is falling at time 120.500ns
+    Node 2 is rising at time 120.610ns
+    Node 3 is falling at time 120.640ns
+    Node out_1 is rising at time 120.660ns
+ Path from in_0 to out_0 :
+    Node in_0 is falling at time 140.500ns
+    Node 1 is rising at time 140.610ns
+    Node out_0 is falling at time 140.630ns
+ Path from in_1 to out_1 :
+    Node in_1 is rising at time 140.500ns
+    Node 2 is falling at time 140.560ns
+    Node 3 is rising at time 140.600ns
+    Node out_1 is falling at time 140.620ns
+ Path from in_0 to out_0 :
+    Node in_0 is rising at time 160.500ns
+    Node 1 is falling at time 160.560ns
+    Node out_0 is rising at time 160.590ns
+ Path from in_1 to out_1 :
+    Node in_1 is falling at time 160.500ns
+    Node 2 is rising at time 160.610ns
+    Node 3 is falling at time 160.640ns
+    Node out_1 is rising at time 160.660ns
+ Path from in_0 to out_0 :
+    Node in_0 is falling at time 200.500ns
+    Node 1 is rising at time 200.610ns
+    Node out_0 is falling at time 200.630ns
+ Path from in_1 to out_1 :
+    Node in_1 is rising at time 200.500ns
+    Node 2 is falling at time 200.560ns
+    Node 3 is rising at time 200.600ns
+    Node out_1 is falling at time 200.620ns
+ Path from in_0 to out_0 :
+    Node in_0 is rising at time 220.500ns
+    Node 1 is falling at time 220.560ns
+    Node out_0 is rising at time 220.590ns
+ Path from in_1 to out_1 :
+    Node in_1 is falling at time 220.500ns
+    Node 2 is rising at time 220.610ns
+    Node 3 is falling at time 220.640ns
+    Node out_1 is rising at time 220.660ns
+ Path from in_0 to out_0 :
+    Node in_0 is falling at time 240.500ns
+    Node 1 is rising at time 240.610ns
+    Node out_0 is falling at time 240.630ns
+ Path from in_1 to out_1 :
+    Node in_1 is rising at time 240.500ns
+    Node 2 is falling at time 240.560ns
+    Node 3 is rising at time 240.600ns
+    Node out_1 is falling at time 240.620ns
+ Path from in_0 to out_0 :
+    Node in_0 is rising at time 260.500ns
+    Node 1 is falling at time 260.560ns
+    Node out_0 is rising at time 260.590ns
+ Path from in_1 to out_1 :
+    Node in_1 is falling at time 260.500ns
+    Node 2 is rising at time 260.610ns
+    Node 3 is falling at time 260.640ns
+    Node out_1 is rising at time 260.660ns

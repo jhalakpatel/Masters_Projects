@@ -1,0 +1,45 @@
+; --------------------------------------------------------
+;|                                                        |
+;|           NanoSim Version G-2012.06 (RHEL64)           |
+;| Copyright (c) 2012 Synopsys Inc., All Rights Reserved. |
+;|                                                        |
+; --------------------------------------------------------
+;
+;Built by nsmgr   on Fri May 18 18:17:12 PDT 2012
+; Mon Dec  1 01:09:30 EST 2014
+; Machine Name: ecegrid-thin3.ecn.purdue.edu
+; 
+; ratio = TotalCap / NodeCap
+; where TotalCap is the capacitances between two terminals
+; and NodeCap is node capacitance.
+; Both TotalCap and NodeCap are estimation of capacitive effects.
+;
+ratio=0.0129879 Cap = 0.100022fF NodeCap = 7.70118fF c48
+ratio=0.0129879 Cap = 0.100022fF NodeCap = 7.70118fF c54
+ratio=0.0129879 Cap = 0.100022fF NodeCap = 7.70118fF c67
+ratio=0.0153222 Cap = 0.169978fF NodeCap = 11.0936fF c49
+ratio=0.016355 Cap = 0.13991fF NodeCap = 8.55459fF c55
+ratio=0.0184751 Cap = 0.204955fF NodeCap = 11.0936fF c68
+ratio=0.0150126 Cap = 0.0349776fF NodeCap = 2.32988fF c47
+ratio=0.0150126 Cap = 0.0349776fF NodeCap = 2.32988fF c53
+ratio=0.0350097 Cap = 0.0699552fF NodeCap = 1.99816fF c50
+ratio=0.0175049 Cap = 0.0349776fF NodeCap = 1.99816fF c56
+ratio=0.0175049 Cap = 0.0349776fF NodeCap = 1.99816fF c69
+ratio=0.0175533 Cap = 0.0699552fF NodeCap = 3.98531fF c46
+ratio=0.00877663 Cap = 0.0349776fF NodeCap = 3.98531fF c52
+ratio=0.00877663 Cap = 0.0349776fF NodeCap = 3.98531fF c66
+ratio=0.00705197 Cap = 0.0349776fF NodeCap = 4.95997fF c45
+ratio=0.00705197 Cap = 0.0349776fF NodeCap = 4.95997fF c51
+
+# of capacitors from netlist                              :           54
+     # of Ground CAPS from netlist                        :           19
+     # of Coupling CAPS from netlist                      :           35
+# of capacitors converted from diodes                     :            0
+     # of Ground CAPS converted from diodes               :            0
+     # of Coupling CAPS converted from diodes             :            0
+# of Coupling CAPS from netlist and converted diodes      :           35
+     # of Coupling CAPS kept (listed here)                :           16
+     # of Coupling CAPS put into SMS Mode                 :            0
+     # of Coupling CAPS split to ground                   :           19
+# of MOSFETS converted to Ground CAPS                     :            0
+# of MOSFETS used as Coupling CAPS (listed here)          :            0

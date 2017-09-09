@@ -1,0 +1,2 @@
+.MEAS TRAN Qtot AVG i(V1) FROM=0 TO=30n
+.MEAS Etot PARAM='2.5*Qtot'

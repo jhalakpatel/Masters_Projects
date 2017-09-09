@@ -1,0 +1,26 @@
+( ( nil
+  version "2.1"
+  mapType "incremental"
+  blockName "Domino_OR"
+  repList "hspiceS spice cmos_sch cmos.sch schematic"
+  stopList "hspiceS spice"
+  globalList "gnd! vdd!"
+  hierDelim "^"
+  netlistDir "/home/ecegrid/a/559mg3/cadence/simulation/Domino_OR/hspiceS/schematic/netlist"
+ )
+( instViewTable
+ )
+( net
+ )
+( inst
+ )
+( model
+( "gnd!" "0" )
+( "Wallace_MUL_Library/Domino_OR/schematic" "Domino_OR" )
+ )
+( term
+ )
+( param
+ )
+( "Domino_OR" "ihnl/cds0/map" )
+ )

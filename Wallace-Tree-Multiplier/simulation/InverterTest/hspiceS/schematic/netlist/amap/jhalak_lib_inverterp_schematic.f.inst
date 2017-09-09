@@ -1,0 +1,8 @@
+HEADER
+"PSFversion" "1.00"
+"P0v" "MP0"
+"P0n" "NCSU_Analog_Parts_pmos4_symbol"
+"N0v" "MN0"
+"N0n" "NCSU_Analog_Parts_nmos4_symbol"
+"Outv" "(FUNCTION (plus (root \"P0/D\") (root \"N0/D\")))"
+"Inv" "(FUNCTION (plus (root \"N0/G\") (root \"P0/G\")))"

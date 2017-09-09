@@ -1,0 +1,10 @@
+HEADER
+"PSFversion" "1.00"
+"design" "(\"hw1\" \"Inverter\" \"schematic\" \"\")"
+"simulator" "hspiceS"
+"temperature" "25"
+"host" ""
+"date" "Oct 24 23:56:45 2014"
+"title" ""
+"analysisList" "()"
+END

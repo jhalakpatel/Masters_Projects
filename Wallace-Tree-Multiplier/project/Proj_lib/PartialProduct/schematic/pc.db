@@ -1,0 +1,35 @@
+#
+Proj_lib AND21_StaticCMOS symbol
+I7
+I6
+I5
+I4
+I3
+I2
+I1
+I0
+#ISCELL
+basic ipin symbol
+PIN10
+PIN7
+PIN6
+PIN5
+PIN4
+PIN3
+PIN2
+PIN1
+PIN0
+#ISCELL
+basic opin symbol
+PIN23
+PIN22
+PIN21
+PIN20
+PIN19
+PIN18
+PIN17
+PIN16
+#ISCELL
+basic iopin symbolr
+PIN8
+PIN9
